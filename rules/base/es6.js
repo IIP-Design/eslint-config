@@ -10,7 +10,6 @@ module.exports = {
       objectLiteralDuplicateProperties: false
     }
   },
-
   rules: {
     'constructor-super': 'error',
     'no-class-assign': 'error',

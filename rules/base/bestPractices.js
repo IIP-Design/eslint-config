@@ -3,7 +3,7 @@ module.exports = {
     'accessor-pairs': 'off',
     'array-callback-return': ['error', { allowImplicit: true }],
     'block-scoped-var': 'error',
-    complexity: ['off', 11],
+    'complexity': ['off', 11],
     'class-methods-use-this': [
       'error',
       {
@@ -14,7 +14,7 @@ module.exports = {
     'default-case': ['error', { commentPattern: '^no default$' }],
     'default-param-last': 'off',
     'dot-notation': ['error', { allowKeywords: true }],
-    eqeqeq: ['error', 'always', { null: 'ignore' }],
+    'eqeqeq': ['error', 'always', { null: 'ignore' }],
     'grouped-accessor-pairs': 'off',
     'guard-for-in': 'error',
     'max-classes-per-file': ['error', 1],
@@ -177,10 +177,10 @@ module.exports = {
     'prefer-promise-reject-errors': ['error', { allowEmptyReject: true }],
     'prefer-named-capture-group': 'off',
     'prefer-regex-literals': 'off',
-    radix: 'error',
+    'radix': 'error',
     'require-await': 'off',
     'require-unicode-regexp': 'off',
     'vars-on-top': 'error',
-    yoda: 'error'
+    'yoda': 'error'
   }
 };

@@ -9,7 +9,7 @@ module.exports = {
         requireReturnForObjectLiteral: false
       }
     ],
-    curly: ['error', 'all'],
+    'curly': ['error', 'all'],
     'lines-around-comment': 'off',
     'max-len': [
       'warn',
@@ -58,7 +58,7 @@ module.exports = {
         allowUnboundThis: true
       }
     ],
-    quotes: [
+    'quotes': [
       'error',
       'single',
       {

@@ -8,12 +8,12 @@ const rules = [
   './rules/base/variables',
   // "./rules/import/index.js",
   './rules/prettier/configurable',
-  './rules/prettier/core'
+  './rules/prettier/core',
 ].map(require.resolve);
 
 module.exports = {
   env: {
-    browser: true
+    browser: true,
   },
   extends: rules,
   parserOptions: {
@@ -24,6 +24,6 @@ module.exports = {
     sourceType: 'module'
   },
   rules: {
-    strict: ['error', 'safe']
+    strict: ['error', 'safe'],
   }
 };

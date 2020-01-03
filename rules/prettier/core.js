@@ -1,5 +1,6 @@
 // Disable ESLint rules handled by Prettier.
 module.exports = {
+  plugins: ['eslint-plugin-prettier'],
   rules: {
     'array-bracket-newline': 'off',
     'array-bracket-spacing': 'off',
@@ -20,7 +21,7 @@ module.exports = {
     'generator-star': 'off',
     'generator-star-spacing': 'off',
     'implicit-arrow-linebreak': 'off',
-    indent: 'off',
+    'indent': 'off',
     'jsx-quotes': 'off',
     'key-spacing': 'off',
     'keyword-spacing': 'off',
@@ -50,7 +51,7 @@ module.exports = {
     'padded-blocks': 'off',
     'quote-props': 'off',
     'rest-spread-spacing': 'off',
-    semi: 'off',
+    'semi': 'off',
     'semi-spacing': 'off',
     'semi-style': 'off',
     'space-after-function-name': 'off',

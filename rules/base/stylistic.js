@@ -1,6 +1,6 @@
 module.exports = {
   rules: {
-    camelcase: ['error', { properties: 'never', ignoreDestructuring: false }],
+    'camelcase': ['error', { properties: 'never', ignoreDestructuring: false }],
     'capitalized-comments': [
       'off',
       'never',
