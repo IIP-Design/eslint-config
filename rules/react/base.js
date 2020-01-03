@@ -24,12 +24,7 @@ module.exports = {
     ],
     'react/default-props-match-prop-types': 'off',
     'react/destructuring-assignment': ['error', 'always'],
-    'react/display-name': [
-      'error',
-      {
-        ignoreTranspilerName: true
-      }
-    ],
+    'react/display-name': 'off',
     'react/forbid-component-props': 'off',
     'react/forbid-dom-props': 'off',
     'react/forbid-elements': 'off',
