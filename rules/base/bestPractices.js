@@ -14,7 +14,6 @@ module.exports = {
     'default-case': ['error', { commentPattern: '^no default$' }],
     'default-param-last': 'off',
     'dot-notation': ['error', { allowKeywords: true }],
-    'dot-location': ['error', 'property'],
     eqeqeq: ['error', 'always', { null: 'ignore' }],
     'grouped-accessor-pairs': 'off',
     'guard-for-in': 'error',
@@ -38,7 +37,6 @@ module.exports = {
     'no-extra-bind': 'error',
     'no-extra-label': 'error',
     'no-fallthrough': 'error',
-    'no-floating-decimal': 'error',
     'no-global-assign': ['error', { exceptions: [] }],
     'no-native-reassign': 'off',
     'no-implicit-coercion': [
@@ -64,12 +62,6 @@ module.exports = {
         ignoreArrayIndexes: true,
         enforceConst: true,
         detectObjects: false
-      }
-    ],
-    'no-multi-spaces': [
-      'error',
-      {
-        ignoreEOLComments: false
       }
     ],
     'no-multi-str': 'error',
@@ -189,7 +181,6 @@ module.exports = {
     'require-await': 'off',
     'require-unicode-regexp': 'off',
     'vars-on-top': 'error',
-    'wrap-iife': ['error', 'outside', { functionPrototypeMethods: false }],
     yoda: 'error'
   }
 };

@@ -5,9 +5,10 @@ const rules = [
   './rules/base/nodeCommon',
   './rules/base/strict',
   './rules/base/stylistic',
-  './rules/base/variables'
+  './rules/base/variables',
   // "./rules/import/index.js",
-  // "./rules/prettier/prettier"
+  './rules/prettier/configurable',
+  './rules/prettier/core'
 ].map(require.resolve);
 
 module.exports = {

@@ -12,10 +12,7 @@ module.exports = {
   },
 
   rules: {
-    'arrow-parens': ['error', 'always'],
-    'arrow-spacing': ['error', { before: true, after: true }],
     'constructor-super': 'error',
-    'generator-star-spacing': ['error', { before: false, after: true }],
     'no-class-assign': 'error',
     'no-const-assign': 'error',
     'no-dupe-class-members': 'error',
@@ -77,7 +74,6 @@ module.exports = {
     'prefer-spread': 'error',
     'prefer-template': 'error',
     'require-yield': 'error',
-    'rest-spread-spacing': ['error', 'never'],
     'sort-imports': [
       'off',
       {
@@ -87,8 +83,6 @@ module.exports = {
         memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single']
       }
     ],
-    'symbol-description': 'error',
-    'template-curly-spacing': 'error',
-    'yield-star-spacing': ['error', 'after']
+    'symbol-description': 'error'
   }
 };

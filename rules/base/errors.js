@@ -18,18 +18,6 @@ module.exports = {
     'no-empty-character-class': 'error',
     'no-ex-assign': 'error',
     'no-extra-boolean-cast': 'error',
-    'no-extra-parens': [
-      'off',
-      'all',
-      {
-        conditionalAssign: true,
-        nestedBinaryExpressions: false,
-        returnAssign: false,
-        ignoreJSX: 'all', // delegate to eslint-plugin-react
-        enforceForArrowConditionals: false
-      }
-    ],
-    'no-extra-semi': 'error',
     'no-func-assign': 'error',
     'no-import-assign': 'off',
     'no-inner-declarations': 'error',
