@@ -1,0 +1,18 @@
+{
+  "name": "@gpa-lab/eslint-config",
+  "version": "0.1.0",
+  "description": "An ESLint configuration conforming to the GPA/LAB style guide",
+  "license": "MIT",
+  "main": "index.js",
+  "author": {
+    "name": "Marek Rewers, U.S. Department of State, Global Public Affairs"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "gpalab"
+  ],
+  "peerDependencies": {
+    "eslint": "^6.8.0"
+  }
+}
