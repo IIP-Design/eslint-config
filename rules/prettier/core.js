@@ -1,3 +1,4 @@
+// Disable ESLint rules handled by Prettier.
 module.exports = {
   rules: {
     'array-bracket-newline': 'off',

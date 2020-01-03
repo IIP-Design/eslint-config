@@ -157,9 +157,9 @@ module.exports = {
     'no-unused-expressions': [
       'error',
       {
-        allowShortCircuit: false,
-        allowTernary: false,
-        allowTaggedTemplates: false
+        allowShortCircuit: true,
+        allowTernary: true,
+        allowTaggedTemplates: true
       }
     ],
     'no-unused-labels': 'error',
