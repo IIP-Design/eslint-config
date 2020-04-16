@@ -3,19 +3,13 @@ module.exports = {
     'react/jsx-boolean-value': ['error', 'never'],
     'react/jsx-curly-brace-presence': ['error', 'never'],
     'react/jsx-filename-extension': [
-      'error',
+      'warn',
       {
         extensions: ['.js', '.jsx', '.mdx']
       }
     ],
-    'react/jsx-fragments': ['warn', 'element'],
-    'react/jsx-handler-names': [
-      'error',
-      {
-        eventHandlerPrefix: 'handle',
-        eventHandlerPropPrefix: 'on'
-      }
-    ],
+    'react/jsx-fragments': 'off',
+    'react/jsx-handler-names': 'off',
     'react/jsx-key': [
       'error',
       {
@@ -60,24 +54,9 @@ module.exports = {
         allowAllCaps: false
       }
     ],
-    'react/jsx-props-no-spreading': 'warn',
-    'react/jsx-sort-default-props': [
-      'error',
-      {
-        ignoreCase: true
-      }
-    ],
-    'react/jsx-sort-props': [
-      'error',
-      {
-        callbacksLast: true,
-        ignoreCase: false,
-        noSortAlphabetically: false,
-        reservedFirst: true,
-        shorthandFirst: false,
-        shorthandLast: false
-      }
-    ],
+    'react/jsx-props-no-spreading': 'off',
+    'react/jsx-sort-default-props': 'off',
+    'react/jsx-sort-props': 'off',
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error'
   }

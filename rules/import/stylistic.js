@@ -3,28 +3,28 @@ module.exports = {
     'import/dynamic-import-chunkname': 'warn',
     'import/exports-last': 'off',
     'import/extensions': [
-      'error',
+      'warn',
       'always',
       {
         js: 'never',
-        jsx: 'never',
-      },
+        jsx: 'never'
+      }
     ],
     'import/first': 'error',
     'import/group-exports': 'off',
     'import/max-dependencies': [
       'off',
       {
-        max: 15,
-      },
+        max: 15
+      }
     ],
     'import/newline-after-import': [
       'error',
       {
-        count: 1,
-      },
+        count: 1
+      }
     ],
-    'import/no-anonymous-default-export': 'error',
+    'import/no-anonymous-default-export': 'warn',
     'import/no-default-export': 'off', // Inverse of prefer-default-export
     'import/no-duplicates': 'error',
     'import/no-named-default': 'error',
@@ -33,19 +33,10 @@ module.exports = {
     'import/no-unassigned-import': [
       'error',
       {
-        allow: ['**/*.css', '**/*.sass', '**/*.scss'],
-      },
-    ],
-    'import/order': [
-      'error',
-      {
-        groups: [
-          'builtin',
-          'external',
-          'internal'
-        ],
+        allow: ['**/*.css', '**/*.sass', '**/*.scss', '@babel/polyfill']
       }
     ],
-    'import/prefer-default-export': 'error',
-  },
+    'import/order': 'off',
+    'import/prefer-default-export': 'off'
+  }
 };

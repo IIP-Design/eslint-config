@@ -3,7 +3,7 @@ const rules = [
   './staticAnalysis',
   './stylistic',
   './warnings'
-].map(require.resolve);
+].map( require.resolve );
 
 module.exports = {
   extends: rules,

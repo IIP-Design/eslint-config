@@ -5,12 +5,12 @@ module.exports = {
     'block-scoped-var': 'error',
     'complexity': ['off', 11],
     'class-methods-use-this': [
-      'error',
+      'warn',
       {
         exceptMethods: []
       }
     ],
-    'consistent-return': 'error',
+    'consistent-return': 'off',
     'default-case': ['error', { commentPattern: '^no default$' }],
     'default-param-last': 'off',
     'dot-notation': ['error', { allowKeywords: true }],
@@ -73,19 +73,7 @@ module.exports = {
     'no-param-reassign': [
       'error',
       {
-        props: true,
-        ignorePropertyModificationsFor: [
-          'acc', // for reduce accumulators
-          'accumulator', // for reduce accumulators
-          'e', // for e.returnvalue
-          'ctx', // for Koa routing
-          'req', // for Express requests
-          'request', // for Express requests
-          'res', // for Express responses
-          'response', // for Express responses
-          '$scope', // for Angular 1 scopes
-          'staticContext' // for ReactRouter context
-        ]
+        props: false
       }
     ],
     'no-proto': 'error',
@@ -169,10 +157,7 @@ module.exports = {
     'no-useless-escape': 'error',
     'no-useless-return': 'error',
     'no-void': 'error',
-    'no-warning-comments': [
-      'warn',
-      { terms: ['todo', 'fixme', 'xxx'], location: 'start' }
-    ],
+    'no-warning-comments': ['warn', { terms: ['todo', 'fixme', 'xxx'], location: 'start' }],
     'no-with': 'error',
     'prefer-promise-reject-errors': ['error', { allowEmptyReject: true }],
     'prefer-named-capture-group': 'off',

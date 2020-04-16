@@ -1,14 +1,15 @@
 module.exports = {
   plugins: ['eslint-plugin-jsx-a11y'],
   rules: {
-    'jsx-a11y/accessible-emoji': 'error',
+    'jsx-a11y/accessible-emoji': 'off',
     'jsx-a11y/alt-text': 'error',
     'jsx-a11y/anchor-has-content': 'error',
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
-        aspects: ['noHref', 'invalidHref', 'preferButton'],
-        component: ['Link']
+        component: ['Link'],
+        specialLink: ['hrefLeft', 'hrefRight'],
+        aspects: ['invalidHref']
       }
     ],
     'jsx-a11y/aria-activedescendant-has-tabindex': 'error',
@@ -49,14 +50,7 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': [
       'error',
       {
-        handlers: [
-          'onClick',
-          'onMouseDown',
-          'onMouseUp',
-          'onKeyPress',
-          'onKeyDown',
-          'onKeyUp'
-        ]
+        handlers: ['onClick', 'onMouseDown', 'onMouseUp', 'onKeyPress', 'onKeyDown', 'onKeyUp']
       }
     ],
     'jsx-a11y/role-has-required-aria-props': 'error',

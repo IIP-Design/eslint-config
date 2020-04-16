@@ -1,19 +1,6 @@
 module.exports = {
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true
-    }
-  },
-  plugins: ['eslint-plugin-react'],
   rules: {
-    'react/boolean-prop-naming': [
-      'warn',
-      {
-        message:
-          'It is preferred that your prop ({{ propName }}) matches the pattern: is{{ pattern }} or has{{ pattern }}',
-        rule: '^(is|has)[A-Z]([A-Za-z0-9]?)+'
-      }
-    ],
+    'react/boolean-prop-naming': 'off',
     'react/button-has-type': [
       'error',
       {
@@ -23,7 +10,7 @@ module.exports = {
       }
     ],
     'react/default-props-match-prop-types': 'off',
-    'react/destructuring-assignment': ['error', 'always'],
+    'react/destructuring-assignment': ['warn', 'always'],
     'react/display-name': 'off',
     'react/forbid-component-props': 'off',
     'react/forbid-dom-props': 'off',
@@ -31,7 +18,7 @@ module.exports = {
     'react/forbid-foreign-prop-types': 'error',
     'react/forbid-prop-types': 'off',
     'react/no-access-state-in-setstate': 'error',
-    'react/no-array-index-key': 'error',
+    'react/no-array-index-key': 'warn',
     'react/no-children-prop': 'off',
     'react/no-danger': 'error',
     'react/no-danger-with-children': 'error',
@@ -41,7 +28,7 @@ module.exports = {
     'react/no-direct-mutation-state': 'error',
     'react/no-find-dom-node': 'error',
     'react/no-is-mounted': 'error',
-    'react/no-multi-comp': 'warn',
+    'react/no-multi-comp': 'off',
     'react/no-redundant-should-component-update': 'error',
     'react/no-render-return-value': 'error',
     'react/no-set-state': 'off',
@@ -53,7 +40,7 @@ module.exports = {
     ],
     'react/no-this-in-sfc': 'error',
     'react/no-typos': 'error',
-    'react/no-unescaped-entities': 'error',
+    'react/no-unescaped-entities': 'warn',
     'react/no-unknown-property': 'error',
     'react/no-unsafe': [
       'error',
@@ -66,9 +53,9 @@ module.exports = {
     'react/no-will-update-set-state': ['error', 'disallow-in-func'],
     'react/prefer-es6-class': ['error', 'always'],
     'react/prefer-read-only-props': 'error',
-    'react/prefer-stateless-function': 'error',
+    'react/prefer-stateless-function': 'off',
     'react/prop-types': 'error',
-    'react/react-in-jsx-scope': 'error',
+    'react/react-in-jsx-scope': 'off', // Disabled so as not to set of errors in test files
     'react/require-default-props': 'off',
     'react/require-optimization': 'off',
     'react/require-render-return': 'error',
@@ -79,59 +66,10 @@ module.exports = {
         html: true
       }
     ],
-    'react/sort-comp': [
-      'error',
-      {
-        groups: {
-          lifecycle: [
-            'displayName',
-            'contextTypes',
-            'childContextTypes',
-            'mixins',
-            'statics',
-            'constructor',
-            'getDefaultProps',
-            'state',
-            'getInitialState',
-            'getChildContext',
-            'getDerivedStateFromProps',
-            'componentWillMount',
-            'UNSAFE_componentWillMount',
-            'componentDidMount',
-            'componentWillReceiveProps',
-            'UNSAFE_componentWillReceiveProps',
-            'shouldComponentUpdate',
-            'componentWillUpdate',
-            'UNSAFE_componentWillUpdate',
-            'getSnapshotBeforeUpdate',
-            'componentDidUpdate',
-            'componentDidCatch',
-            'componentWillUnmount'
-          ],
-          'props-validation': ['propTypes', 'defaultProps']
-        },
-        order: [
-          'static-methods',
-          'lifecycle',
-          '/^handle.+$/',
-          'everything-else',
-          'render',
-          'props-validation'
-        ]
-      }
-    ],
-    'react/sort-prop-types': [
-      'error',
-      {
-        callbacksLast: true,
-        ignoreCase: false,
-        noSortAlphabetically: false,
-        requiredFirst: true,
-        sortShapeProp: true
-      }
-    ],
+    'react/sort-comp': 'off',
+    'react/sort-prop-types': 'off',
     'react/state-in-constructor': 'off',
-    'react/static-property-placement': 'error',
+    'react/static-property-placement': 'off',
     'react/style-prop-object': 'error',
     'react/void-dom-elements-no-children': 'error'
   }

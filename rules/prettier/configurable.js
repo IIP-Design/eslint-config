@@ -9,7 +9,7 @@ module.exports = {
         requireReturnForObjectLiteral: false
       }
     ],
-    'curly': ['error', 'all'],
+    'curly': 'off',
     'lines-around-comment': 'off',
     'max-len': [
       'warn',

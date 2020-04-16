@@ -26,7 +26,7 @@ module.exports = {
         considerPropertyDescriptor: true
       }
     ],
-    'func-names': 'warn',
+    'func-names': 'off',
     'func-style': ['off', 'expression'],
     'id-blacklist': 'off',
     'id-length': 'off',
@@ -39,11 +39,7 @@ module.exports = {
         applyDefaultPatterns: true
       }
     ],
-    'lines-between-class-members': [
-      'error',
-      'always',
-      { exceptAfterSingleLine: false }
-    ],
+    'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: false }],
     'lines-around-directive': [
       'error',
       {
@@ -120,15 +116,7 @@ module.exports = {
     ],
     'no-spaced-func': 'error',
     'no-ternary': 'off',
-    'no-underscore-dangle': [
-      'error',
-      {
-        allow: [],
-        allowAfterThis: false,
-        allowAfterSuper: false,
-        enforceInMethodNames: true
-      }
-    ],
+    'no-underscore-dangle': 'off',
     'no-unneeded-ternary': ['error', { defaultAssignment: false }],
     'one-var': ['error', 'never'],
     'operator-assignment': ['error', 'always'],

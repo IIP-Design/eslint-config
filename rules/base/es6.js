@@ -1,15 +1,4 @@
 module.exports = {
-  env: {
-    es6: true
-  },
-  parserOptions: {
-    ecmaVersion: 6,
-    sourceType: 'module',
-    ecmaFeatures: {
-      generators: false,
-      objectLiteralDuplicateProperties: false
-    }
-  },
   rules: {
     'constructor-super': 'error',
     'no-class-assign': 'error',
@@ -47,7 +36,7 @@ module.exports = {
     'prefer-const': [
       'error',
       {
-        destructuring: 'any',
+        destructuring: 'all',
         ignoreReadBeforeAssign: true
       }
     ],

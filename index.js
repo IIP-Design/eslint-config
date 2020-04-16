@@ -6,24 +6,32 @@ const rules = [
   './rules/base/strict',
   './rules/base/stylistic',
   './rules/base/variables',
-  // "./rules/import/index.js",
+  './rules/import/index.js',
   './rules/prettier/configurable',
-  './rules/prettier/core',
-].map(require.resolve);
+  './rules/prettier/core'
+].map( require.resolve );
 
 module.exports = {
   env: {
     browser: true,
+    es6: true,
+    jest: true,
+    jquery: true,
+    node: true,
+    serviceworker: true
   },
   extends: rules,
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      impliedStrict: true
     },
-    ecmaVersion: 2018,
+    ecmaVersion: 2020,
     sourceType: 'module'
   },
   rules: {
-    strict: ['error', 'safe'],
+    // Prettier overrides:
+    'arrow-parens': ['error', 'as-needed'],
+    'object-curly-spacing': ['error', 'always'],
+    'space-in-parens': ['warn', 'always']
   }
 };

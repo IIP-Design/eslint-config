@@ -9,7 +9,7 @@ module.exports = {
     'no-console': 'warn',
     'no-constant-condition': 'warn',
     'no-control-regex': 'error',
-    'no-debugger': 'error',
+    'no-debugger': 'warn',
     'no-dupe-args': 'error',
     'no-dupe-else-if': 'off',
     'no-dupe-keys': 'error',

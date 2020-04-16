@@ -4,9 +4,19 @@ const rules = [
   './rules/react/hooks',
   './rules/react/jsx',
   './rules/react/prettier'
-].map(require.resolve);
+].map( require.resolve );
 
 module.exports = {
   extends: rules,
-  rules: {}
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true
+    }
+  },
+  plugins: ['eslint-plugin-react'],
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  }
 };

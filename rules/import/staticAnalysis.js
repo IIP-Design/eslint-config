@@ -13,16 +13,16 @@ module.exports = {
     'import/no-unresolved': [
       'error',
       {
-        'amd': true,
-        'commonjs': true,
+        amd: true,
+        commonjs: true
       }
     ],
     'import/no-useless-path-segments': [
       'error',
       {
-        noUselessIndex: true,
-      },
+        noUselessIndex: true
+      }
     ],
-    'import/no-webpack-loader-syntax': 'warn',
-  },
+    'import/no-webpack-loader-syntax': 'warn'
+  }
 };
