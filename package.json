@@ -1,6 +1,6 @@
 {
   "name": "@gpa-lab/eslint-config",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "An ESLint configuration conforming to the GPA/LAB style guide",
   "license": "MIT",
   "main": "index.js",
