@@ -3,8 +3,8 @@ const rules = [
   './rules/react/base',
   './rules/react/hooks',
   './rules/react/jsx',
-  './rules/react/prettier'
-].map( require.resolve );
+  './rules/react/no-prettier'
+].map(require.resolve);
 
 module.exports = {
   extends: rules,
