@@ -4,7 +4,7 @@ module.exports = {
   rules: {
     'array-bracket-newline': ['error', { multiline: true, minItems: 3 }],
     'array-bracket-spacing': ['error', 'never'],
-    'array-element-newline': ['error', 'consitent'],
+    'array-element-newline': ['error', 'consistent'],
     'arrow-parens': ['error', 'as-needed'],
     'arrow-spacing': ['error', { before: true, after: true }],
     'block-spacing': ['error', 'always'],
@@ -52,7 +52,7 @@ module.exports = {
     'no-trailing-spaces': 'error',
     'no-whitespace-before-property': 'error',
     'nonblock-statement-body-position': ['error', 'beside'],
-    'object-curly-newline': ['error', { minProperties: 3 }],
+    'object-curly-newline': ['error', { consistent: true }],
     'object-curly-spacing': ['error', 'always'],
     'object-property-newline': ['error', { allowAllPropertiesOnSameLine: true }],
     'one-var-declaration-per-line': ['error', 'always'],
