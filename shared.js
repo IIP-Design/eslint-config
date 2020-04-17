@@ -1,4 +1,5 @@
 const rules = [
+  './rules/deprecated/deprecated',
   './rules/base/bestPractices',
   './rules/base/errors',
   './rules/base/es6',
@@ -6,8 +7,8 @@ const rules = [
   './rules/base/strict',
   './rules/base/stylistic',
   './rules/base/variables',
-  './rules/import/index.js',
-].map( require.resolve );
+  './rules/import/index.js'
+].map(require.resolve);
 
 module.exports = {
   env: {

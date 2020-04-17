@@ -33,10 +33,8 @@ module.exports = {
     'no-unreachable': 'error',
     'no-unsafe-finally': 'error',
     'no-unsafe-negation': 'error',
-    'no-negated-in-lhs': 'off',
     'require-atomic-updates': 'off',
     'use-isnan': 'error',
-    'valid-jsdoc': 'off',
     'valid-typeof': ['error', { requireStringLiterals: true }]
   }
 };

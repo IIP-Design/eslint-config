@@ -38,7 +38,6 @@ module.exports = {
     'no-extra-label': 'error',
     'no-fallthrough': 'error',
     'no-global-assign': ['error', { exceptions: [] }],
-    'no-native-reassign': 'off',
     'no-implicit-coercion': [
       'off',
       {

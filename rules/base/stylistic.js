@@ -40,13 +40,6 @@ module.exports = {
       }
     ],
     'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: false }],
-    'lines-around-directive': [
-      'error',
-      {
-        before: 'always',
-        after: 'always'
-      }
-    ],
     'max-depth': ['off', 4],
     'max-lines': [
       'off',
@@ -79,8 +72,6 @@ module.exports = {
         capIsNewExceptions: ['Immutable.Map', 'Immutable.Set', 'Immutable.List']
       }
     ],
-    'newline-after-var': 'off',
-    'newline-before-return': 'off',
     'no-array-constructor': 'error',
     'no-bitwise': 'error',
     'no-continue': 'error',
@@ -114,16 +105,19 @@ module.exports = {
           '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.'
       }
     ],
-    'no-spaced-func': 'error',
     'no-ternary': 'off',
     'no-underscore-dangle': 'off',
     'no-unneeded-ternary': ['error', { defaultAssignment: false }],
     'one-var': ['error', 'never'],
     'operator-assignment': ['error', 'always'],
-    'padding-line-between-statements': 'off',
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: '*', next: 'return' },
+      { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
+      { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] }
+    ],
     'prefer-exponentiation-operator': 'off',
     'prefer-object-spread': 'error',
-    'require-jsdoc': 'off',
     'sort-keys': ['off', 'asc', { caseSensitive: false, natural: true }],
     'sort-vars': 'off',
     'spaced-comment': [

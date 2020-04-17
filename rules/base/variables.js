@@ -1,12 +1,11 @@
-const confusingGlobals = require( './confusingGlobals' );
+const confusingGlobals = require('./confusingGlobals');
 
 module.exports = {
   rules: {
     'init-declarations': 'off',
-    'no-catch-shadow': 'off',
     'no-delete-var': 'error',
     'no-label-var': 'error',
-    'no-restricted-globals': ['error'].concat( confusingGlobals ),
+    'no-restricted-globals': ['error'].concat(confusingGlobals),
     'no-shadow': [
       'error',
       {
