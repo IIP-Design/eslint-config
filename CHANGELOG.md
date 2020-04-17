@@ -9,6 +9,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _This sections lists changes commited to master since most recent release_
 
+## [v1.1.0](https://github.com/IIP-Design/eslint-config/releases/tag/v1.1.0) - 2020.04.17
+
+### Added:
+
+- Links to peer dependency repos/docs in the readme
+
+### Changed:
+
+- Removed Prettier configurations from the default ruleset, implementing them as an optional sub-package (@gpa-lab/eslint-config/prettier)
+- Create a `shared.js` module that sets the base rules shared by both the default and the prettier configurations
+- Define `no-prettier` rules for both base and React configurations to provide formatting when Prettier sub-package is not used
+- Move deprecated rules into their own file and disable them, deleted references to removed rules
+- Update readme with information on Prettier subpackage
+
 ## [v1.0.0](https://github.com/IIP-Design/eslint-config/releases/tag/v1.0.0) - 2020.04.16
 
 ### Added:
