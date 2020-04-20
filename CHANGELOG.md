@@ -12,6 +12,7 @@ _This sections lists changes commited to master since most recent release_
 ### Changed:
 
 - Add `dotenv/config` as an allowed unassigned import to `import/no-unassigned-import`
+- Move Prettier and React configs to optional dependencies so users do not get prompted to install them as peer dependencies
 
 ## [v1.1.1](https://github.com/IIP-Design/eslint-config/releases/tag/v1.1.1) - 2020.04.20
 
