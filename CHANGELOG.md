@@ -5,9 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/IIP-Design/styled-block-builder/compare/v1.0.0...HEAD)
+## [Unreleased](https://github.com/IIP-Design/styled-block-builder/compare/v1.1.1...HEAD)
 
 _This sections lists changes commited to master since most recent release_
+
+## [v1.1.1](https://github.com/IIP-Design/eslint-config/releases/tag/v1.1.1) - 2020.04.20
+
+### Changed:
+
+- Remove `always` value from the `new-parens` rule as this is the default value and including it at times causes and error
 
 ## [v1.1.0](https://github.com/IIP-Design/eslint-config/releases/tag/v1.1.0) - 2020.04.17
 

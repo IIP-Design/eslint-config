@@ -42,7 +42,7 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
     'multiline-ternary': ['error', 'always-multiline'],
     'newline-per-chained-call': ['error', { ignoreChainWithDepth: 2 }],
-    'new-parens': ['error', 'always'],
+    'new-parens': 'error',
     'no-extra-parens': ['error', 'all', { ignoreJSX: 'multi-line' }],
     'no-extra-semi': 'error',
     'no-floating-decimal': 'error',
