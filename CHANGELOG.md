@@ -5,13 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/IIP-Design/styled-block-builder/compare/v1.1.1...HEAD)
+## [Unreleased](https://github.com/IIP-Design/styled-block-builder/compare/v1.1.2...HEAD)
 
 _This sections lists changes commited to master since most recent release_
+
+## [v1.1.2](https://github.com/IIP-Design/eslint-config/releases/tag/v1.1.1) - 2020.04.20
 
 ### Changed:
 
 - Add `dotenv/config` as an allowed unassigned import to `import/no-unassigned-import`
+- Change `template-tag-spacing` from `always` to `never`
 - Move Prettier and React configs to optional dependencies so users do not get prompted to install them as peer dependencies
 
 ## [v1.1.1](https://github.com/IIP-Design/eslint-config/releases/tag/v1.1.1) - 2020.04.20

@@ -73,7 +73,7 @@ module.exports = {
     'space-unary-ops': ['error', { words: true, nonwords: false }],
     'switch-colon-spacing': ['error', { after: true, before: false }],
     'template-curly-spacing': ['error', 'never'],
-    'template-tag-spacing': ['error', 'always'],
+    'template-tag-spacing': ['error', 'never'],
     'unicode-bom': ['error', 'never'],
     'wrap-iife': ['error', 'inside'],
     'wrap-regex': 'error',
