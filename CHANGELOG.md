@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _This sections lists changes commited to master since most recent release_
 
+### Changed:
+
+- Use `space-before-function-paren` to require space before parens for async arrow functions: `async () => {}` rather than `async() => {}`
+
 ## [v1.1.2](https://github.com/IIP-Design/eslint-config/releases/tag/v1.1.1) - 2020.04.20
 
 ### Changed:
