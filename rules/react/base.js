@@ -17,6 +17,13 @@ module.exports = {
     'react/forbid-elements': 'off',
     'react/forbid-foreign-prop-types': 'error',
     'react/forbid-prop-types': 'off',
+    'react/function-component-definition': [
+      'error',
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'arrow-function'
+      }
+    ],
     'react/no-access-state-in-setstate': 'error',
     'react/no-array-index-key': 'warn',
     'react/no-children-prop': 'off',

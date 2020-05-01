@@ -9,8 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _This sections lists changes commited to master since most recent release_
 
+### Added:
+
+- Missing rule from React rule set `react/function-component-definition` set to both named and un-named declarations to `arrow-function`.
+
 ### Changed:
 
+- Set `react-hooks/exhaustive-deps` to warn as recommended 
 - Set `comma-dangle` to `always-multiline` to enforce a comma on the last item of a multiline array/object. Makes for more readabel git diffs.
 - Use `space-before-function-paren` to require space before parens for async arrow functions: `async () => {}` rather than `async() => {}`
 - Amend `indent` rule to enforce indentation of two spaces on switch cases
