@@ -13,6 +13,7 @@ _This sections lists changes commited to master since most recent release_
 
 - Set `comma-dangle` to `always-multiline` to enforce a comma on the last item of a multiline array/object. Makes for more readabel git diffs.
 - Use `space-before-function-paren` to require space before parens for async arrow functions: `async () => {}` rather than `async() => {}`
+- Amend `indent` rule to enforce indentation of two spaces on switch cases
 - Set default published NPM package access to public
 
 ## [v1.1.2](https://github.com/IIP-Design/eslint-config/releases/tag/v1.1.1) - 2020.04.20
