@@ -5,12 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/IIP-Design/styled-block-builder/compare/v1.1.2...HEAD)
+## [Unreleased](https://github.com/IIP-Design/eslint-config/compare/v1.2.0...HEAD)
 
 _This sections lists changes commited to master since most recent release_
 
+## [v1.2.0](https://github.com/IIP-Design/eslint-config/compare/v1.1.2...v1.2.0) - 2020.05.03
+
 ### Added:
 
+- Jest and Cypress plugins with the recommended rules enabled
 - Missing rule from React rule set `react/function-component-definition` set to both named and un-named declarations to `arrow-function`.
 
 ### Changed:
@@ -22,7 +25,7 @@ _This sections lists changes commited to master since most recent release_
 - Updates dependencies
 - Set default published NPM package access to public
 
-## [v1.1.2](https://github.com/IIP-Design/eslint-config/releases/tag/v1.1.1) - 2020.04.20
+## [v1.1.2](https://github.com/IIP-Design/eslint-config/compare/v1.1.1...v1.1.2) - 2020.04.20
 
 ### Changed:
 
@@ -30,13 +33,13 @@ _This sections lists changes commited to master since most recent release_
 - Change `template-tag-spacing` from `always` to `never`
 - Move Prettier and React configs to optional dependencies so users do not get prompted to install them as peer dependencies
 
-## [v1.1.1](https://github.com/IIP-Design/eslint-config/releases/tag/v1.1.1) - 2020.04.20
+## [v1.1.1](https://github.com/IIP-Design/eslint-config/compare/v1.1.0...v1.1.1) - 2020.04.20
 
 ### Changed:
 
 - Remove `always` value from the `new-parens` rule as this is the default value and including it at times causes and error
 
-## [v1.1.0](https://github.com/IIP-Design/eslint-config/releases/tag/v1.1.0) - 2020.04.17
+## [v1.1.0](https://github.com/IIP-Design/eslint-config/compare/v1.0.0...v1.1.0) - 2020.04.17
 
 ### Added:
 
@@ -50,7 +53,7 @@ _This sections lists changes commited to master since most recent release_
 - Move deprecated rules into their own file and disable them, deleted references to removed rules
 - Update readme with information on Prettier subpackage
 
-## [v1.0.0](https://github.com/IIP-Design/eslint-config/releases/tag/v1.0.0) - 2020.04.16
+## [v1.0.0](https://github.com/IIP-Design/eslint-config/compare/v0.1.1...v1.0.0) - 2020.04.16
 
 ### Added:
 
@@ -104,7 +107,7 @@ _This sections lists changes commited to master since most recent release_
 - Updated ecmaVersion to `2020`
 - Moved ecmaFeatures `jsx: true` and eslint-plugin-react set up to React settings index
 
-## [v0.1.1](https://github.com/IIP-Design/eslint-config/releases/tag/v0.1.1) - 2020.01.03
+## [v0.1.1](https://github.com/IIP-Design/eslint-config/compare/v0.1.0...v0.1.1) - 2020.01.03
 
 ### Added:
 

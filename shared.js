@@ -7,7 +7,8 @@ const rules = [
   './rules/base/strict',
   './rules/base/stylistic',
   './rules/base/variables',
-  './rules/import/index.js'
+  './rules/import/index.js',
+  './rules/testing/jest.js'
 ].map(require.resolve);
 
 module.exports = {
