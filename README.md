@@ -46,9 +46,9 @@ If you intend to use the Prettier configuration, we recommend installing all the
 
 Once installed, add an `.eslintrc` file to your project root and extend the GPA/LAB eslint-config as such:
 
-```js
-module.exports = {
-  extends: ['@gpa-lab/eslint-config'],
+```json
+{
+  "extends": ["@gpa-lab/eslint-config"]
 };
 ```
 
@@ -59,11 +59,12 @@ This will apply the base ruleset to your project.
 ### Sub-packages
 
 #### React
+
 This optional package includes an additional set of rules pertaining to React applications. To enable the React sub-package, add `@gpa-lab/eslint-config/react` to the extends array as such:
 
-```js
-module.exports = {
-  extends: ['@gpa-lab/eslint-config', '@gpa-lab/eslint-config/react'],
+```json
+{
+  "extends": ["@gpa-lab/eslint-config", "@gpa-lab/eslint-config/react"]
 };
 ```
 
@@ -74,15 +75,16 @@ The React sub-package depends on some ESLint plugins not needed by the base conf
 ```
 
 #### Prettier
+
 This package bundles the base rules with additional settings to optimize integration with the [Prettier](https://prettier.io/) formatting tool. To enable the Prettier configuration, add `@gpa-lab/eslint-config/prettier` to the extends array as such:
 
-```js
-module.exports = {
-  extends: ['@gpa-lab/eslint-config/prettier'],
+```json
+{
+  "extends": ["@gpa-lab/eslint-config/prettier"]
 };
 ```
 
-This this extention includes the ruleset provided by the base configuration, so you do not have to also import `@gpa-lab/eslint-config`. Please note that if you are using this configuration in conjunction with any other ruleset (including the React subpackage), make sure that it is listed **last** in the extends array.
+This this extension includes the ruleset provided by the base configuration, so you do not have to also import `@gpa-lab/eslint-config`. Please note that if you are using this configuration in conjunction with any other ruleset (including the React sub-package), make sure that it is listed **last** in the extends array.
 
 The Prettier sub-package depends on some additional packages not needed by the base configuration. If you did not install them during the initial setup, you will need to run the following command to install these required peer dependencies.
 

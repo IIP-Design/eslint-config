@@ -14,6 +14,7 @@ _This sections lists changes committed to master since most recent release_
 ### Changed
 
 - Updated React and Jest plugins, Prettier config
+- Use JSON rather than JavaScript example snippets in the readme since most GPA/LAB projects use an `.eslintrc` file rather than an `.eslintrc.js` file
 
 ## [v1.2.0](https://github.com/IIP-Design/eslint-config/compare/v1.1.2...v1.2.0) - 2020.05.03
 
