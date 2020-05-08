@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/IIP-Design/eslint-config/compare/v1.2.0...HEAD)
 
-_This sections lists changes commited to master since most recent release_
+_This sections lists changes committed to master since most recent release_
+
+## [v1.2.1](https://github.com/IIP-Design/eslint-config/compare/v1.2.0...v1.2.1) - 2020.05.08
+
+### Changed
+
+- Updated React and Jest plugins, Prettier config
 
 ## [v1.2.0](https://github.com/IIP-Design/eslint-config/compare/v1.1.2...v1.2.0) - 2020.05.03
 
@@ -19,7 +25,7 @@ _This sections lists changes commited to master since most recent release_
 ### Changed:
 
 - Set `react-hooks/exhaustive-deps` to warn as [recommended](https://reactjs.org/docs/hooks-rules.html#eslint-plugin)
-- Set `comma-dangle` to `always-multiline` to enforce a comma on the last item of a multiline array/object. Makes for more readabel git diffs.
+- Set `comma-dangle` to `always-multiline` to enforce a comma on the last item of a multiline array/object. Makes for more readable git diffs.
 - Use `space-before-function-paren` to require space before parens for async arrow functions: `async () => {}` rather than `async() => {}`
 - Amend `indent` rule to enforce indentation of two spaces on switch cases
 - Updates dependencies
@@ -51,13 +57,13 @@ _This sections lists changes commited to master since most recent release_
 - Create a `shared.js` module that sets the base rules shared by both the default and the prettier configurations
 - Define `no-prettier` rules for both base and React configurations to provide formatting when Prettier sub-package is not used
 - Move deprecated rules into their own file and disable them, deleted references to removed rules
-- Update readme with information on Prettier subpackage
+- Update readme with information on Prettier sub-package
 
 ## [v1.0.0](https://github.com/IIP-Design/eslint-config/compare/v0.1.1...v1.0.0) - 2020.04.16
 
 ### Added:
 
-- Jest, jquery, and serviceworkers as supported environments
+- Jest, JQuery, and service workers as supported environments
 - Set ecmaFeature `impliedStrict` to true
 - Setting in React index to detect the version of React in use
 - Prettier overrides in base ruleset index
@@ -68,6 +74,7 @@ _This sections lists changes commited to master since most recent release_
 - Repo and issues links to package.json
 
 ### Changed:
+
 - Altered rules to conform to existing GPA/LAB team conventions. Specifically:
   - Change `consistent-return` from error to off
   - Set the `props` option on `no-param-reassign` to `false` rather than `true` with additional `ignorePropertyModificationsFor` options
@@ -115,7 +122,7 @@ _This sections lists changes commited to master since most recent release_
 
 ### Changed:
 
-- Disable `react/display-name` and `react-hooks/ehxhaustive-deps` as not used by the team
+- Disable `react/display-name` and `react-hooks/exhaustive-deps` as not used by the team
 - Altered `import/no-extraneous-dependencies` to allow for devDependencies, optionalDependencies, and peerDependencies
 - List all needed plugins as peerDependencies rather than dependencies, since ESLint resolves relative to eslint config file not shared config file
 
@@ -127,4 +134,3 @@ _This sections lists changes commited to master since most recent release_
 - React-related ESLint plugins (jsx-a11y, react, and react-hooks) and rule definitions
 - Import rule definitions
 - Seamless Prettier integration
-
