@@ -11,10 +11,20 @@ _This sections lists changes committed to master since most recent release_
 
 ## [v1.2.1](https://github.com/IIP-Design/eslint-config/compare/v1.2.0...v1.2.1) - 2020.05.08
 
-### Changed
+### Added:
 
+- Documentation on the Cypress sub-package and Jest plugin to the readme
+
+### Changed:
+
+- Move Jest rules out of shared config and into the default configuration
+- Make Cypress package a complete ruleset extending the shared configuration
 - Updated React and Jest plugins, Prettier config
 - Use JSON rather than JavaScript example snippets in the readme since most GPA/LAB projects use an `.eslintrc` file rather than an `.eslintrc.js` file
+
+### Fixed:
+
+- Corrected the setting of `cypress/globals` as an available environment (previously set to `cypress` which was undefined)
 
 ## [v1.2.0](https://github.com/IIP-Design/eslint-config/compare/v1.1.2...v1.2.0) - 2020.05.03
 

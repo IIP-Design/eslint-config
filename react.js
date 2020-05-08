@@ -3,20 +3,20 @@ const rules = [
   './rules/react/base',
   './rules/react/hooks',
   './rules/react/jsx',
-  './rules/react/no-prettier'
+  './rules/react/no-prettier',
 ].map(require.resolve);
 
 module.exports = {
   extends: rules,
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
   plugins: ['eslint-plugin-react'],
   settings: {
     react: {
-      version: 'detect'
-    }
-  }
+      version: 'detect',
+    },
+  },
 };

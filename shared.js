@@ -8,24 +8,22 @@ const rules = [
   './rules/base/stylistic',
   './rules/base/variables',
   './rules/import/index.js',
-  './rules/testing/jest.js'
 ].map(require.resolve);
 
 module.exports = {
   env: {
     browser: true,
     es6: true,
-    jest: true,
     jquery: true,
     node: true,
-    serviceworker: true
+    serviceworker: true,
   },
   extends: rules,
   parserOptions: {
     ecmaFeatures: {
-      impliedStrict: true
+      impliedStrict: true,
     },
     ecmaVersion: 2020,
-    sourceType: 'module'
-  }
+    sourceType: 'module',
+  },
 };

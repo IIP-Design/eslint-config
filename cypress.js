@@ -1,7 +1,5 @@
+const rules = ['./shared', './rules/testing/cypress.js'].map(require.resolve);
+
 module.exports = {
-  env: {
-    cypress: true
-  },
-  extends: ['plugin:cypress/recommended'],
-  plugins: ['eslint-plugin-cypress']
+  extends: rules,
 };

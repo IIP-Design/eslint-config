@@ -1,4 +1,7 @@
 module.exports = {
+  env: {
+    jest: true,
+  },
   extends: ['plugin:jest/recommended'],
-  plugins: ['eslint-plugin-jest']
+  plugins: ['eslint-plugin-jest'],
 };
