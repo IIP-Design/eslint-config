@@ -3,3 +3,6 @@ node_modules/
 
 # Editor Settings
 .vscode/
+
+# Test coverage
+coverage/

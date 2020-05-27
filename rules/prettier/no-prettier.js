@@ -1,4 +1,4 @@
-// Confirgure the rules typically disabled by Prettier.
+// Configure the rules typically disabled by Prettier.
 // For using the default setup without Prettier.
 module.exports = {
   rules: {
@@ -16,8 +16,8 @@ module.exports = {
         objects: 'always-multiline',
         imports: 'always-multiline',
         exports: 'always-multiline',
-        functions: 'always-multiline'
-      }
+        functions: 'always-multiline',
+      },
     ],
     'comma-spacing': ['error', { before: false, after: true }],
     'comma-style': ['error', 'last'],
@@ -31,8 +31,8 @@ module.exports = {
       'error',
       {
         before: true,
-        after: false
-      }
+        after: false,
+      },
     ],
     'implicit-arrow-linebreak': ['error', 'beside'],
     'indent': ['error', 2, { SwitchCase: 1 }],
@@ -65,11 +65,11 @@ module.exports = {
     'semi-style': ['error', 'last'],
     'space-before-blocks': [
       'error',
-      { functions: 'always', keywords: 'always', classes: 'always' }
+      { functions: 'always', keywords: 'always', classes: 'always' },
     ],
     'space-before-function-paren': [
       'error',
-      { anonymous: 'never', named: 'never', asyncArrow: 'always' }
+      { anonymous: 'never', named: 'never', asyncArrow: 'always' },
     ],
     'space-in-parens': ['warn', 'always'],
     'space-infix-ops': 'error',
@@ -80,6 +80,6 @@ module.exports = {
     'unicode-bom': ['error', 'never'],
     'wrap-iife': ['error', 'inside'],
     'wrap-regex': 'error',
-    'yield-star-spacing': ['error', { before: true, after: false }]
-  }
+    'yield-star-spacing': ['error', { before: true, after: false }],
+  },
 };

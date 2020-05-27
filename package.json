@@ -22,7 +22,8 @@
   ],
   "scripts": {
     "lint": "eslint --ext .js ./",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "test": "jest ./"
   },
   "prettier": "@gpa-lab/prettier-config",
   "dependencies": {
@@ -39,7 +40,8 @@
     "prettier": "^2.0.5"
   },
   "devDependencies": {
-    "@gpa-lab/prettier-config": "^1.1.0"
+    "@gpa-lab/prettier-config": "^1.1.0",
+    "jest": "^26.0.1"
   },
   "publishConfig": {
     "access": "public"
