@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _This sections lists changes committed to master since most recent release_
 
+### Added:
+
+- New rules by ESLint between releases 6.8.0 -> 7.6.0. Specifically:
+  - `default-case-last`
+  - `no-promise-executor-return`
+  - `no-restricted-exports`
+  - `no-unreachable-loop`
+  - `no-useless-backreference`
+  - `prefer-named-capture-group`
+
 ## [v1.2.2](https://github.com/IIP-Design/eslint-config/compare/v1.2.1...v1.2.2) - 2020.05.27
 
 ### Added:
@@ -41,12 +51,12 @@ _This sections lists changes committed to master since most recent release_
 ### Added:
 
 - Jest and Cypress plugins with the recommended rules enabled
-- Missing rule from React rule set `react/function-component-definition` set to both named and un-named declarations to `arrow-function`.
+- Missing rule from React rule set `react/function-component-definition` set to both named and un-named declarations to `arrow-function`
 
 ### Changed:
 
 - Set `react-hooks/exhaustive-deps` to warn as [recommended](https://reactjs.org/docs/hooks-rules.html#eslint-plugin)
-- Set `comma-dangle` to `always-multiline` to enforce a comma on the last item of a multiline array/object. Makes for more readable git diffs.
+- Set `comma-dangle` to `always-multiline` to enforce a comma on the last item of a multiline array/object. Makes for more readable git diffs
 - Use `space-before-function-paren` to require space before parens for async arrow functions: `async () => {}` rather than `async() => {}`
 - Amend `indent` rule to enforce indentation of two spaces on switch cases
 - Updates dependencies

@@ -12,6 +12,7 @@ module.exports = {
     ],
     'consistent-return': 'off',
     'default-case': ['error', { commentPattern: '^no default$' }],
+    'default-case-last': 'error',
     'default-param-last': 'off',
     'dot-notation': ['error', { allowKeywords: true }],
     'eqeqeq': ['error', 'always', { null: 'ignore' }],

@@ -13,6 +13,7 @@ module.exports = {
         patterns: []
       }
     ],
+    'no-restricted-exports': 'off',
     'no-this-before-super': 'error',
     'no-useless-computed-key': 'error',
     'no-useless-constructor': 'error',

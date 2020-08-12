@@ -10,6 +10,7 @@
 
 module.exports = {
   rules: {
+    'id-blacklist': 'off', // ESLint - v7.4.0 - id-denylist'
     'callback-return': 'off', // ESLint - v7.0.0 - eslint-plugin-node
     'global-require': 'off', // ESLint - v7.0.0 - eslint-plugin-node
     'handle-callback-err': 'off', // ESLint - v7.0.0 - eslint-plugin-node
@@ -24,6 +25,7 @@ module.exports = {
     'require-jsdoc': 'off', // ESLint - v5.10.0
     'valid-jsdoc': 'off', // ESLint - v5.10.0
     'no-catch-shadow': 'off', // ESLint - v5.1.0 - no-shadow
+    'indent-legacy': 'off', // ESLint - v4.0.0 - indent
     'lines-around-directive': 'off', // ESLint - v4.0.0 - padding-line-between-statements
     'newline-after-var': 'off', // ESLint - v4.0.0 - padding-line-between-statements
     'newline-before-return': 'off', // ESLint - v4.0.0 - padding-line-between-statements

@@ -28,7 +28,7 @@ module.exports = {
     ],
     'func-names': 'off',
     'func-style': ['off', 'expression'],
-    'id-blacklist': 'off',
+    'id-denylist': 'off',
     'id-length': 'off',
     'id-match': 'off',
     'line-comment-position': [
