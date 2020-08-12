@@ -1,4 +1,5 @@
 const rules = [
+  './rules/deprecated/react.js',
   './rules/react/a11y',
   './rules/react/base',
   './rules/react/hooks',
