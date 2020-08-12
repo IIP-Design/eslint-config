@@ -18,6 +18,12 @@ _This sections lists changes committed to master since most recent release_
   - `no-unreachable-loop`
   - `no-useless-backreference`
   - `prefer-named-capture-group`
+- The `indent-legacy` rule to the deprecated list
+
+### Changed:
+
+- Loosen the `no-extra-parens` to only apply to functions
+- Replace deprecated `id-blacklist` rule with `id-denylist`
 
 ## [v1.2.2](https://github.com/IIP-Design/eslint-config/compare/v1.2.1...v1.2.2) - 2020.05.27
 
