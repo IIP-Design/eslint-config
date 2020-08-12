@@ -6,14 +6,8 @@ module.exports = {
     'no-dupe-class-members': 'error',
     'no-duplicate-imports': 'off',
     'no-new-symbol': 'error',
-    'no-restricted-imports': [
-      'off',
-      {
-        paths: [],
-        patterns: []
-      }
-    ],
     'no-restricted-exports': 'off',
+    'no-restricted-imports': 'off',
     'no-this-before-super': 'error',
     'no-useless-computed-key': 'error',
     'no-useless-constructor': 'error',
@@ -22,8 +16,8 @@ module.exports = {
       {
         ignoreDestructuring: false,
         ignoreImport: false,
-        ignoreExport: false
-      }
+        ignoreExport: false,
+      },
     ],
     'no-var': 'error',
     'object-shorthand': [
@@ -31,46 +25,38 @@ module.exports = {
       'always',
       {
         ignoreConstructors: false,
-        avoidQuotes: true
-      }
+        avoidQuotes: true,
+      },
     ],
     'prefer-const': [
       'error',
       {
         destructuring: 'all',
-        ignoreReadBeforeAssign: true
-      }
+        ignoreReadBeforeAssign: true,
+      },
     ],
     'prefer-destructuring': [
       'error',
       {
         VariableDeclarator: {
           array: false,
-          object: true
+          object: true,
         },
         AssignmentExpression: {
           array: true,
-          object: false
-        }
+          object: false,
+        },
       },
       {
-        enforceForRenamedProperties: false
-      }
+        enforceForRenamedProperties: false,
+      },
     ],
     'prefer-numeric-literals': 'error',
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
     'prefer-template': 'error',
     'require-yield': 'error',
-    'sort-imports': [
-      'off',
-      {
-        ignoreCase: false,
-        ignoreDeclarationSort: false,
-        ignoreMemberSort: false,
-        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single']
-      }
-    ],
-    'symbol-description': 'error'
-  }
+    'sort-imports': 'off',
+    'symbol-description': 'error',
+  },
 };

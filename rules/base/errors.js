@@ -38,6 +38,6 @@ module.exports = {
     'no-useless-backreference': 'error',
     'require-atomic-updates': 'off',
     'use-isnan': 'error',
-    'valid-typeof': ['error', { requireStringLiterals: true }]
-  }
+    'valid-typeof': ['error', { requireStringLiterals: true }],
+  },
 };

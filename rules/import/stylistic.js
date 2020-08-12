@@ -7,22 +7,17 @@ module.exports = {
       'always',
       {
         js: 'never',
-        jsx: 'never'
-      }
+        jsx: 'never',
+      },
     ],
     'import/first': 'error',
     'import/group-exports': 'off',
-    'import/max-dependencies': [
-      'off',
-      {
-        max: 15
-      }
-    ],
+    'import/max-dependencies': 'off',
     'import/newline-after-import': [
       'error',
       {
-        count: 1
-      }
+        count: 1,
+      },
     ],
     'import/no-anonymous-default-export': 'warn',
     'import/no-default-export': 'off', // Inverse of prefer-default-export
@@ -33,10 +28,10 @@ module.exports = {
     'import/no-unassigned-import': [
       'error',
       {
-        allow: ['**/*.css', '**/*.sass', '**/*.scss', '@babel/polyfill', 'dotenv/config']
-      }
+        allow: ['**/*.css', '**/*.sass', '**/*.scss', '@babel/polyfill', 'dotenv/config'],
+      },
     ],
     'import/order': 'off',
-    'import/prefer-default-export': 'off'
-  }
+    'import/prefer-default-export': 'off',
+  },
 };

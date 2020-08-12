@@ -25,6 +25,10 @@ _This sections lists changes committed to master since most recent release_
 - Loosen the `no-extra-parens` to only apply to functions
 - Replace deprecated `id-blacklist` rule with `id-denylist`
 
+### Fixed:
+
+- Removed options and replaced array notation with string notation for all disabled rules
+
 ## [v1.2.2](https://github.com/IIP-Design/eslint-config/compare/v1.2.1...v1.2.2) - 2020.05.27
 
 ### Added:
