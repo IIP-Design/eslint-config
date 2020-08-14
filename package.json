@@ -29,7 +29,8 @@
   "dependencies": {
     "eslint": "^7.6.0",
     "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jest": "^23.20.0"
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-node": "^11.1.0"
   },
   "optionalDependencies": {
     "eslint-plugin-cypress": "^2.11.1",

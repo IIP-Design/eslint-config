@@ -3,11 +3,11 @@ const rules = [
   './rules/base/bestPractices',
   './rules/base/errors',
   './rules/base/es6',
-  './rules/base/nodeCommon',
   './rules/base/strict',
   './rules/base/stylistic',
   './rules/base/variables',
   './rules/import/index.js',
+  './rules/node/index.js',
 ].map(require.resolve);
 
 module.exports = {

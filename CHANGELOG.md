@@ -11,6 +11,7 @@ _This sections lists changes committed to master since most recent release_
 
 ### Added:
 
+- Node linting vis eslint-plugin-node
 - New rules by ESLint between releases 6.8.0 -> 7.6.0. Specifically:
   - `default-case-last`
   - `no-promise-executor-return`
@@ -22,6 +23,7 @@ _This sections lists changes committed to master since most recent release_
 
 ### Changed:
 
+- Disabled and deprecated all Node/CommonJS core rules due to deprecation by ESLint (replaced by eslint-plugin-node)
 - Loosen the `no-extra-parens` to only apply to functions
 - Replace deprecated `id-blacklist` rule with `id-denylist`
 

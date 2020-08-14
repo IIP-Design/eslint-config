@@ -1,5 +1,5 @@
 /**
- * The following @react-eslint rules have been deprecated.
+ * The following eslint-plugin-react rules have been deprecated.
  *
  */
 

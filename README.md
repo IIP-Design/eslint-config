@@ -15,6 +15,7 @@ There are a number of peer dependencies listened for this project. Namely:
 - [eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import) - Required
 - [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest) - Required
 - [eslint-plugin-jsx-a11y](https://github.com/evcohen/eslint-plugin-jsx-a11y) - Required for React
+- [eslint-plugin-node](github.com/mysticatea/eslint-plugin-node) - Required
 - [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier) - Required for Prettier
 - [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react) - Required for React and Prettier
 - [eslint-plugin-react-hooks](https://github.com/facebook/react/tree/master/packages/eslint-plugin-react-hooks) - Required for React
@@ -25,19 +26,19 @@ Please note that several of these peer dependencies pertain only to the optional
 To install the minimum dependencies required for the base configuration run the command:
 
 ```bash
-npm i -D eslint eslint-plugin-import eslint-plugin-jest
+npm i -D eslint eslint-plugin-import eslint-plugin-jest eslint-plugin-node
 ```
 
 If you intend to also use the React sub-package, run the following install the React-specific plugins as well:
 
 ```bash
-npm i -D eslint eslint-plugin-import eslint-plugin-jest eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
+npm i -D eslint eslint-plugin-import eslint-plugin-jest eslint-plugin-jsx-a11y eslint-plugin-node eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 If you intend to use the Prettier configuration, we recommend installing all the dependencies by running:
 
 ```bash
-npm i -D eslint eslint-plugin-import eslint-plugin-jest eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks prettier
+npm i -D eslint eslint-plugin-import eslint-plugin-jest eslint-plugin-jsx-a11y eslint-plugin-node eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks prettier
 ```
 
 > (Note: If using the Prettier sub-package without the React sub-package, you can omit the `eslint-plugin-jsx-a11y` and `eslint-plugin-react-hooks plugins`, but `eslint-plugin-react` is still required as the Prettier ruleset refers to it.)
