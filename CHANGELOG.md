@@ -5,9 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/IIP-Design/eslint-config/compare/v1.2.2...HEAD)
+## [Unreleased](https://github.com/IIP-Design/eslint-config/compare/v1.3.0...HEAD)
 
 _This sections lists changes committed to master since most recent release_
+
+## [v1.3.0](https://github.com/IIP-Design/eslint-config/compare/v1.2.2...v1.3.0) - 2020.08.14
 
 ### Added:
 
@@ -20,12 +22,15 @@ _This sections lists changes committed to master since most recent release_
   - `no-useless-backreference`
   - `prefer-named-capture-group`
 - The `indent-legacy` rule to the deprecated list
+- Deprecated React rules to the deprecated list
+- Unit tests for the eslint-plugin-node ruleset config
 
 ### Changed:
 
 - Disabled and deprecated all Node/CommonJS core rules due to deprecation by ESLint (replaced by eslint-plugin-node)
 - Loosen the `no-extra-parens` to only apply to functions
 - Replace deprecated `id-blacklist` rule with `id-denylist`
+- Updated unit tests to reflect base Node/CommonJS rule deprecation
 
 ### Fixed:
 

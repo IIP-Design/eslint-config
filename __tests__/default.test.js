@@ -5,11 +5,11 @@ const deprecatedRuleset = require('../rules/deprecated/deprecated');
 const bestPracticesRuleset = require('../rules/base/bestPractices');
 const errorsRuleset = require('../rules/base/errors');
 const es6Ruleset = require('../rules/base/es6');
-const nodeCommonRuleset = require('../rules/base/nodeCommon');
 const strictRuleset = require('../rules/base/strict');
 const stylisticRuleset = require('../rules/base/stylistic');
 const variablesRuleset = require('../rules/base/variables');
 const importRuleset = require('../rules/import/index.js');
+const nodeRuleset = require('../rules/node/index.js');
 
 describe('Default config', () => {
   it('loads without error', () => {
@@ -42,11 +42,11 @@ describe('Shared configurations', () => {
     expect(extension[1].endsWith('rules/base/bestPractices.js')).toEqual(true);
     expect(extension[2].endsWith('rules/base/errors.js')).toEqual(true);
     expect(extension[3].endsWith('rules/base/es6.js')).toEqual(true);
-    expect(extension[4].endsWith('rules/base/nodeCommon.js')).toEqual(true);
-    expect(extension[5].endsWith('rules/base/strict.js')).toEqual(true);
-    expect(extension[6].endsWith('rules/base/stylistic.js')).toEqual(true);
-    expect(extension[7].endsWith('rules/base/variables.js')).toEqual(true);
-    expect(extension[8].endsWith('rules/import/index.js')).toEqual(true);
+    expect(extension[4].endsWith('rules/base/strict.js')).toEqual(true);
+    expect(extension[5].endsWith('rules/base/stylistic.js')).toEqual(true);
+    expect(extension[6].endsWith('rules/base/variables.js')).toEqual(true);
+    expect(extension[7].endsWith('rules/import/index.js')).toEqual(true);
+    expect(extension[8].endsWith('rules/node/index.js')).toEqual(true);
   });
 
   it('makes the commons globals available to ESLint', () => {
@@ -94,12 +94,6 @@ describe('ES6 base ruleset', () => {
   });
 });
 
-describe('Node/Common.js base ruleset', () => {
-  it('loads without error', () => {
-    expect(() => nodeCommonRuleset).not.toThrow();
-  });
-});
-
 describe('Strict mode ruleset', () => {
   it('loads without error', () => {
     expect(() => strictRuleset).not.toThrow();
@@ -121,5 +115,11 @@ describe('Variables ruleset', () => {
 describe('Import ruleset', () => {
   it('loads without error', () => {
     expect(() => importRuleset).not.toThrow();
+  });
+});
+
+describe('Node ruleset', () => {
+  it('loads without error', () => {
+    expect(() => nodeRuleset).not.toThrow();
   });
 });
