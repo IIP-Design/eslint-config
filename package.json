@@ -4,9 +4,12 @@
   "description": "An ESLint configuration conforming to the GPA/LAB style guide",
   "license": "MIT",
   "main": "index.js",
-  "author": {
-    "name": "Marek Rewers, U.S. Department of State, Global Public Affairs"
-  },
+  "author": "U.S. Department of State, Bureau of Global Public Affairs Digital Lab <gpadigitalhelp@state.gov>",
+  "contributors": [
+    {
+      "name": "Marek Rewers"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/IIP-Design/eslint-config"
