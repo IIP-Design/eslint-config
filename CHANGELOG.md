@@ -19,6 +19,10 @@ _This sections lists changes committed to master since most recent release_
 
 - Disabled the rule `node/no-unsupported-features/es-syntax` to allow for ES6 modules by default
 
+### Security:
+
+- Update dependencies
+
 ## [v1.3.0](https://github.com/IIP-Design/eslint-config/compare/v1.2.2...v1.3.0) - 2020.08.14
 
 ### Added:
