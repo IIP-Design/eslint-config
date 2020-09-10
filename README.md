@@ -77,6 +77,16 @@ The React sub-package depends on some ESLint plugins not needed by the base conf
   npm i -D eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks
 ```
 
+#### CommonJS Scripts
+
+The default configuration supports Node.js out of the box, however, it assumes that ES6 modules are supported. This configuration can be used when ES6 import syntax is not desired.
+
+```json
+{
+  "extends": ["@gpa-lab/eslint-config/script"]
+};
+```
+
 #### Prettier
 
 This package bundles the base rules with additional settings to optimize integration with the [Prettier](https://prettier.io/) formatting tool. To enable the Prettier configuration, add `@gpa-lab/eslint-config/prettier` to the extends array as such:

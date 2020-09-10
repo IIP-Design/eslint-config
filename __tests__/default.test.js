@@ -66,6 +66,7 @@ describe('Shared configurations', () => {
     const { sourceType } = sharedConfig.parserOptions;
 
     expect(ecmaFeatures.impliedStrict).toEqual(true);
+    expect(ecmaFeatures.globalReturn).toEqual(false);
     expect(ecmaVersion).toEqual(2020);
     expect(sourceType).toEqual('module');
   });
