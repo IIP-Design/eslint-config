@@ -1,31 +1,32 @@
-# Change Log
+## Change Log
 
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/IIP-Design/eslint-config/compare/v1.3.1...HEAD)
+### [Unreleased](https://github.com/IIP-Design/eslint-config/compare/v1.3.1...HEAD)
 
 _This sections lists changes committed to master since most recent release_
 
-## [v1.3.1](https://github.com/IIP-Design/eslint-config/compare/v1.3.0...v1.3.1) - 2020.09.10
 
-### Added:
+### [v1.3.1](https://github.com/IIP-Design/eslint-config/compare/v1.3.0...v1.3.1) - 2020.09.10
+
+#### Added:
 
 - A scripts configuration which extends the base config and is indented for CommonJS scripts
 
-### Changed:
+#### Changed:
 
 - Disabled the rule `node/no-unsupported-features/es-syntax` to allow for ES6 modules by default
 
-### Security:
+#### Security:
 
 - Update dependencies
 
-## [v1.3.0](https://github.com/IIP-Design/eslint-config/compare/v1.2.2...v1.3.0) - 2020.08.14
+### [v1.3.0](https://github.com/IIP-Design/eslint-config/compare/v1.2.2...v1.3.0) - 2020.08.14
 
-### Added:
+#### Added:
 
 - Node linting vis eslint-plugin-node
 - New rules by ESLint between releases 6.8.0 -> 7.6.0. Specifically:
@@ -39,52 +40,52 @@ _This sections lists changes committed to master since most recent release_
 - Deprecated React rules to the deprecated list
 - Unit tests for the eslint-plugin-node ruleset config
 
-### Changed:
+#### Changed:
 
 - Disabled and deprecated all Node/CommonJS core rules due to deprecation by ESLint (replaced by eslint-plugin-node)
 - Loosen the `no-extra-parens` to only apply to functions
 - Replace deprecated `id-blacklist` rule with `id-denylist`
 - Updated unit tests to reflect base Node/CommonJS rule deprecation
 
-### Fixed:
+#### Fixed:
 
 - Removed options and replaced array notation with string notation for all disabled rules
 
-## [v1.2.2](https://github.com/IIP-Design/eslint-config/compare/v1.2.1...v1.2.2) - 2020.05.27
+### [v1.2.2](https://github.com/IIP-Design/eslint-config/compare/v1.2.1...v1.2.2) - 2020.05.27
 
-### Added:
+#### Added:
 
 - Tests to ensure that all configs are loaded properly
 
-### Changed:
+#### Changed:
 
 - Add option to `react/jsx-curly-spacing` to add padding to children within curly brackets
 
-## [v1.2.1](https://github.com/IIP-Design/eslint-config/compare/v1.2.0...v1.2.1) - 2020.05.08
+### [v1.2.1](https://github.com/IIP-Design/eslint-config/compare/v1.2.0...v1.2.1) - 2020.05.08
 
-### Added:
+#### Added:
 
 - Documentation on the Cypress sub-package and Jest plugin to the readme
 
-### Changed:
+#### Changed:
 
 - Move Jest rules out of shared config and into the default configuration
 - Make Cypress package a complete ruleset extending the shared configuration
 - Updated React and Jest plugins, Prettier config
 - Use JSON rather than JavaScript example snippets in the readme since most GPA/LAB projects use an `.eslintrc` file rather than an `.eslintrc.js` file
 
-### Fixed:
+#### Fixed:
 
 - Corrected the setting of `cypress/globals` as an available environment (previously set to `cypress` which was undefined)
 
-## [v1.2.0](https://github.com/IIP-Design/eslint-config/compare/v1.1.2...v1.2.0) - 2020.05.03
+### [v1.2.0](https://github.com/IIP-Design/eslint-config/compare/v1.1.2...v1.2.0) - 2020.05.03
 
-### Added:
+#### Added:
 
 - Jest and Cypress plugins with the recommended rules enabled
 - Missing rule from React rule set `react/function-component-definition` set to both named and un-named declarations to `arrow-function`
 
-### Changed:
+#### Changed:
 
 - Set `react-hooks/exhaustive-deps` to warn as [recommended](https://reactjs.org/docs/hooks-rules.html#eslint-plugin)
 - Set `comma-dangle` to `always-multiline` to enforce a comma on the last item of a multiline array/object. Makes for more readable git diffs
@@ -93,27 +94,27 @@ _This sections lists changes committed to master since most recent release_
 - Updates dependencies
 - Set default published NPM package access to public
 
-## [v1.1.2](https://github.com/IIP-Design/eslint-config/compare/v1.1.1...v1.1.2) - 2020.04.20
+### [v1.1.2](https://github.com/IIP-Design/eslint-config/compare/v1.1.1...v1.1.2) - 2020.04.20
 
-### Changed:
+#### Changed:
 
 - Add `dotenv/config` as an allowed unassigned import to `import/no-unassigned-import`
 - Change `template-tag-spacing` from `always` to `never`
 - Move Prettier and React configs to optional dependencies so users do not get prompted to install them as peer dependencies
 
-## [v1.1.1](https://github.com/IIP-Design/eslint-config/compare/v1.1.0...v1.1.1) - 2020.04.20
+### [v1.1.1](https://github.com/IIP-Design/eslint-config/compare/v1.1.0...v1.1.1) - 2020.04.20
 
-### Changed:
+#### Changed:
 
 - Remove `always` value from the `new-parens` rule as this is the default value and including it at times causes and error
 
-## [v1.1.0](https://github.com/IIP-Design/eslint-config/compare/v1.0.0...v1.1.0) - 2020.04.17
+### [v1.1.0](https://github.com/IIP-Design/eslint-config/compare/v1.0.0...v1.1.0) - 2020.04.17
 
-### Added:
+#### Added:
 
 - Links to peer dependency repos/docs in the readme
 
-### Changed:
+#### Changed:
 
 - Removed Prettier configurations from the default ruleset, implementing them as an optional sub-package (@gpa-lab/eslint-config/prettier)
 - Create a `shared.js` module that sets the base rules shared by both the default and the prettier configurations
@@ -121,9 +122,9 @@ _This sections lists changes committed to master since most recent release_
 - Move deprecated rules into their own file and disable them, deleted references to removed rules
 - Update readme with information on Prettier sub-package
 
-## [v1.0.0](https://github.com/IIP-Design/eslint-config/compare/v0.1.1...v1.0.0) - 2020.04.16
+### [v1.0.0](https://github.com/IIP-Design/eslint-config/compare/v0.1.1...v1.0.0) - 2020.04.16
 
-### Added:
+#### Added:
 
 - Jest, JQuery, and service workers as supported environments
 - Set ecmaFeature `impliedStrict` to true
@@ -135,7 +136,7 @@ _This sections lists changes committed to master since most recent release_
 - A changelog
 - Repo and issues links to package.json
 
-### Changed:
+#### Changed:
 
 - Altered rules to conform to existing GPA/LAB team conventions. Specifically:
   - Change `consistent-return` from error to off
@@ -176,21 +177,21 @@ _This sections lists changes committed to master since most recent release_
 - Updated ecmaVersion to `2020`
 - Moved ecmaFeatures `jsx: true` and eslint-plugin-react set up to React settings index
 
-## [v0.1.1](https://github.com/IIP-Design/eslint-config/compare/v0.1.0...v0.1.1) - 2020.01.03
+### [v0.1.1](https://github.com/IIP-Design/eslint-config/compare/v0.1.0...v0.1.1) - 2020.01.03
 
-### Added:
+#### Added:
 
 - A readme file and license
 
-### Changed:
+#### Changed:
 
 - Disable `react/display-name` and `react-hooks/exhaustive-deps` as not used by the team
 - Altered `import/no-extraneous-dependencies` to allow for devDependencies, optionalDependencies, and peerDependencies
 - List all needed plugins as peerDependencies rather than dependencies, since ESLint resolves relative to eslint config file not shared config file
 
-## [v0.1.0](https://github.com/IIP-Design/eslint-config/releases/tag/v0.1.0) - 2020.01.03 (Initial Release)
+### [v0.1.0](https://github.com/IIP-Design/eslint-config/releases/tag/v0.1.0) - 2020.01.03 (Initial Release)
 
-### Added:
+#### Added:
 
 - Base ESLint rule definitions modeled largely on [AirBnB ruleset](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb)
 - React-related ESLint plugins (jsx-a11y, react, and react-hooks) and rule definitions
