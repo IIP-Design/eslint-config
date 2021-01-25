@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 _This sections lists changes committed to master since most recent release_
 
+#### Added:
+
+- New rules by ESLint between releases 7.8.1 -> 7.18.0. Specifically:
+  - `no-nonoctal-decimal-escape`
+  - `no-unsafe-optional-chaining`
+
+#### Security:
+
+- Update dependencies
 
 ### [v1.3.1](https://github.com/IIP-Design/eslint-config/compare/v1.3.0...v1.3.1) - 2020.09.10
 
