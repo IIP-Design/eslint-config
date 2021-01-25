@@ -11,9 +11,18 @@ _This sections lists changes committed to master since most recent release_
 
 #### Added:
 
-- New rules by ESLint between releases 7.8.1 -> 7.18.0. Specifically:
+- New rules added to ESLint between releases 7.8.1 -> 7.18.0. Specifically:
   - `no-nonoctal-decimal-escape`
   - `no-unsafe-optional-chaining`
+- New rules added to the ESLint React Plugin between 7.20.6 -> 7.22.0. Specifically:
+  - `react/jsx-newline`
+  - `react/jsx-no-constructed-context-values`
+
+#### Changed:
+
+- Set the new `allow` property on `react/jsx-filename-extension` to `as-needed` to prevent the use of the `.jsx` file extension on files not using the JSX syntax.
+- Set the new `checkKeyMustBeforeSpread` property on `react/jsx-key` to `true` to enforce listing the JSX element key prior to spreading other props. This avoids a potential, unexpected createElement fallback.
+- Set the new `warnOnSpreadAttributes` property on `react/jsx-no-target-blank` to `true`. This ensures that the use of `target="_blank"` without `rel="noreferrer"` isn't missed even when spreading in props.
 
 #### Security:
 
