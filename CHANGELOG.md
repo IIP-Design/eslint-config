@@ -23,6 +23,7 @@ _This sections lists changes committed to master since most recent release_
 - Set the new `allow` property on `react/jsx-filename-extension` to `as-needed` to prevent the use of the `.jsx` file extension on files not using the JSX syntax.
 - Set the new `checkKeyMustBeforeSpread` property on `react/jsx-key` to `true` to enforce listing the JSX element key prior to spreading other props. This avoids a potential, unexpected createElement fallback.
 - Set the new `warnOnSpreadAttributes` property on `react/jsx-no-target-blank` to `true`. This ensures that the use of `target="_blank"` without `rel="noreferrer"` isn't missed even when spreading in props.
+- Switch the `allowAllCaps` property on `react/jsx-pascal-case` to `true`.
 
 #### Security:
 

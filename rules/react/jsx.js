@@ -56,7 +56,7 @@ module.exports = {
     'react/jsx-pascal-case': [
       'error',
       {
-        allowAllCaps: false,
+        allowAllCaps: true,
       },
     ],
     'react/jsx-props-no-spreading': 'off',
