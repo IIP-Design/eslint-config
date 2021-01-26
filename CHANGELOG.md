@@ -2,12 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-### [Unreleased](https://github.com/IIP-Design/eslint-config/compare/v1.3.1...HEAD)
+### [Unreleased](https://github.com/IIP-Design/eslint-config/compare/v1.4.0...HEAD)
 
 _This sections lists changes committed to master since most recent release_
+
+### [v1.4.0](https://github.com/IIP-Design/eslint-config/compare/v1.3.1...v1.4.0) - 2021.01.26
 
 #### Added:
 
@@ -26,6 +27,7 @@ _This sections lists changes committed to master since most recent release_
 - Switch the `allowAllCaps` property on `react/jsx-pascal-case` to `true`.
 - Add `@axe-core/react`, `@testing-library/react`, and `prop-types` as allowed modules in `node/no-unpublished-import`.
 - Add `@next/bundle-analyzer` and `@wordpress/scripts` as allowed modules in `node/no-unpublished-require`.
+- Disable the `node/no-missing-import` rule. It overlaps with the `import/no-unresolved` rule and can cause problems when module aliasing.
 
 #### Security:
 
