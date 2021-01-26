@@ -11,8 +11,18 @@ module.exports = {
     'node/no-path-concat': 'off',
     'node/no-process-exit': 'error',
     'node/no-unpublished-bin': 'error',
-    'node/no-unpublished-import': 'error',
-    'node/no-unpublished-require': 'error',
+    'node/no-unpublished-import': [
+      'error',
+      {
+        allowModules: ['@axe-core/react', '@testing-library/react', 'prop-types'],
+      },
+    ],
+    'node/no-unpublished-require': [
+      'error',
+      {
+        allowModules: ['@next/bundle-analyzer', '@wordpress/scripts'],
+      },
+    ],
     'node/no-unsupported-features/es-builtins': 'error',
     'node/no-unsupported-features/es-syntax': 'off',
     'node/no-unsupported-features/node-builtins': 'error',

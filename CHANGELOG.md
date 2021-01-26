@@ -24,6 +24,8 @@ _This sections lists changes committed to master since most recent release_
 - Set the new `checkKeyMustBeforeSpread` property on `react/jsx-key` to `true` to enforce listing the JSX element key prior to spreading other props. This avoids a potential, unexpected createElement fallback.
 - Set the new `warnOnSpreadAttributes` property on `react/jsx-no-target-blank` to `true`. This ensures that the use of `target="_blank"` without `rel="noreferrer"` isn't missed even when spreading in props.
 - Switch the `allowAllCaps` property on `react/jsx-pascal-case` to `true`.
+- Add `@axe-core/react`, `@testing-library/react`, and `prop-types` as allowed modules in `node/no-unpublished-import`.
+- Add `@next/bundle-analyzer` and `@wordpress/scripts` as allowed modules in `node/no-unpublished-require`.
 
 #### Security:
 
