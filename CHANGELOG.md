@@ -13,6 +13,7 @@ _This sections lists changes committed to master since most recent release_
 #### Changed:
 
 - Remove the `allow: 'as-needed'` property from the `react/jsx-filename-extension` rule as it was behaving in an unexpected fashion.
+- Update contact info in the package.json file.
 
 ### [v1.4.0](https://github.com/IIP-Design/eslint-config/compare/v1.3.1...v1.4.0) - 2021.01.26
 
