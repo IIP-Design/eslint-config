@@ -6,8 +6,8 @@ module.exports = {
       {
         button: true,
         reset: true,
-        submit: true
-      }
+        submit: true,
+      },
     ],
     'react/default-props-match-prop-types': 'off',
     'react/destructuring-assignment': ['warn', 'always'],
@@ -21,8 +21,8 @@ module.exports = {
       'error',
       {
         namedComponents: 'arrow-function',
-        unnamedComponents: 'arrow-function'
-      }
+        unnamedComponents: 'arrow-function',
+      },
     ],
     'react/no-access-state-in-setstate': 'error',
     'react/no-array-index-key': 'warn',
@@ -36,14 +36,15 @@ module.exports = {
     'react/no-find-dom-node': 'error',
     'react/no-is-mounted': 'error',
     'react/no-multi-comp': 'off',
+    'react/no-namespace': 'error',
     'react/no-redundant-should-component-update': 'error',
     'react/no-render-return-value': 'error',
     'react/no-set-state': 'off',
     'react/no-string-refs': [
       'error',
       {
-        noTemplateLiterals: true
-      }
+        noTemplateLiterals: true,
+      },
     ],
     'react/no-this-in-sfc': 'error',
     'react/no-typos': 'error',
@@ -52,13 +53,14 @@ module.exports = {
     'react/no-unsafe': [
       'error',
       {
-        checkAliases: true
-      }
+        checkAliases: true,
+      },
     ],
     'react/no-unused-prop-types': 'error',
     'react/no-unused-state': 'error',
     'react/no-will-update-set-state': ['error', 'disallow-in-func'],
     'react/prefer-es6-class': ['error', 'always'],
+    'react/prefer-exact-props': 'off',
     'react/prefer-read-only-props': 'error',
     'react/prefer-stateless-function': 'off',
     'react/prop-types': 'error',
@@ -70,14 +72,14 @@ module.exports = {
       'error',
       {
         component: true,
-        html: true
-      }
+        html: true,
+      },
     ],
     'react/sort-comp': 'off',
     'react/sort-prop-types': 'off',
     'react/state-in-constructor': 'off',
     'react/static-property-placement': 'off',
     'react/style-prop-object': 'error',
-    'react/void-dom-elements-no-children': 'error'
-  }
+    'react/void-dom-elements-no-children': 'error',
+  },
 };

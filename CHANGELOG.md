@@ -8,6 +8,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 _This sections lists changes committed to master since most recent release_
 
+- New rules added to the ESLint React Plugin between 7.24.0 -> 7.26.0. Specifically:
+  - `react/prefer-exact-props`
+  - `react/no-namespace`
+- Set the new `allowExpressions` property on `react/jsx-no-useless-fragment` to `false` to disallow all fragments.
+- Set the new `allowLeadingUnderscore` property on `react/jsx-pascal-case` to `false` to disallow component names staring with an underscore.
+- Set the new `links` and `forms` properties to true to prevent usage of unsafe `target='_blank'` inside links and forms.
+- Update dependencies
+
 ### [v1.4.1](https://github.com/IIP-Design/eslint-config/compare/v1.4.0...v1.4.1) - 2021.02.08
 
 #### Changed:

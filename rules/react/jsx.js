@@ -41,7 +41,10 @@ module.exports = {
     'react/jsx-no-target-blank': [
       'error',
       {
+        allowReferrer: false,
         enforceDynamicLinks: 'always',
+        forms: true,
+        links: true,
         warnOnSpreadAttributes: true,
       },
     ],
@@ -51,11 +54,18 @@ module.exports = {
         allowGlobals: false,
       },
     ],
-    'react/jsx-no-useless-fragment': 'error',
+    'react/jsx-no-useless-fragment': [
+      'error',
+      {
+        allowExpressions: false,
+      },
+    ],
     'react/jsx-pascal-case': [
       'error',
       {
         allowAllCaps: true,
+        allowLeadingUnderscore: false,
+        allowNamespace: false,
       },
     ],
     'react/jsx-props-no-spreading': 'off',
