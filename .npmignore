@@ -5,5 +5,12 @@ package-lock.json
 # Editor Settings
 .vscode/
 
+# Git
+.git
+
+# NPM
+.npmrc
+npm-debug.log
+
 # Test coverage
 coverage/
