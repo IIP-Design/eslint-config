@@ -3,7 +3,8 @@ node_modules/
 package-lock.json
 
 # Editor Settings
-.vscode/
+.vscode/*
+!.vscode/cspell.json
 
 # Test coverage
 coverage/

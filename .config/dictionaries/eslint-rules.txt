@@ -1,0 +1,23 @@
+# Words or phrases used in ESLint rules
+activedescendant
+backreference
+builtins
+camelcase
+chunkname
+defaultstatus
+eqeqeq
+iife
+isnan
+linebreak
+multilines
+noninteractive
+nonoctal
+nonwords
+paren
+parens
+plusplus
+proptypes
+serviceworker
+setstate
+tabindex
+textnodes

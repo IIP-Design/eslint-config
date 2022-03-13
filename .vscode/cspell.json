@@ -1,0 +1,11 @@
+{
+  "dictionaryDefinitions": [
+    {
+      "name": "ESLint",
+      "path": "../.config/dictionaries/eslint-rules.txt"
+    }
+  ],
+  "dictionaries": [
+    "ESLint"
+  ]
+}
