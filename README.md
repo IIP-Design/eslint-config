@@ -52,7 +52,7 @@ Once installed, add an `.eslintrc` file to your project root and extend the GPA/
 ```json
 {
   "extends": ["@gpa-lab/eslint-config"]
-};
+}
 ```
 
 This will apply the base ruleset to your project.
@@ -68,7 +68,7 @@ This optional package includes an additional set of rules pertaining to React ap
 ```json
 {
   "extends": ["@gpa-lab/eslint-config", "@gpa-lab/eslint-config/react"]
-};
+}
 ```
 
 The React sub-package depends on some ESLint plugins not needed by the base configuration. If you did not install them during the initial setup, you will need to run the following command to install these required peer dependencies.
@@ -84,7 +84,7 @@ The default configuration supports Node.js out of the box, however, it assumes t
 ```json
 {
   "extends": ["@gpa-lab/eslint-config/script"]
-};
+}
 ```
 
 **Prettier**
@@ -94,7 +94,7 @@ This package bundles the base rules with additional settings to optimize integra
 ```json
 {
   "extends": ["@gpa-lab/eslint-config/prettier"]
-};
+}
 ```
 
 This this extension includes the ruleset provided by the base configuration, so you do not have to also import `@gpa-lab/eslint-config`. Please note that if you are using this configuration in conjunction with any other ruleset (including the React sub-package), make sure that it is listed **last** in the extends array.
@@ -115,7 +115,7 @@ This optional package extends the base ESLint rules from this package, adding a 
 {
   "extends": ["@gpa-lab/eslint-config/cypress"],
   "root": true
-};
+}
 ```
 
 The Cypress sub-package depends on the Cypress ESLint plugin which can be installed by running the following command:

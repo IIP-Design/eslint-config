@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 _This sections lists changes committed to master since most recent release_
 
-### [v1.4.1](https://github.com/IIP-Design/eslint-config/compare/v1.4.1...v1.5.0) - 2021.09.28
+### [v1.5.0](https://github.com/IIP-Design/eslint-config/compare/v1.4.1...v1.5.0) - 2021.09.28
 
 - New rules added to the ESLint React Plugin between 7.24.0 -> 7.26.0. Specifically:
   - `react/prefer-exact-props`
