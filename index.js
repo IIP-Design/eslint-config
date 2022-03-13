@@ -3,8 +3,8 @@ const rules = [
   './rules/prettier/configurable',
   './rules/prettier/no-prettier',
   './rules/testing/jest.js',
-].map(require.resolve);
+].map( require.resolve );
 
 module.exports = {
-  extends: rules,
+  'extends': rules,
 };

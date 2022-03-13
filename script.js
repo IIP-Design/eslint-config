@@ -1,7 +1,7 @@
-const rules = ['./index'].map(require.resolve);
+const rules = ['./index'].map( require.resolve );
 
 module.exports = {
-  extends: rules,
+  'extends': rules,
   parserOptions: {
     ecmaFeatures: { globalReturn: true },
     sourceType: 'script',

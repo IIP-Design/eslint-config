@@ -1,7 +1,14 @@
 module.exports = {
   rules: {
     'react/jsx-boolean-value': ['error', 'never'],
-    'react/jsx-curly-brace-presence': ['error', 'never'],
+    'react/jsx-curly-brace-presence': [
+      'error',
+      {
+        children: 'never',
+        propElementValues: 'always',
+        props: 'never',
+      },
+    ],
     'react/jsx-filename-extension': [
       'warn',
       {
@@ -17,6 +24,7 @@ module.exports = {
       {
         checkFragmentShorthand: true,
         checkKeyMustBeforeSpread: true,
+        warnOnDuplicates: true,
       },
     ],
     'react/jsx-max-depth': 'off',

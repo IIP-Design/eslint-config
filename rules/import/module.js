@@ -4,5 +4,6 @@ module.exports = {
     'import/no-commonjs': 'off',
     'import/no-nodejs-modules': 'off',
     'import/unambiguous': 'off',
+    'import/no-import-module-exports': 'off',
   },
 };

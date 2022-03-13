@@ -17,6 +17,7 @@ module.exports = {
         commonjs: true,
       },
     ],
+    'import/no-relative-packages': 'off',
     'import/no-useless-path-segments': [
       'error',
       {

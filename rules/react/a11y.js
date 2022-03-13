@@ -1,7 +1,6 @@
 module.exports = {
   plugins: ['eslint-plugin-jsx-a11y'],
   rules: {
-    'jsx-a11y/accessible-emoji': 'off',
     'jsx-a11y/alt-text': 'error',
     'jsx-a11y/anchor-has-content': 'error',
     'jsx-a11y/anchor-is-valid': [
@@ -22,6 +21,7 @@ module.exports = {
       },
     ],
     'jsx-a11y/aria-unsupported-elements': 'error',
+    'jsx-a11y/autocomplete-valid': 'error',
     'jsx-a11y/click-events-have-key-events': 'error',
     'jsx-a11y/heading-has-content': 'error',
     'jsx-a11y/html-has-lang': 'error',

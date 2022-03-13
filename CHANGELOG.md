@@ -4,18 +4,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/IIP-Design/eslint-config/compare/v1.5.0...HEAD)
+## [Unreleased](https://github.com/IIP-Design/eslint-config/compare/v1.6.0...HEAD)
 
 _This sections lists changes committed to master since most recent release_
 
+## [v1.6.0](https://github.com/IIP-Design/eslint-config/compare/v1.5.0...v1.6.0) - 2022.03.13
+
 **Added:**
 
-- New rules added to ESLint between 7.32.0 -> 8.11.0. Specifically:
+- New rules and options added to ESLint between 7.32.0 -> 8.11.0. Specifically:
   - `no-unused-private-class-members` at the level `warn` to indicate the presence of private methods that should probably be removed. (added v8.1.0)
   - `prefer-object-has-own` at the level `off`. This rule favors the use of `Object.hasOwn()` over `Object.prototype.hasOwnProperty.call()` a pattern we do not typically use. Furthermore, it is only relevant in an ES2020 context which some projects may not conform to. (added v8.5.0)
-- Set the new `enforceForClassFields` property on `class-methods-use-this` to `false` to allow for arrow function class methods.
-- Set the new `onlyOneSimpleParam` property on `no-confusing-arrow` to false. This explicitly chooses the current default behavior.
-- Set the new `destructuredArrayIgnorePattern` property on `no-unused-vars` to `^_`. This allows us to indicate unused array elements when destructuring with a leading underscore.
+  - Set the new `enforceForClassFields` property on `class-methods-use-this` to `false` to allow for arrow function class methods.
+  - Set the new `onlyOneSimpleParam` property on `no-confusing-arrow` to false. This explicitly chooses the current default behavior.
+  - Set the new `destructuredArrayIgnorePattern` property on `no-unused-vars` to `^_`. This allows us to indicate unused array elements when destructuring with a leading underscore.
+- New rules and options added to ESLint plugin React between 7.26.0 -> 7.29.3. Specifically:
+  - `react/no-arrow-function-lifecycle` to prevent the declaration of React class lifecycle methods as arrow functions, which can have performance implications. (added in v7.27.0 of eslint-plugin-react)
+  - `react/no-invalid-html-attribute` which prevents the assignment of an invalid value to a number of attributes on native HTML elements. (added in v7.27.0 of eslint-plugin-react)
+  - `react/no-unused-class-component-methods` to ensure that all methods declared in class components are used. (added in v7.27.0 of eslint-plugin-react)
+  - `react/hook-use-state` to enforce the `[value,setValue]` naming convention when destructuring the return from a `useState` call. (added in v7.29.0 of eslint-plugin-react)
+  - `react/iframe-missing-sandbox` to follow security best practices and require a `sandbox` property on iframe elements. (added in v7.29.0 of eslint-plugin-react)
+  - Utilize the new `propElementValues` property on `react/jsx-curly-brace-presence` to ensure that when passing a JSX element as a prop, it is always surrounded by curly brackets.
+  - Enable the new `warnOnDuplicates` property on `react/jsx-key` to detect non-unique keys in an array.
+- Several existing plugin rules that had been omitted in previous versions of this configuration. Namely:
+  - `import/no-relative-packages` - set to the level `off` since we do not currently use Yarn/Lerna workspaces, but included for the sake of completeness. (added in v2.23.0 of eslint-plugin-import)
+  - `import/no-import-module-exports` - set to the level `off` as it is unclear what impact stricter control would have on our codebase, but included for the sake of completeness. (added in v2.23.0 of eslint-plugin-import)
+  - `jsx-a11y/autocomplete-valid` - set to `error` to ensure that the autocomplete attribute is only used with appropriate input elements. (added in v6.3.0 of eslint-plugin-jsx-a11y)
 
 **Changed:**
 
@@ -27,11 +41,21 @@ _This sections lists changes committed to master since most recent release_
 
 **Deprecated:**
 
-- The version of this configuration intended for use with Prettier has been deprecated (but not yet removed). The team disagreed with some of Prettier's firm held opinions and has hence phased out it's use.
+- The version of this configuration intended for use with Prettier has been deprecated (but not yet removed). The team disagreed with some of Prettier's firm held opinions and has hence phased out it's use. Allowed for the removal of the following, corresponding dependencies:
+  - `eslint-plugin-prettier`
+  - `prettier`
+  - `@gpa-lab/prettier-config`
 
 **Build:**
 
-- Update all dependencies
+- Update all dependencies:
+  - `eslint`: 7.32.0 -> 8.11.0
+  - `eslint-plugin-import`: 2.24.2 -> 2.25.4
+  - `eslint-plugin-jest`: 24.4.3 -> 26.1.1
+  - `eslint-plugin-jsx-a11y`: 6.4.1 -> 6.5.1
+  - `eslint-plugin-react`: 7.26.0 -> 7.29.3
+  - `eslint-plugin-react-hooks`: 4.2.0 -> 4.3.0
+  - `jest`: 27.2.3 -> 27.5.1
 
 ## [v1.5.0](https://github.com/IIP-Design/eslint-config/compare/v1.4.1...v1.5.0) - 2021.09.28
 
