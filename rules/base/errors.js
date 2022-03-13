@@ -1,3 +1,6 @@
+/**
+ * These rules relate to possible syntax or logic errors in JavaScript code.
+ */
 module.exports = {
   rules: {
     'for-direction': 'error',

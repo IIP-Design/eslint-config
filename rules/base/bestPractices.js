@@ -1,3 +1,6 @@
+/**
+ * These rules relate to better ways of doing things to help avoid problems.
+ */
 module.exports = {
   rules: {
     'accessor-pairs': 'off',

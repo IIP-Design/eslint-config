@@ -1,3 +1,6 @@
+/**
+ * These rules relate to style guidelines.
+ */
 module.exports = {
   rules: {
     camelcase: ['error', { properties: 'never', ignoreDestructuring: false }],

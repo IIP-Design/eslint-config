@@ -1,3 +1,6 @@
+/**
+ * These rules relate to variable declarations.
+ */
 const confusingGlobals = require( './confusingGlobals' );
 
 module.exports = {

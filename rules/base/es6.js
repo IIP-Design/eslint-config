@@ -1,3 +1,6 @@
+/**
+ * These rules relate to ES6, also known as ES2015.
+ */
 module.exports = {
   rules: {
     'constructor-super': 'error',
