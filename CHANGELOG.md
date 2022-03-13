@@ -30,6 +30,7 @@ _This sections lists changes committed to master since most recent release_
   - `import/no-relative-packages` - set to the level `off` since we do not currently use Yarn/Lerna workspaces, but included for the sake of completeness. (added in v2.23.0 of eslint-plugin-import)
   - `import/no-import-module-exports` - set to the level `off` as it is unclear what impact stricter control would have on our codebase, but included for the sake of completeness. (added in v2.23.0 of eslint-plugin-import)
   - `jsx-a11y/autocomplete-valid` - set to `error` to ensure that the autocomplete attribute is only used with appropriate input elements. (added in v6.3.0 of eslint-plugin-jsx-a11y)
+- An override to allow unpublished require statements in Webpack config files (identified by the filenames `webpack.*.js`).
 
 **Changed:**
 

@@ -8,7 +8,7 @@ const rules = [
   './rules/base/variables',
   './rules/import/index.js',
   './rules/node/index.js',
-].map(require.resolve);
+].map( require.resolve );
 
 module.exports = {
   env: {
@@ -18,7 +18,15 @@ module.exports = {
     node: true,
     serviceworker: true,
   },
-  extends: rules,
+  'extends': rules,
+  overrides: [
+    {
+      files: ['**/webpack.*.js'],
+      rules: {
+        'node/no-unpublished-require': 'off',
+      },
+    },
+  ],
   parserOptions: {
     ecmaFeatures: {
       globalReturn: false,
