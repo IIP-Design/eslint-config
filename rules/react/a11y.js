@@ -9,8 +9,8 @@ module.exports = {
       {
         component: ['Link'],
         specialLink: ['hrefLeft', 'hrefRight'],
-        aspects: ['invalidHref']
-      }
+        aspects: ['invalidHref'],
+      },
     ],
     'jsx-a11y/aria-activedescendant-has-tabindex': 'error',
     'jsx-a11y/aria-props': 'error',
@@ -18,8 +18,8 @@ module.exports = {
     'jsx-a11y/aria-role': [
       'error',
       {
-        ignoreNonDOM: true
-      }
+        ignoreNonDOM: true,
+      },
     ],
     'jsx-a11y/aria-unsupported-elements': 'error',
     'jsx-a11y/click-events-have-key-events': 'error',
@@ -32,8 +32,8 @@ module.exports = {
       'error',
       {
         assert: 'both',
-        depth: 3
-      }
+        depth: 3,
+      },
     ],
     'jsx-a11y/lang': 'error',
     'jsx-a11y/media-has-caption': 'error',
@@ -50,12 +50,14 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': [
       'error',
       {
-        handlers: ['onClick', 'onMouseDown', 'onMouseUp', 'onKeyPress', 'onKeyDown', 'onKeyUp']
-      }
+        handlers: [
+          'onClick', 'onMouseDown', 'onMouseUp', 'onKeyPress', 'onKeyDown', 'onKeyUp',
+        ],
+      },
     ],
     'jsx-a11y/role-has-required-aria-props': 'error',
     'jsx-a11y/role-supports-aria-props': 'error',
     'jsx-a11y/scope': 'error',
-    'jsx-a11y/tabindex-no-positive': 'error'
-  }
+    'jsx-a11y/tabindex-no-positive': 'error',
+  },
 };

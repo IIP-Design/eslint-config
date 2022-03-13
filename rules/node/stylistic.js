@@ -1,8 +1,12 @@
 module.exports = {
   rules: {
     'node/callback-return': 'error',
-    'node/exports-style': ['error', 'module.exports', { allowBatchAssign: true }],
-    'node/file-extension-in-import': ['error', 'always', { '.js': 'never', '.jsx': 'never' }],
+    'node/exports-style': [
+      'error', 'module.exports', { allowBatchAssign: true },
+    ],
+    'node/file-extension-in-import': [
+      'error', 'always', { '.js': 'never', '.jsx': 'never' },
+    ],
     'node/global-require': 'error',
     'node/no-mixed-requires': 'error',
     'node/no-process-env': 'off',

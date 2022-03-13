@@ -14,15 +14,15 @@ module.exports = {
       'error',
       {
         amd: true,
-        commonjs: true
-      }
+        commonjs: true,
+      },
     ],
     'import/no-useless-path-segments': [
       'error',
       {
-        noUselessIndex: true
-      }
+        noUselessIndex: true,
+      },
     ],
-    'import/no-webpack-loader-syntax': 'warn'
-  }
+    'import/no-webpack-loader-syntax': 'warn',
+  },
 };

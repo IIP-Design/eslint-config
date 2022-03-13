@@ -20,7 +20,7 @@ module.exports = {
     'function-paren-newline': 'off',
     'generator-star-spacing': 'off',
     'implicit-arrow-linebreak': 'off',
-    'indent': 'off',
+    indent: 'off',
     'jsx-quotes': 'off',
     'key-spacing': 'off',
     'keyword-spacing': 'off',
@@ -47,7 +47,7 @@ module.exports = {
     'padded-blocks': 'off',
     'quote-props': 'off',
     'rest-spread-spacing': 'off',
-    'semi': 'off',
+    semi: 'off',
     'semi-spacing': 'off',
     'semi-style': 'off',
     'space-before-blocks': 'off',
@@ -62,6 +62,6 @@ module.exports = {
     'unicode-bom': 'off',
     'wrap-iife': 'off',
     'wrap-regex': 'off',
-    'yield-star-spacing': 'off'
-  }
+    'yield-star-spacing': 'off',
+  },
 };

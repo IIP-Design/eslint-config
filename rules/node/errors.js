@@ -14,7 +14,9 @@ module.exports = {
     'node/no-unpublished-import': [
       'error',
       {
-        allowModules: ['@axe-core/react', '@testing-library/react', 'prop-types'],
+        allowModules: [
+          '@axe-core/react', '@testing-library/react', 'prop-types',
+        ],
       },
     ],
     'node/no-unpublished-require': [

@@ -1,16 +1,18 @@
 module.exports = {
   rules: {
-    'camelcase': ['error', { properties: 'never', ignoreDestructuring: false }],
+    camelcase: ['error', { properties: 'never', ignoreDestructuring: false }],
     'capitalized-comments': 'off',
     'consistent-this': 'off',
-    'func-name-matching': 'off',
+    'func-name-matching': 'error',
     'func-names': 'off',
     'func-style': 'off',
     'id-denylist': 'off',
     'id-length': 'off',
     'id-match': 'off',
     'line-comment-position': 'off',
-    'lines-between-class-members': ['error', 'always', { exceptAfterSingleLine: false }],
+    'lines-between-class-members': [
+      'error', 'always', { exceptAfterSingleLine: false },
+    ],
     'max-depth': 'off',
     'max-lines': 'off',
     'max-lines-per-function': 'off',
@@ -25,7 +27,9 @@ module.exports = {
         newIsCap: true,
         newIsCapExceptions: [],
         capIsNew: false,
-        capIsNewExceptions: ['Immutable.Map', 'Immutable.Set', 'Immutable.List'],
+        capIsNewExceptions: [
+          'Immutable.Map', 'Immutable.Set', 'Immutable.List',
+        ],
       },
     ],
     'no-array-constructor': 'error',
@@ -69,8 +73,18 @@ module.exports = {
     'padding-line-between-statements': [
       'error',
       { blankLine: 'always', prev: '*', next: 'return' },
-      { blankLine: 'always', prev: ['const', 'let', 'var'], next: '*' },
-      { blankLine: 'any', prev: ['const', 'let', 'var'], next: ['const', 'let', 'var'] },
+      { blankLine: 'always',
+        prev: [
+          'const', 'let', 'var',
+        ],
+        next: '*' },
+      { blankLine: 'any',
+        prev: [
+          'const', 'let', 'var',
+        ],
+        next: [
+          'const', 'let', 'var',
+        ] },
     ],
     'prefer-exponentiation-operator': 'off',
     'prefer-object-spread': 'error',
@@ -86,7 +100,9 @@ module.exports = {
         },
         block: {
           exceptions: ['-', '+'],
-          markers: ['=', '!', ':', '::'], // space here to support sprockets directives and flow comment types
+          markers: [
+            '=', '!', ':', '::',
+          ], // space here to support sprockets directives and flow comment types
           balanced: true,
         },
       },

@@ -64,5 +64,5 @@ module.exports = [
   'statusbar',
   'stop',
   'toolbar',
-  'top'
+  'top',
 ];

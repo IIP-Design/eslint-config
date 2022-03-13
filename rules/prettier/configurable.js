@@ -6,10 +6,10 @@ module.exports = {
       'error',
       'as-needed',
       {
-        requireReturnForObjectLiteral: false
-      }
+        requireReturnForObjectLiteral: false,
+      },
     ],
-    'curly': 'off',
+    curly: 'off',
     'lines-around-comment': 'off',
     'max-len': [
       'warn',
@@ -21,20 +21,21 @@ module.exports = {
         ignoreTemplateLiterals: true,
         ignoreTrailingComments: true,
         ignoreUrls: true,
-        tabWidth: 2
-      }
+        tabWidth: 2,
+      },
     ],
     'no-confusing-arrow': [
       'error',
       {
-        allowParens: true
-      }
+        allowParens: true,
+        onlyOneSimpleParam: false,
+      },
     ],
     'no-mixed-operators': [
       'error',
       {
         allowSamePrecedence: false,
-        // the list of arthmetic groups disallows mixing `%` and `**`
+        // the list of arithmetic groups disallows mixing `%` and `**`
         // with other arithmetic operators.
         groups: [
           ['%', '**'],
@@ -43,11 +44,15 @@ module.exports = {
           ['%', '*'],
           ['%', '/'],
           ['/', '*'],
-          ['&', '|', '<<', '>>', '>>>'],
-          ['==', '!=', '===', '!=='],
-          ['&&', '||']
-        ]
-      }
+          [
+            '&', '|', '<<', '>>', '>>>',
+          ],
+          [
+            '==', '!=', '===', '!==',
+          ],
+          ['&&', '||'],
+        ],
+      },
     ],
     'no-tabs': 'error',
     'no-unexpected-multiline': 'error',
@@ -55,16 +60,16 @@ module.exports = {
       'error',
       {
         allowNamedFunctions: true,
-        allowUnboundThis: true
-      }
+        allowUnboundThis: true,
+      },
     ],
-    'quotes': [
+    quotes: [
       'error',
       'single',
       {
         allowTemplateLiterals: false,
-        avoidEscape: true
-      }
-    ]
-  }
+        avoidEscape: true,
+      },
+    ],
+  },
 };

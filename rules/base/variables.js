@@ -1,17 +1,20 @@
-const confusingGlobals = require('./confusingGlobals');
+const confusingGlobals = require( './confusingGlobals' );
 
 module.exports = {
   rules: {
     'init-declarations': 'off',
     'no-delete-var': 'error',
     'no-label-var': 'error',
-    'no-restricted-globals': ['error'].concat(confusingGlobals),
+    'no-restricted-globals': ['error'].concat( confusingGlobals ),
     'no-shadow': [
       'error',
       {
-        allow: ['resolve', 'reject', 'done', 'next', 'err', 'error'],
-        hoist: 'all'
-      }
+        allow: [
+          'resolve', 'reject', 'done', 'next', 'err', 'error',
+        ],
+        builtinGlobals: true,
+        hoist: 'all',
+      },
     ],
     'no-shadow-restricted-names': 'error',
     'no-undef': 'error',
@@ -23,10 +26,18 @@ module.exports = {
         args: 'after-used',
         argsIgnorePattern: 'res|next|^err',
         caughtErrors: 'none',
+        destructuredArrayIgnorePattern: '^_',
         ignoreRestSiblings: true,
-        vars: 'all'
-      }
+        vars: 'all',
+      },
     ],
-    'no-use-before-define': ['error', { functions: true, classes: true, variables: true }]
-  }
+    'no-use-before-define': [
+      'error',
+      {
+        classes: true,
+        functions: true,
+        variables: true,
+      },
+    ],
+  },
 };

@@ -7,12 +7,12 @@ module.exports = {
       {
         devDependencies: true,
         optionalDependencies: true,
-        peerDependencies: true
-      }
+        peerDependencies: true,
+      },
     ],
     'import/no-mutable-exports': 'error',
     'import/no-named-as-default': 'error',
     'import/no-named-as-default-member': 'error',
-    'import/no-unused-modules': 'off'
-  }
+    'import/no-unused-modules': 'off',
+  },
 };

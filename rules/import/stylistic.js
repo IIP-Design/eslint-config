@@ -28,7 +28,9 @@ module.exports = {
     'import/no-unassigned-import': [
       'error',
       {
-        allow: ['**/*.css', '**/*.sass', '**/*.scss', '@babel/polyfill', 'dotenv/config'],
+        allow: [
+          '**/*.css', '**/*.sass', '**/*.scss', '@babel/polyfill', 'dotenv/config',
+        ],
       },
     ],
     'import/order': 'off',

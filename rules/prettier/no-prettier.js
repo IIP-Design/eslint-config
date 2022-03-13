@@ -8,15 +8,17 @@ module.exports = {
     'arrow-parens': ['error', 'as-needed'],
     'arrow-spacing': ['error', { before: true, after: true }],
     'block-spacing': ['error', 'always'],
-    'brace-style': ['error', '1tbs', { allowSingleLine: true }],
+    'brace-style': [
+      'error', '1tbs', { allowSingleLine: true },
+    ],
     'comma-dangle': [
       'error',
       {
         arrays: 'always-multiline',
-        objects: 'always-multiline',
-        imports: 'always-multiline',
         exports: 'always-multiline',
         functions: 'always-multiline',
+        imports: 'always-multiline',
+        objects: 'always-multiline',
       },
     ],
     'comma-spacing': ['error', { before: false, after: true }],
@@ -35,7 +37,9 @@ module.exports = {
       },
     ],
     'implicit-arrow-linebreak': ['error', 'beside'],
-    'indent': ['error', 2, { SwitchCase: 1 }],
+    indent: [
+      'error', 2, { SwitchCase: 1 },
+    ],
     'jsx-quotes': ['error', 'prefer-double'],
     'key-spacing': ['error', { beforeColon: false, afterColon: true }],
     'keyword-spacing': ['error', { before: true, after: true }],
@@ -58,9 +62,11 @@ module.exports = {
     'one-var-declaration-per-line': ['error', 'always'],
     'operator-linebreak': ['error', 'before'],
     'padded-blocks': ['error', 'never'],
-    'quote-props': ['error', 'as-needed', { keywords: true, unnecessary: true }],
+    'quote-props': [
+      'error', 'as-needed', { keywords: true, unnecessary: true },
+    ],
     'rest-spread-spacing': ['error', 'never'],
-    'semi': ['error', 'always'],
+    semi: ['error', 'always'],
     'semi-spacing': ['error', { before: false, after: true }],
     'semi-style': ['error', 'last'],
     'space-before-blocks': [
