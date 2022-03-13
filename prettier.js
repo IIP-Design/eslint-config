@@ -1,3 +1,8 @@
+/**
+ * @deprecated - The Lab team has largely phased out the use
+ * of Prettier. As such we no longer intend to use (and will
+ * no longer maintain) this configuration.
+ */
 const rules = [
   './shared',
   './rules/prettier/configurable',

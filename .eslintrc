@@ -1,5 +1,5 @@
 {
   "extends": [
-    "./prettier.js"
+    "./index.js"
   ]
 }
