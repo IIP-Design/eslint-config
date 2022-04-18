@@ -8,6 +8,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 _This sections lists changes committed to master since most recent release_
 
+**Build:**
+
+- Update dependencies:
+  - `eslint`: 8.11.0 => 8.13.0
+  - `eslint-plugin-import`: 2.25.4 => 2.26.0
+  - `eslint-plugin-jest`: 26.1.1 => 26.1.4
+  - `eslint-plugin-react`: 7.29.3 => 7.29.4
+  - `eslint-plugin-react-hooks`: 4.3.0 => 4.4.0
+
 ## [v1.6.0](https://github.com/IIP-Design/eslint-config/compare/v1.5.0...v1.6.0) - 2022.03.13
 
 **Added:**
