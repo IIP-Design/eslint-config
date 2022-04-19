@@ -4,9 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/IIP-Design/eslint-config/compare/v1.6.0...HEAD)
+## [Unreleased](https://github.com/IIP-Design/eslint-config/compare/v1.6.1...HEAD)
 
 _This sections lists changes committed to master since most recent release_
+
+## [v1.6.1](https://github.com/IIP-Design/eslint-config/compare/v1.6.0...v1.6.1) - 2022.04.19
+
+**Changed:**
+
+- Reverted changes applied in v1.6.0 to the `no-shadow` rule, which included checks for `builtinGlobals`. We found this rule to be too restrictive and barred the use of several common variable names (such as `name`, `status`, and `parent`). Rather than enumerating a list of exceptions, we opted to disable the rule.
 
 **Build:**
 

@@ -12,10 +12,7 @@ module.exports = {
     'no-shadow': [
       'error',
       {
-        allow: [
-          'resolve', 'reject', 'done', 'next', 'err', 'error',
-        ],
-        builtinGlobals: true,
+        builtinGlobals: false,
         hoist: 'all',
       },
     ],
