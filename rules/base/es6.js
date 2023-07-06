@@ -8,7 +8,8 @@ module.exports = {
     'no-const-assign': 'error',
     'no-dupe-class-members': 'error',
     'no-duplicate-imports': 'off',
-    'no-new-symbol': 'error',
+    'no-new-native-nonconstructor': 'error',
+    'no-new-symbol': 'off', // Superseded by no-new-native-nonconstructor
     'no-restricted-exports': 'off',
     'no-restricted-imports': 'off',
     'no-this-before-super': 'error',

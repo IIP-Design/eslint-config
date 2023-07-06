@@ -66,7 +66,11 @@ module.exports = {
       'error', 'as-needed', { keywords: true, unnecessary: true },
     ],
     'rest-spread-spacing': ['error', 'never'],
-    semi: ['error', 'always'],
+    semi: [
+      'error',
+      'always',
+      { omitLastInOneLineBlock: true, omitLastInOneLineClassBody: true },
+    ],
     'semi-spacing': ['error', { before: false, after: true }],
     'semi-style': ['error', 'last'],
     'space-before-blocks': [
