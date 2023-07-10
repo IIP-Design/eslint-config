@@ -6,7 +6,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased](https://github.com/IIP-Design/eslint-config/compare/v1.6.1...HEAD)
 
-_This sections lists changes committed to master since most recent release_
+_This sections lists changes committed to main since most recent release_
+
+**Added:**
+
+- New rules and options added to ESLint between 8.13.0 -> 8.44.0. Specifically:
+  - Set the `omitLastInOneLineBlock` and `omitLastInOneLineClassBody` properties on the `semi` rule to `true` to improve to appearance of a single lined block.
+  - `no-empty-static-block` at the level `error` to remove unused static blocks in classes. (added v8.27.0)
+  - `no-new-native-nonconstructor` at the level `error` to prevent accidentally calling Symbols and BigInts with the new keyword. Also disabled the `no-new-symbol` rule that it overlaps with. (added v8.27.0)
+  - `logical-assignment-operators` at the level `off`. This use of logical operators is not common in our codebase, so it seems wise to limit usage to a more traditional syntax in order to reduce possible confusion. (added v8.24.0)
+  - Set the new `allowNamedExports` property on `no-use-before-define` to `false` to ensure exports are explicitly defined before exporting.
+  - `no-constant-binary-expression` at the level `error` to prevent creating comparisons that always evaluate to true or false. (added v8.14.0)
+- New rules and options added to ESLint plugin React between 7.29.4 -> 7.32.2. Specifically:
+  - `react/no-object-type-as-default-prop` set to `warn` to help identify possible performance regressions. (added v7.32.0)
+  - Replaced the deprecated rule `jsx-sort-default-props` with it's replacement `sort-default-props`.
+  - Set the `allowDestructuredState` option on the rule `react/hook-use-state` to `true` to allow for the destructuring of initial state in the `useState` hook.
+  - `react/jsx-no-leaked-render` to ensure that the app doesn't render an invalid value in place of a JSX element (added v7.30.0)
+
+**Build:**
+
+- Update dependencies:
+  - `eslint`: 8.13.0 => 8.44.0
+  - `eslint-plugin-cypress`: 2.12.1 => 2.13.3
+  - `eslint-plugin-import`: 2.26.0 => 2.27.5
+  - `eslint-plugin-jest`: 26.1.4 => 27.2.2
+  - `eslint-plugin-jsx-a11y`: 6.5.1 => 6.7.1
+  - `eslint-plugin-react`: 7.29.4 => 7.32.2
+  - `eslint-plugin-react-hooks`: 4.4.0 => 4.6.0
+  - `jest`: 27.5.1 => 29.6.1
 
 ## [v1.6.1](https://github.com/IIP-Design/eslint-config/compare/v1.6.0...v1.6.1) - 2022.04.19
 

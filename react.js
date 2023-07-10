@@ -5,10 +5,10 @@ const rules = [
   './rules/react/hooks',
   './rules/react/jsx',
   './rules/react/no-prettier',
-].map(require.resolve);
+].map( require.resolve );
 
 module.exports = {
-  extends: rules,
+  'extends': rules,
   parserOptions: {
     ecmaFeatures: {
       jsx: true,

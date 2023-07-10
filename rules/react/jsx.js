@@ -47,6 +47,12 @@ module.exports = {
         ignoreCase: true,
       },
     ],
+    'react/jsx-no-leaked-render': [
+      'error',
+      {
+        validStrategies: ['ternary', 'coerce'],
+      },
+    ],
     'react/jsx-no-literals': 'off',
     'react/jsx-no-target-blank': [
       'error',
@@ -79,9 +85,9 @@ module.exports = {
       },
     ],
     'react/jsx-props-no-spreading': 'off',
-    'react/jsx-sort-default-props': 'off',
     'react/jsx-sort-props': 'off',
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
+    'react/sort-default-props': 'off',
   },
 };

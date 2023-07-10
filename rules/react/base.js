@@ -24,7 +24,12 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
-    'react/hook-use-state': 'error',
+    'react/hook-use-state': [
+      'error',
+      {
+        allowDestructuredState: true,
+      },
+    ],
     'react/iframe-missing-sandbox': 'error',
     'react/no-access-state-in-setstate': 'error',
     'react/no-array-index-key': 'warn',
@@ -41,6 +46,7 @@ module.exports = {
     'react/no-is-mounted': 'error',
     'react/no-multi-comp': 'off',
     'react/no-namespace': 'error',
+    'react/no-object-type-as-default-prop': 'warn',
     'react/no-redundant-should-component-update': 'error',
     'react/no-render-return-value': 'error',
     'react/no-set-state': 'off',
