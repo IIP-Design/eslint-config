@@ -21,7 +21,12 @@ _This sections lists changes committed to main since most recent release_
   - `react/no-object-type-as-default-prop` set to `warn` to help identify possible performance regressions. (added v7.32.0)
   - Replaced the deprecated rule `jsx-sort-default-props` with it's replacement `sort-default-props`.
   - Set the `allowDestructuredState` option on the rule `react/hook-use-state` to `true` to allow for the destructuring of initial state in the `useState` hook.
-  - `react/jsx-no-leaked-render` to ensure that the app doesn't render an invalid value in place of a JSX element (added v7.30.0)
+  - `react/jsx-no-leaked-render` to ensure that the app doesn't render an invalid value in place of a JSX element. (added v7.30.0)
+- New rules and options added to ESLint plugin JSX a11y between 6.5.1 -> 6.7.1. Specifically:
+  - `jsx-a11y/no-aria-hidden-on-focusable` at the level `error` to prevent hiding interactive elements using aria-hidden. (added v6.7.0)
+  - `jsx-a11y/anchor-ambiguous-text` at level `off`. (added v6.7.0)
+  - `jsx-a11y/prefer-tag-over-role` at the level `error` to highlight the preference for semantic HTML tags over roles. (added v6.7.0)
+  - Remove the rule `jsx-a11y/no-onchange` which was deprecated in v6.5.0.
 
 **Build:**
 
