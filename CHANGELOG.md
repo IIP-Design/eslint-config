@@ -27,6 +27,10 @@ _This sections lists changes committed to main since most recent release_
   - `jsx-a11y/anchor-ambiguous-text` at level `off`. (added v6.7.0)
   - `jsx-a11y/prefer-tag-over-role` at the level `error` to highlight the preference for semantic HTML tags over roles. (added v6.7.0)
   - Remove the rule `jsx-a11y/no-onchange` which was deprecated in v6.5.0.
+- New rules and options added to ESLint plugin import
+  - `import/no-empty-named-blocks` at the level `error`. (added v2.27.0)
+  - `import/consistent-type-specifier-style` at the level `error` and the style of `prefer-top-level`. (added v2.27.0)
+  - Set the `considerComments` option on the `import/newline-after-import` rule to `true`.
 
 **Build:**
 

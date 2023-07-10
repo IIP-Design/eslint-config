@@ -2,6 +2,7 @@ module.exports = {
   rules: {
     'import/export': 'error',
     'import/no-deprecated': 'error',
+    'import/no-empty-named-blocks': 'error',
     'import/no-extraneous-dependencies': [
       'warn',
       {

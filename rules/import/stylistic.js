@@ -1,5 +1,6 @@
 module.exports = {
   rules: {
+    'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
     'import/dynamic-import-chunkname': 'warn',
     'import/exports-last': 'off',
     'import/extensions': [
@@ -16,6 +17,7 @@ module.exports = {
     'import/newline-after-import': [
       'error',
       {
+        considerComments: true,
         count: 1,
       },
     ],
