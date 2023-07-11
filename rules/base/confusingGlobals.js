@@ -4,7 +4,7 @@
  * https://github.com/facebook/create-react-app/tree/master/packages/confusing-browser-globals
  */
 
-module.exports = [
+const confusingGlobals = [
   'addEventListener',
   'blur',
   'close',
@@ -66,3 +66,5 @@ module.exports = [
   'toolbar',
   'top',
 ];
+
+export default confusingGlobals;
