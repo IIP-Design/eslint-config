@@ -1,8 +1,13 @@
-const rules = [
-  './module', './staticAnalysis', './stylistic', './warnings',
-].map( require.resolve );
+import moduleRules from './module.js';
+import staticAnalysisRules from './staticAnalysis.js';
+import stylisticRules from './stylistic.js';
+import warningRules from './warnings.js';
 
-module.exports = {
-  'extends': rules,
-  plugins: ['eslint-plugin-import'],
+const importRules = {
+  ...moduleRules,
+  ...staticAnalysisRules,
+  ...stylisticRules,
+  ...warningRules,
 };
+
+export default importRules;
