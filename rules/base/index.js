@@ -1,4 +1,4 @@
-import bestPractices from './bestPractices.js';
+import bestPracticeRules from './bestPractices.js';
 import errorRules from './errors.js';
 import es6Rules from './es6.js';
 import formatRules from './formatting.js';
@@ -7,7 +7,7 @@ import stylisticRules from './stylistic.js';
 import variableRules from './variables.js';
 
 const baseRules = {
-  ...bestPractices,
+  ...bestPracticeRules,
   ...errorRules,
   ...es6Rules,
   ...formatRules,

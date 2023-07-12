@@ -1,4 +1,4 @@
-const stylisticRules = {
+const importStylisticRules = {
   'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
   'import/dynamic-import-chunkname': 'warn',
   'import/exports-last': 'off',
@@ -38,4 +38,4 @@ const stylisticRules = {
   'import/prefer-default-export': 'off',
 };
 
-export default stylisticRules;
+export default importStylisticRules;

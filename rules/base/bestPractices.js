@@ -1,7 +1,7 @@
 /**
  * These rules relate to better ways of doing things to help avoid problems.
  */
-const bestPractices = {
+const bestPracticeRules = {
   'accessor-pairs': 'off',
   'array-callback-return': ['error', { allowImplicit: true }],
   'block-scoped-var': 'error',
@@ -169,4 +169,4 @@ const bestPractices = {
   yoda: 'error',
 };
 
-export default bestPractices;
+export default bestPracticeRules;

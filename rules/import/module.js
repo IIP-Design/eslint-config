@@ -1,4 +1,4 @@
-const moduleRules = {
+const importModuleRules = {
   'import/no-amd': 'error',
   'import/no-commonjs': 'off',
   'import/no-nodejs-modules': 'off',
@@ -6,4 +6,4 @@ const moduleRules = {
   'import/no-import-module-exports': 'off',
 };
 
-export default moduleRules;
+export default importModuleRules;

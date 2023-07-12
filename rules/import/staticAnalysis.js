@@ -1,4 +1,4 @@
-const staticAnalysisRules = {
+const importStaticAnalysisRules = {
   'import/default': 'off',
   'import/named': 'error',
   'import/namespace': 'off',
@@ -26,4 +26,4 @@ const staticAnalysisRules = {
   'import/no-webpack-loader-syntax': 'warn',
 };
 
-export default staticAnalysisRules;
+export default importStaticAnalysisRules;

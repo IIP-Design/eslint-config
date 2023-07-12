@@ -1,4 +1,4 @@
-const warningRules = {
+const importWarningRules = {
   'import/export': 'error',
   'import/no-deprecated': 'error',
   'import/no-empty-named-blocks': 'error',
@@ -16,4 +16,4 @@ const warningRules = {
   'import/no-unused-modules': 'off',
 };
 
-export default warningRules;
+export default importWarningRules;

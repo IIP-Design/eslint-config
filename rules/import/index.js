@@ -1,13 +1,13 @@
-import moduleRules from './module.js';
-import staticAnalysisRules from './staticAnalysis.js';
-import stylisticRules from './stylistic.js';
-import warningRules from './warnings.js';
+import importModuleRules from './module.js';
+import importStaticAnalysisRules from './staticAnalysis.js';
+import importStylisticRules from './stylistic.js';
+import importWarningRules from './warnings.js';
 
 const importRules = {
-  ...moduleRules,
-  ...staticAnalysisRules,
-  ...stylisticRules,
-  ...warningRules,
+  ...importModuleRules,
+  ...importStaticAnalysisRules,
+  ...importStylisticRules,
+  ...importWarningRules,
 };
 
 export default importRules;
