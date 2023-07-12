@@ -7,31 +7,30 @@
  * A list of all deprecated rules can be found here: https://eslint.org/docs/rules/#deprecated
  *
  */
-
-module.exports = {
-  rules: {
-    'id-blacklist': 'off', // ESLint - v7.4.0 - id-denylist'
-    'callback-return': 'off', // ESLint - v7.0.0 - eslint-plugin-node
-    'global-require': 'off', // ESLint - v7.0.0 - eslint-plugin-node
-    'handle-callback-err': 'off', // ESLint - v7.0.0 - eslint-plugin-node
-    'no-buffer-constructor': 'off', // ESLint - v7.0.0 - eslint-plugin-node
-    'no-mixed-requires': 'off', // ESLint - v7.0.0 - eslint-plugin-node
-    'no-new-require': 'off', // ESLint - v7.0.0 - eslint-plugin-node
-    'no-path-concat': 'off', // ESLint - v7.0.0 - eslint-plugin-node
-    'no-process-env': 'off', // ESLint - v7.0.0 - eslint-plugin-node
-    'no-process-exit': 'off', // ESLint - v7.0.0 - eslint-plugin-node
-    'no-restricted-modules': 'off', // ESLint - v7.0.0 - eslint-plugin-node
-    'no-sync': 'off', // ESLint - v7.0.0 - eslint-plugin-node
-    'require-jsdoc': 'off', // ESLint - v5.10.0
-    'valid-jsdoc': 'off', // ESLint - v5.10.0
-    'no-catch-shadow': 'off', // ESLint - v5.1.0 - no-shadow
-    'indent-legacy': 'off', // ESLint - v4.0.0 - indent
-    'lines-around-directive': 'off', // ESLint - v4.0.0 - padding-line-between-statements
-    'newline-after-var': 'off', // ESLint - v4.0.0 - padding-line-between-statements
-    'newline-before-return': 'off', // ESLint - v4.0.0 - padding-line-between-statements
-    'prefer-reflect': 'off', // ESLint - v3.9.0
-    'no-native-reassign': 'off', // ESLint - v3.3.0 - no-global-assign
-    'no-negated-in-lhs': 'off', // ESLint - v3.3.0 - no-unsafe-negation
-    'no-spaced-func': 'off', // ESLint - v3.3.0 - func-call-spacing
-  },
+const deprecatedEslintRules = {
+  'id-blacklist': 'off', // ESLint - v7.4.0 - id-denylist'
+  'callback-return': 'off', // ESLint - v7.0.0 - eslint-plugin-node
+  'global-require': 'off', // ESLint - v7.0.0 - eslint-plugin-node
+  'handle-callback-err': 'off', // ESLint - v7.0.0 - eslint-plugin-node
+  'no-buffer-constructor': 'off', // ESLint - v7.0.0 - eslint-plugin-node
+  'no-mixed-requires': 'off', // ESLint - v7.0.0 - eslint-plugin-node
+  'no-new-require': 'off', // ESLint - v7.0.0 - eslint-plugin-node
+  'no-path-concat': 'off', // ESLint - v7.0.0 - eslint-plugin-node
+  'no-process-env': 'off', // ESLint - v7.0.0 - eslint-plugin-node
+  'no-process-exit': 'off', // ESLint - v7.0.0 - eslint-plugin-node
+  'no-restricted-modules': 'off', // ESLint - v7.0.0 - eslint-plugin-node
+  'no-sync': 'off', // ESLint - v7.0.0 - eslint-plugin-node
+  'require-jsdoc': 'off', // ESLint - v5.10.0
+  'valid-jsdoc': 'off', // ESLint - v5.10.0
+  'no-catch-shadow': 'off', // ESLint - v5.1.0 - no-shadow
+  'indent-legacy': 'off', // ESLint - v4.0.0 - indent
+  'lines-around-directive': 'off', // ESLint - v4.0.0 - padding-line-between-statements
+  'newline-after-var': 'off', // ESLint - v4.0.0 - padding-line-between-statements
+  'newline-before-return': 'off', // ESLint - v4.0.0 - padding-line-between-statements
+  'prefer-reflect': 'off', // ESLint - v3.9.0
+  'no-native-reassign': 'off', // ESLint - v3.3.0 - no-global-assign
+  'no-negated-in-lhs': 'off', // ESLint - v3.3.0 - no-unsafe-negation
+  'no-spaced-func': 'off', // ESLint - v3.3.0 - func-call-spacing
 };
+
+export default deprecatedEslintRules;
