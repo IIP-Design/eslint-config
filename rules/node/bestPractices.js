@@ -1,5 +1,5 @@
-module.exports = {
-  rules: {
-    'node/no-deprecated-api': 'error',
-  },
+const nodeBestPracticeRules = {
+  'node/no-deprecated-api': 'error',
 };
+
+export default nodeBestPracticeRules;

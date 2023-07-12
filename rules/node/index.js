@@ -1,10 +1,13 @@
-const rules = [
-  '../deprecated/node', './bestPractices', './errors', './stylistic',
-].map(
-  require.resolve,
-);
+import deprecatedNodeRules from '../deprecated/node.js';
+import nodeBestPracticeRules from './bestPractices.js';
+import nodeErrorRules from './errors.js';
+import nodeStylisticRules from './stylistic.js';
 
-module.exports = {
-  'extends': rules,
-  plugins: ['eslint-plugin-node'],
+const nodeRules = {
+  ...deprecatedNodeRules,
+  ...nodeBestPracticeRules,
+  ...nodeErrorRules,
+  ...nodeStylisticRules,
 };
+
+export default nodeRules;
