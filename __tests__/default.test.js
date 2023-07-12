@@ -1,78 +1,75 @@
-const defaultConfig = require( '../index' );
-const sharedConfig = require( '../shared' );
+import defaultConfig from '../index.js';
 
-const deprecatedRuleset = require( '../rules/deprecated/deprecated' );
-const bestPracticesRuleset = require( '../rules/base/bestPractices' );
-const errorsRuleset = require( '../rules/base/errors' );
-const es6Ruleset = require( '../rules/base/es6' );
-const strictRuleset = require( '../rules/base/strict' );
-const stylisticRuleset = require( '../rules/base/stylistic' );
-const variablesRuleset = require( '../rules/base/variables' );
-const importRuleset = require( '../rules/import' );
-const nodeRuleset = require( '../rules/node' );
+import deprecatedRuleset from '../rules/deprecated/deprecated.js';
+import bestPracticesRuleset from '../rules/base/bestPractices.js';
+import errorsRuleset from '../rules/base/errors.js';
+import es6Ruleset from '../rules/base/es6.js';
+import strictRuleset from '../rules/base/strict.js';
+import stylisticRuleset from '../rules/base/stylistic.js';
+import variablesRuleset from '../rules/base/variables.js';
+import importRuleset from '../rules/import/index.js';
+import nodeRuleset from '../rules/node/index.js';
 
 describe( 'Default config', () => {
+  let baseConfigObject = {};
+  let testConfigObject = {};
+  let webpackConfigObject = {};
+
   it( 'loads without error', () => {
     expect( () => defaultConfig ).not.toThrow();
   } );
 
-  it( 'includes the shared, no-Prettier, and Jest rulesets', () => {
-    const extension = defaultConfig.extends;
+  it( 'is a list of rulesets that contains rules for JS files, tests, and Webpack configs', () => {
+    expect( Array.isArray( defaultConfig ) ).toEqual( true );
+    expect( defaultConfig ).toHaveLength( 3 );
 
-    expect( extension ).toHaveLength( 4 );
+    [
+      baseConfigObject, testConfigObject, webpackConfigObject,
+    ] = defaultConfig;
 
-    expect( extension[0].endsWith( 'shared.js' ) ).toEqual( true );
-    expect( extension[1].endsWith( 'rules/prettier/configurable.js' ) ).toEqual( true );
-    expect( extension[2].endsWith( 'rules/prettier/no-prettier.js' ) ).toEqual( true );
-    expect( extension[3].endsWith( 'rules/testing/jest.js' ) ).toEqual( true );
-  } );
-} );
-
-describe( 'Shared configurations', () => {
-  it( 'loads without error', () => {
-    expect( () => sharedConfig ).not.toThrow();
+    expect( baseConfigObject.files.includes( '**/*.js' ) ).toEqual( true );
+    expect( testConfigObject.files.includes( '**/*.test.js' ) ).toEqual( true );
+    expect( webpackConfigObject.files.includes( '**/webpack.*.js' ) ).toEqual( true );
   } );
 
-  it( 'includes the base, import, and deprecated rulesets', () => {
-    const extension = sharedConfig.extends;
+  it( 'includes the import and node plugins in the base ruleset', () => {
+    expect( baseConfigObject.plugins ).toBeDefined();
 
-    expect( extension ).toHaveLength( 9 );
+    const { plugins } = baseConfigObject;
 
-    expect( extension[0].endsWith( 'rules/deprecated/deprecated.js' ) ).toEqual( true );
-    expect( extension[1].endsWith( 'rules/base/bestPractices.js' ) ).toEqual( true );
-    expect( extension[2].endsWith( 'rules/base/errors.js' ) ).toEqual( true );
-    expect( extension[3].endsWith( 'rules/base/es6.js' ) ).toEqual( true );
-    expect( extension[4].endsWith( 'rules/base/strict.js' ) ).toEqual( true );
-    expect( extension[5].endsWith( 'rules/base/stylistic.js' ) ).toEqual( true );
-    expect( extension[6].endsWith( 'rules/base/variables.js' ) ).toEqual( true );
-    expect( extension[7].endsWith( 'rules/import/index.js' ) ).toEqual( true );
-    expect( extension[8].endsWith( 'rules/node/index.js' ) ).toEqual( true );
+    expect( Object.keys( plugins ).length ).toEqual( 2 );
+
+    expect( plugins.import ).toBeDefined();
+    expect( plugins.node ).toBeDefined();
   } );
 
-  it( 'makes the commons globals available to ESLint', () => {
-    const { env } = sharedConfig;
+  it( 'includes the jest plugins in the tests ruleset', () => {
+    expect( testConfigObject.plugins ).toBeDefined();
 
-    expect( env ).toBeDefined();
-    expect( env.browser ).toEqual( true );
-    expect( env.es6 ).toEqual( true );
-    expect( env.jquery ).toEqual( true );
-    expect( env.node ).toEqual( true );
-    expect( env.serviceworker ).toEqual( true );
+    const { plugins } = testConfigObject;
+
+    expect( Object.keys( plugins ).length ).toEqual( 1 );
+
+    expect( plugins.jest ).toBeDefined();
   } );
 
-  it( 'sets the parser options', () => {
-    const { ecmaFeatures } = sharedConfig.parserOptions;
-    const { ecmaVersion } = sharedConfig.parserOptions;
-    const { sourceType } = sharedConfig.parserOptions;
+  it( 'sets the language and parser options', () => {
+    expect( baseConfigObject.languageOptions ).toBeDefined();
+
+    expect( baseConfigObject.languageOptions.ecmaVersion ).toBeDefined();
+    expect( baseConfigObject.languageOptions.globals ).toBeDefined();
+    expect( baseConfigObject.languageOptions.parserOptions ).toBeDefined();
+
+    const { ecmaVersion, parserOptions: { ecmaFeatures } } = baseConfigObject.languageOptions;
+
+    expect( ecmaVersion ).toEqual( 'latest' );
 
     expect( ecmaFeatures.impliedStrict ).toEqual( true );
     expect( ecmaFeatures.globalReturn ).toEqual( false );
-    expect( ecmaVersion ).toEqual( 2020 );
-    expect( sourceType ).toEqual( 'module' );
   } );
 } );
 
-describe( 'Deprecates ruleset', () => {
+describe( 'Deprecated ruleset', () => {
   it( 'loads without error', () => {
     expect( () => deprecatedRuleset ).not.toThrow();
   } );

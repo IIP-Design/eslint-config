@@ -1,23 +1,38 @@
-const scriptConfig = require( '../script' );
+import scriptConfig from '../script.js';
 
 describe( 'Node.js script config', () => {
+  let baseConfigObject = {};
+  let testConfigObject = {};
+  let webpackConfigObject = {};
+  let scriptsConfigObject = {};
+
   it( 'loads without error', () => {
     expect( () => scriptConfig ).not.toThrow();
   } );
 
-  it( 'includes the Node.js script rulesets', () => {
-    const extension = scriptConfig.extends;
+  it( 'includes the base rulesets', () => {
+    expect( Array.isArray( scriptConfig ) ).toEqual( true );
+    expect( scriptConfig ).toHaveLength( 4 );
 
-    expect( extension ).toHaveLength( 1 );
+    [
+      baseConfigObject, testConfigObject, webpackConfigObject, scriptsConfigObject,
+    ] = scriptConfig;
 
-    expect( extension[0].endsWith( 'index.js' ) ).toEqual( true );
+    expect( baseConfigObject.files.includes( '**/*.js' ) ).toEqual( true );
+    expect( testConfigObject.files.includes( '**/*.test.js' ) ).toEqual( true );
+    expect( webpackConfigObject.files.includes( '**/webpack.*.js' ) ).toEqual( true );
+    expect( scriptsConfigObject.files.includes( '**/*.js' ) ).toEqual( true );
   } );
 
-  it( 'sets the parser options', () => {
-    const { ecmaFeatures } = scriptConfig.parserOptions;
-    const { sourceType } = scriptConfig.parserOptions;
+  it( 'overrides the base language options', () => {
+    expect( scriptsConfigObject.languageOptions ).toBeDefined();
 
+    const { parserOptions: { ecmaFeatures }, sourceType } = scriptsConfigObject.languageOptions;
+
+    expect( ecmaFeatures ).toBeDefined();
     expect( ecmaFeatures.globalReturn ).toEqual( true );
+
+    expect( sourceType ).toBeDefined();
     expect( sourceType ).toEqual( 'script' );
   } );
 } );

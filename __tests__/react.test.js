@@ -1,38 +1,60 @@
-const reactConfig = require( '../react' );
-const a11yRuleset = require( '../rules/react/a11y' );
-const baseRuleset = require( '../rules/react/base' );
-const deprecatedRuleset = require( '../rules/deprecated/react' );
-const hooksRuleset = require( '../rules/react/hooks' );
-const jsxRuleset = require( '../rules/react/jsx' );
-const noPrettierRuleset = require( '../rules/react/no-prettier' );
+import reactConfig from '../react.js';
+import a11yRuleset from '../rules/react/a11y.js';
+import baseRuleset from '../rules/react/base.js';
+import deprecatedRuleset from '../rules/deprecated/react.js';
+import hooksRuleset from '../rules/react/hooks.js';
+import jsxRuleset from '../rules/react/jsx.js';
+import formatRuleset from '../rules/react/formatting.js';
 
 describe( 'React config', () => {
+  let baseConfigObject = {};
+  let testConfigObject = {};
+  let webpackConfigObject = {};
+  let reactConfigObject = {};
+
   it( 'loads without error', () => {
     expect( () => reactConfig ).not.toThrow();
   } );
 
-  it( 'includes the React rulesets', () => {
-    const extension = reactConfig.extends;
+  it( 'includes the base configuration along with the React rulesets', () => {
+    expect( Array.isArray( reactConfig ) ).toEqual( true );
+    expect( reactConfig ).toHaveLength( 4 );
 
-    expect( extension ).toHaveLength( 6 );
+    [
+      baseConfigObject, testConfigObject, webpackConfigObject, reactConfigObject,
+    ] = reactConfig;
 
-    expect( extension[0].endsWith( 'rules/deprecated/react.js' ) ).toEqual( true );
-    expect( extension[1].endsWith( 'rules/react/a11y.js' ) ).toEqual( true );
-    expect( extension[2].endsWith( 'rules/react/base.js' ) ).toEqual( true );
-    expect( extension[3].endsWith( 'rules/react/hooks.js' ) ).toEqual( true );
-    expect( extension[4].endsWith( 'rules/react/jsx.js' ) ).toEqual( true );
-    expect( extension[5].endsWith( 'rules/react/no-prettier.js' ) ).toEqual( true );
+    expect( baseConfigObject.files.includes( '**/*.js' ) ).toEqual( true );
+    expect( testConfigObject.files.includes( '**/*.test.js' ) ).toEqual( true );
+    expect( webpackConfigObject.files.includes( '**/webpack.*.js' ) ).toEqual( true );
+    expect( reactConfigObject.files.includes( '**/*.js', '**/*.jsx', '**/*.tsx' ) ).toEqual( true );
   } );
 
-  it( 'loads the React ESLint plugin', () => {
-    const { plugins } = reactConfig;
+  it( 'includes the React, JSX a11y, and hooks plugins', () => {
+    expect( reactConfigObject.plugins ).toBeDefined();
 
-    expect( plugins ).toHaveLength( 1 );
-    expect( plugins.includes( 'eslint-plugin-react' ) ).toEqual( true );
+    const { plugins } = reactConfigObject;
+
+    expect( Object.keys( plugins ).length ).toEqual( 3 );
+
+    expect( plugins.react ).toBeDefined();
+    expect( plugins['react-hooks'] ).toBeDefined();
+    expect( plugins['jsx-a11y'] ).toBeDefined();
+  } );
+
+  it( 'enables the use of JSX', () => {
+    expect( reactConfigObject.parserOptions ).toBeDefined();
+
+    const { ecmaFeatures } = reactConfigObject.parserOptions;
+
+    expect( ecmaFeatures ).toBeDefined();
+    expect( ecmaFeatures.jsx ).toEqual( true );
   } );
 
   it( "detects the user's version of React", () => {
-    const reactSettings = reactConfig.settings.react;
+    expect( reactConfigObject.settings ).toBeDefined();
+
+    const reactSettings = reactConfigObject.settings.react;
 
     expect( reactSettings ).toBeDefined();
     expect( reactSettings.version ).toEqual( 'detect' );
@@ -42,13 +64,6 @@ describe( 'React config', () => {
 describe( 'React accessibility ruleset', () => {
   it( 'loads without error', () => {
     expect( () => a11yRuleset ).not.toThrow();
-  } );
-
-  it( 'loads the React JSX accessibility ESLint plugin', () => {
-    const { plugins } = a11yRuleset;
-
-    expect( plugins ).toHaveLength( 1 );
-    expect( plugins.includes( 'eslint-plugin-jsx-a11y' ) ).toEqual( true );
   } );
 } );
 
@@ -68,13 +83,6 @@ describe( 'React hooks ruleset', () => {
   it( 'loads without error', () => {
     expect( () => hooksRuleset ).not.toThrow();
   } );
-
-  it( 'loads the React hooks ESLint plugin', () => {
-    const { plugins } = hooksRuleset;
-
-    expect( plugins ).toHaveLength( 1 );
-    expect( plugins.includes( 'eslint-plugin-react-hooks' ) ).toEqual( true );
-  } );
 } );
 
 describe( 'React JSX ruleset', () => {
@@ -83,8 +91,8 @@ describe( 'React JSX ruleset', () => {
   } );
 } );
 
-describe( 'React no-Prettier ruleset', () => {
+describe( 'React formatting ruleset', () => {
   it( 'loads without error', () => {
-    expect( () => noPrettierRuleset ).not.toThrow();
+    expect( () => formatRuleset ).not.toThrow();
   } );
 } );

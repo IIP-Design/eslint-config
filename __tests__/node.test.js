@@ -1,52 +1,34 @@
-const nodeConfig = require( '../rules/node/index' );
-const bestPracticesRuleset = require( '../rules/node/bestPractices' );
-const errorsRuleset = require( '../rules/node/errors' );
-const stylisticRuleset = require( '../rules/node/stylistic' );
-const deprecatedRuleset = require( '../rules/deprecated/node' );
+import nodeRules from '../rules/node/index.js';
+import bestPracticesRuleset from '../rules/node/bestPractices.js';
+import errorsRuleset from '../rules/node/errors.js';
+import stylisticRuleset from '../rules/node/stylistic.js';
+import deprecatedRuleset from '../rules/deprecated/node.js';
 
-describe( 'Import config', () => {
-  it( 'loads without error', () => {
-    expect( () => nodeConfig ).not.toThrow();
-  } );
-
-  it( 'includes the import rulesets', () => {
-    const extension = nodeConfig.extends;
-
-    expect( extension ).toHaveLength( 4 );
-
-    expect( extension[0].endsWith( 'rules/deprecated/node.js' ) ).toEqual( true );
-    expect( extension[1].endsWith( 'rules/node/bestPractices.js' ) ).toEqual( true );
-    expect( extension[2].endsWith( 'rules/node/errors.js' ) ).toEqual( true );
-    expect( extension[3].endsWith( 'rules/node/stylistic.js' ) ).toEqual( true );
-  } );
-
-  it( 'loads the import ESLint plugin', () => {
-    const { plugins } = nodeConfig;
-
-    expect( plugins ).toHaveLength( 1 );
-    expect( plugins.includes( 'eslint-plugin-node' ) ).toEqual( true );
+describe( 'Combined node rules', () => {
+  it( 'load without error', () => {
+    expect( () => nodeRules ).not.toThrow();
   } );
 } );
 
-describe( 'Imports module ruleset', () => {
+describe( 'Node best practices ruleset', () => {
   it( 'loads without error', () => {
     expect( () => bestPracticesRuleset ).not.toThrow();
   } );
 } );
 
-describe( 'Imports static analysis ruleset', () => {
+describe( 'Node errors ruleset', () => {
   it( 'loads without error', () => {
     expect( () => errorsRuleset ).not.toThrow();
   } );
 } );
 
-describe( 'Import stylistic ruleset', () => {
+describe( 'Node stylistic ruleset', () => {
   it( 'loads without error', () => {
     expect( () => stylisticRuleset ).not.toThrow();
   } );
 } );
 
-describe( 'Imports warning ruleset', () => {
+describe( 'Node deprecated ruleset', () => {
   it( 'loads without error', () => {
     expect( () => deprecatedRuleset ).not.toThrow();
   } );
