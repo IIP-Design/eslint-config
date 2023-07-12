@@ -1,9 +1,18 @@
-const rules = ['./index'].map( require.resolve );
+import baseConfig from './index.js';
 
-module.exports = {
-  'extends': rules,
-  parserOptions: {
-    ecmaFeatures: { globalReturn: true },
-    sourceType: 'script',
+const scriptConfig = [
+  ...baseConfig,
+  {
+    files: ['**/*.js'],
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: {
+          globalReturn: true,
+        },
+      },
+      sourceType: 'script',
+    },
   },
-};
+];
+
+export default scriptConfig;
