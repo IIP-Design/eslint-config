@@ -1,23 +1,35 @@
-const rules = [
-  './rules/deprecated/react.js',
-  './rules/react/a11y',
-  './rules/react/base',
-  './rules/react/hooks',
-  './rules/react/jsx',
-  './rules/react/no-prettier',
-].map( require.resolve );
+import hooksPlugin from 'eslint-plugin-react-hooks';
+import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
+import reactPlugin from 'eslint-plugin-react';
 
-module.exports = {
-  'extends': rules,
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
+import baseConfig from './index.js';
+import reactRules from './rules/react/index.js';
+
+const reactConfig = [
+  ...baseConfig,
+  {
+    files: [
+      '**/*.js', '**/*.jsx', '**/*.tsx',
+    ],
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true,
+      },
+    },
+    plugins: {
+      'jsx-a11y': jsxA11yPlugin,
+      react: reactPlugin,
+      'react-hooks': hooksPlugin,
+    },
+    rules: {
+      ...reactRules,
+    },
+    settings: {
+      react: {
+        version: 'detect',
+      },
     },
   },
-  plugins: ['eslint-plugin-react'],
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
-};
+];
+
+export default reactConfig;
