@@ -32,6 +32,15 @@ _This sections lists changes committed to main since most recent release_
   - `import/consistent-type-specifier-style` at the level `error` and the style of `prefer-top-level`. (added v2.27.0)
   - Set the `considerComments` option on the `import/newline-after-import` rule to `true`.
 
+**Changed:**
+
+- **BREAKING** Switched to the new ESLint flat configuration.
+- Updated all rules packages to the ES modules style.
+
+**Removed:**
+
+- **BREAKING** The Prettier rules and configuration deprecated in v1.6.0.
+
 **Build:**
 
 - Update dependencies:
@@ -43,6 +52,8 @@ _This sections lists changes committed to main since most recent release_
   - `eslint-plugin-react`: 7.29.4 => 7.32.2
   - `eslint-plugin-react-hooks`: 4.4.0 => 4.6.0
   - `jest`: 27.5.1 => 29.6.1
+- Set package type to `module`.
+- Updated unit tests to work with the new ESM/flat config setup.
 
 ## [v1.6.1](https://github.com/IIP-Design/eslint-config/compare/v1.6.0...v1.6.1) - 2022.04.19
 

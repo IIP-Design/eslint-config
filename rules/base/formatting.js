@@ -166,7 +166,9 @@ const configurableFormatRules = {
   ],
 };
 
-export default {
+const formatRules = {
   ...baseFormatRules,
   ...configurableFormatRules,
 };
+
+export default formatRules;

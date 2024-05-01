@@ -9,7 +9,9 @@ import nodeRules from './rules/node/index.js';
 
 const baseConfig = [
   {
-    files: ['**/*.js'],
+    files: [
+      '**/*.js', '**/*.cjs', '**/*.mjs',
+    ],
     languageOptions: {
       ecmaVersion: 'latest',
       globals: {
