@@ -1,3 +1,13 @@
+/*
+ * The Lab team traditionally used Prettier for formatting and ESLint for linting.
+ * Since ESLint provides nearly all of the capabilities of Prettier, we opted for
+ * reduced tooling and now allow ESLint to handle both tasks.
+ *
+ * While the Lab's Prettier config was deprecate in version 1.6.0 of this package,
+ * we still split up the formatting rules into those handled by Prettier and those
+ * handled by ESLint should a future iteration of the team choose to go back to Prettier.
+ */
+
 // Configure the rules typically disabled by Prettier.
 // For using the default setup without Prettier.
 const baseFormatRules = {

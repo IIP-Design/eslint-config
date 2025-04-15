@@ -1,7 +1,7 @@
 /**
  * These rules relate to variable declarations.
  */
-import confusingGlobals from './confusingGlobals.js';
+import confusingGlobals from './confusingGlobals';
 
 const variableRules = {
   'init-declarations': 'off',

@@ -1,19 +1,22 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { config } from 'typescript-eslint';
 import hooksPlugin from 'eslint-plugin-react-hooks';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
 import reactPlugin from 'eslint-plugin-react';
 
-import baseConfig from './index.js';
-import reactRules from './rules/react/index.js';
+import reactRules from './rules/react/index';
 
-const reactConfig = [
-  ...baseConfig,
+const reactConfig = config(
   {
     files: [
-      '**/*.js', '**/*.jsx', '**/*.tsx',
+      '**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx',
     ],
-    parserOptions: {
-      ecmaFeatures: {
-        jsx: true,
+    name: 'gpalab/react',
+    languageOptions: {
+      parserOptions: {
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
     },
     plugins: {
@@ -22,7 +25,7 @@ const reactConfig = [
       'react-hooks': hooksPlugin,
     },
     rules: {
-      ...reactRules,
+      ...reactRules as Partial<Record<string, any>>,
     },
     settings: {
       react: {
@@ -30,6 +33,6 @@ const reactConfig = [
       },
     },
   },
-];
+);
 
 export default reactConfig;

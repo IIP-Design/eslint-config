@@ -1,18 +1,15 @@
-import baseConfig from './index.js';
+/* eslint-disable import-x/extensions */
+import { defineConfig } from 'eslint/config';
+
+import tsConfig from './dist/typescript.js';
 
 const config = [
-  ...baseConfig,
   {
-    files: ['**/*.js'],
-    rules: {
-      'import/extensions': [
-        'warn',
-        'always',
-      ],
-      'import/no-useless-path-segments': 'off',
-      'node/file-extension-in-import': ['error', 'always'],
-    },
+    ignores: [
+      '__tests__/*', 'coverage/*', 'dist/*',
+    ],
   },
+  ...tsConfig,
 ];
 
-export default config;
+export default defineConfig( config );

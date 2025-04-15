@@ -9,7 +9,7 @@ const bestPracticeRules = {
     'warn',
     {
       enforceForClassFields: false,
-      exceptMethods: [],
+      exceptMethods: [] as string[],
     },
   ],
   complexity: 'off',
@@ -47,7 +47,7 @@ const bestPracticeRules = {
   'no-extra-bind': 'error',
   'no-extra-label': 'error',
   'no-fallthrough': 'error',
-  'no-global-assign': ['error', { exceptions: [] }],
+  'no-global-assign': ['error', { exceptions: [] as string[] }],
   'no-implicit-coercion': 'off',
   'no-implicit-globals': 'off',
   'no-implied-eval': 'error',

@@ -27,7 +27,7 @@ const stylisticRules = {
     'error',
     {
       newIsCap: true,
-      newIsCapExceptions: [],
+      newIsCapExceptions: [] as string[],
       capIsNew: false,
       capIsNewExceptions: [
         'Immutable.Map', 'Immutable.Set', 'Immutable.List',
@@ -49,22 +49,22 @@ const stylisticRules = {
     {
       selector: 'ForInStatement',
       message:
-          'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
+        'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
     },
     {
       selector: 'ForOfStatement',
       message:
-          'iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations.',
+        'iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations.',
     },
     {
       selector: 'LabeledStatement',
       message:
-          'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+        'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
     },
     {
       selector: 'WithStatement',
       message:
-          '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
+        '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
     },
   ],
   'no-ternary': 'off',
@@ -75,18 +75,22 @@ const stylisticRules = {
   'padding-line-between-statements': [
     'error',
     { blankLine: 'always', prev: '*', next: 'return' },
-    { blankLine: 'always',
+    {
+      blankLine: 'always',
       prev: [
         'const', 'let', 'var',
       ],
-      next: '*' },
-    { blankLine: 'any',
+      next: '*',
+    },
+    {
+      blankLine: 'any',
       prev: [
         'const', 'let', 'var',
       ],
       next: [
         'const', 'let', 'var',
-      ] },
+      ],
+    },
   ],
   'prefer-exponentiation-operator': 'off',
   'prefer-object-spread': 'error',

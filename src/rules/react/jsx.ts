@@ -12,7 +12,7 @@ const reactJsxRules = {
     'warn',
     {
       extensions: [
-        '.js', '.jsx', '.mdx',
+        '.jsx', '.mdx', '.tsx',
       ],
     },
   ],
