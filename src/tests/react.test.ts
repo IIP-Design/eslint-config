@@ -1,16 +1,19 @@
-import reactConfig from '../react.js';
-import a11yRuleset from '../rules/react/a11y.js';
-import baseRuleset from '../rules/react/base.js';
-import deprecatedRuleset from '../rules/deprecated/react.js';
-import hooksRuleset from '../rules/react/hooks.js';
-import jsxRuleset from '../rules/react/jsx.js';
-import formatRuleset from '../rules/react/formatting.js';
+import reactConfig from '../react';
+import a11yRuleset from '../rules/react/a11y';
+import baseRuleset from '../rules/react/base';
+import deprecatedRuleset from '../rules/deprecated/react';
+import hooksRuleset from '../rules/react/hooks';
+import jsxRuleset from '../rules/react/jsx';
+import formatRuleset from '../rules/react/formatting';
+
+interface IReactSettings {
+  version: string
+}
+
+const jsxFileExts = ['.jsx', '.tsx'];
 
 describe( 'React config', () => {
-  let baseConfigObject = {};
-  let testConfigObject = {};
-  let webpackConfigObject = {};
-  let reactConfigObject = {};
+  const [reactConfigObject] = reactConfig;
 
   it( 'loads without error', () => {
     expect( () => reactConfig ).not.toThrow();
@@ -18,16 +21,15 @@ describe( 'React config', () => {
 
   it( 'includes the base configuration along with the React rulesets', () => {
     expect( Array.isArray( reactConfig ) ).toEqual( true );
-    expect( reactConfig ).toHaveLength( 4 );
+    expect( reactConfig ).toHaveLength( 1 );
 
-    [
-      baseConfigObject, testConfigObject, webpackConfigObject, reactConfigObject,
-    ] = reactConfig;
+    // Inspect the React-specific configuration objct.
+    expect( reactConfigObject.name ).toEqual( 'gpalab/react' );
+    expect( reactConfigObject.files ).toHaveLength( 2 );
 
-    expect( baseConfigObject.files.includes( '**/*.js' ) ).toEqual( true );
-    expect( testConfigObject.files.includes( '**/*.test.js' ) ).toEqual( true );
-    expect( webpackConfigObject.files.includes( '**/webpack.*.js' ) ).toEqual( true );
-    expect( reactConfigObject.files.includes( '**/*.js', '**/*.jsx', '**/*.tsx' ) ).toEqual( true );
+    jsxFileExts.forEach( ext => {
+      expect( reactConfigObject.files.includes( `**/*${ext}` ) ).toEqual( true );
+    } );
   } );
 
   it( 'includes the React, JSX a11y, and hooks plugins', () => {
@@ -43,24 +45,25 @@ describe( 'React config', () => {
   } );
 
   it( 'enables the use of JSX', () => {
-    expect( reactConfigObject.parserOptions ).toBeDefined();
+    const parserOptions = reactConfigObject?.languageOptions?.parserOptions;
 
-    const { ecmaFeatures } = reactConfigObject.parserOptions;
+    expect( parserOptions ).toBeDefined();
+
+    const { ecmaFeatures } = parserOptions;
 
     expect( ecmaFeatures ).toBeDefined();
     expect( ecmaFeatures.jsx ).toEqual( true );
   } );
 
   it( "detects the user's version of React", () => {
-    expect( reactConfigObject.settings ).toBeDefined();
-
-    const reactSettings = reactConfigObject.settings.react;
+    const reactSettings = reactConfigObject?.settings?.react as IReactSettings;
 
     expect( reactSettings ).toBeDefined();
     expect( reactSettings.version ).toEqual( 'detect' );
   } );
 } );
 
+// Confirm that each of the constituent rulesets load without issue.
 describe( 'React accessibility ruleset', () => {
   it( 'loads without error', () => {
     expect( () => a11yRuleset ).not.toThrow();

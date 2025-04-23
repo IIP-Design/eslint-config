@@ -1,35 +1,46 @@
-import defaultConfig from '../index.js';
+import defaultConfig from '../index';
 
-import deprecatedRuleset from '../rules/deprecated/deprecated.js';
-import bestPracticesRuleset from '../rules/base/bestPractices.js';
-import errorsRuleset from '../rules/base/errors.js';
-import es6Ruleset from '../rules/base/es6.js';
-import strictRuleset from '../rules/base/strict.js';
-import stylisticRuleset from '../rules/base/stylistic.js';
-import variablesRuleset from '../rules/base/variables.js';
-import importRuleset from '../rules/import/index.js';
-import nodeRuleset from '../rules/node/index.js';
+import deprecatedRuleset from '../rules/deprecated/deprecated';
+import bestPracticesRuleset from '../rules/base/bestPractices';
+import errorsRuleset from '../rules/base/errors';
+import es6Ruleset from '../rules/base/es6';
+import strictRuleset from '../rules/base/strict';
+import stylisticRuleset from '../rules/base/stylistic';
+import variablesRuleset from '../rules/base/variables';
+import importRuleset from '../rules/import/index';
+import nodeRuleset from '../rules/node/index';
 
 describe( 'Default config', () => {
-  let baseConfigObject = {};
-  let testConfigObject = {};
-  let webpackConfigObject = {};
+  // The default config is composed of four sub-configs that we extract here.
+  const [
+    baseConfigObject, jestConfigObject, testConfigObject, configsConfigObject,
+  ] = defaultConfig;
 
   it( 'loads without error', () => {
     expect( () => defaultConfig ).not.toThrow();
   } );
 
-  it( 'is a list of rulesets that contains rules for JS files, tests, and Webpack configs', () => {
+  it( 'is a list of rulesets that contains rules for JS files, tests, and configuration file configs', () => {
     expect( Array.isArray( defaultConfig ) ).toEqual( true );
-    expect( defaultConfig ).toHaveLength( 3 );
+    expect( defaultConfig ).toHaveLength( 4 );
 
-    [
-      baseConfigObject, testConfigObject, webpackConfigObject,
-    ] = defaultConfig;
-
+    // Make sure that the base config applies to JS files.
     expect( baseConfigObject.files.includes( '**/*.js' ) ).toEqual( true );
-    expect( testConfigObject.files.includes( '**/*.test.js' ) ).toEqual( true );
-    expect( webpackConfigObject.files.includes( '**/webpack.*.js' ) ).toEqual( true );
+    expect( baseConfigObject.name ).toEqual( 'gpalab/recommended' );
+
+    // Make sure that the jest and test configs apply to both Typescript and JS test files.
+    expect( jestConfigObject.files.includes( '**/*.test.{js,ts}' ) ).toEqual( true );
+    expect( testConfigObject.files.includes( '**/*.test.{js,ts}' ) ).toEqual( true );
+    expect( testConfigObject.name ).toEqual( 'gpalab/test-files' );
+
+    // Make sure that the configuration file config apply only to files.
+    const regex = new RegExp( /\b(?:config|webpack|eslint|jest)\b/ );
+
+    configsConfigObject.files.forEach( file => {
+      expect( regex.test( file as string ) ).toBe( true );
+    } );
+
+    expect( configsConfigObject.name ).toEqual( 'gpalab/config-files' );
   } );
 
   it( 'includes the import and node plugins in the base ruleset', () => {
@@ -39,11 +50,11 @@ describe( 'Default config', () => {
 
     expect( Object.keys( plugins ).length ).toEqual( 2 );
 
-    expect( plugins.import ).toBeDefined();
-    expect( plugins.node ).toBeDefined();
+    expect( plugins['import-x'] ).toBeDefined();
+    expect( plugins.n ).toBeDefined();
   } );
 
-  it( 'includes the jest plugins in the tests ruleset', () => {
+  it( 'includes the Jest plugins in the tests ruleset', () => {
     expect( testConfigObject.plugins ).toBeDefined();
 
     const { plugins } = testConfigObject;
@@ -69,6 +80,7 @@ describe( 'Default config', () => {
   } );
 } );
 
+// Confirm that each of the constituent rulesets load without issue.
 describe( 'Deprecated ruleset', () => {
   it( 'loads without error', () => {
     expect( () => deprecatedRuleset ).not.toThrow();

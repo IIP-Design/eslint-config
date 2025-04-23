@@ -1,8 +1,8 @@
-import importRules from '../rules/import/index.js';
-import moduleRuleset from '../rules/import/module.js';
-import staticAnalysisRuleset from '../rules/import/staticAnalysis.js';
-import stylisticRuleset from '../rules/import/stylistic.js';
-import warningsRuleset from '../rules/import/warnings.js';
+import importRules from '../rules/import/index';
+import moduleRuleset from '../rules/import/module';
+import staticAnalysisRuleset from '../rules/import/staticAnalysis';
+import stylisticRuleset from '../rules/import/stylistic';
+import warningsRuleset from '../rules/import/warnings';
 
 describe( 'Combined import rules', () => {
   it( 'load without error', () => {
@@ -10,6 +10,7 @@ describe( 'Combined import rules', () => {
   } );
 } );
 
+// Confirm that each of the constituent rulesets load without issue.
 describe( 'Imports module ruleset', () => {
   it( 'loads without error', () => {
     expect( () => moduleRuleset ).not.toThrow();
