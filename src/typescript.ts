@@ -14,6 +14,7 @@ const scriptConfig = config(
     languageOptions: {
       parser,
     },
+    name: 'gpalab/typescript',
     plugins: {
       '@typescript-eslint': plugin,
     },
