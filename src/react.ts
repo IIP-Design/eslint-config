@@ -6,11 +6,11 @@ import reactPlugin from 'eslint-plugin-react';
 
 import reactRules from './rules/react/index';
 
+import { extensions, allFilesWithExts } from './constants';
+
 const reactConfig = config(
   {
-    files: [
-      '**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx',
-    ],
+    files: allFilesWithExts( extensions.react ),
     name: 'gpalab/react',
     languageOptions: {
       parserOptions: {

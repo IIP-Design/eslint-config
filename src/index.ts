@@ -10,11 +10,11 @@ import baseRules from './rules/base/index';
 import importRules from './rules/import/index';
 import nodeRules from './rules/node/index';
 
+import { extensions, allFilesWithExts } from './constants';
+
 const baseConfig = config(
   {
-    files: [
-      '**/*.cjs', '**/*.js', '**/*.jsx', '**/*.mjs', '**/*.ts', '**/*.tsx',
-    ],
+    files: allFilesWithExts( extensions.all ),
     languageOptions: {
       ecmaVersion: 'latest',
       globals: {
@@ -43,20 +43,14 @@ const baseConfig = config(
       ...nodeRules as Partial<Record<string, any>>,
     },
     settings: {
-      'import-x/extensions': [
-        '.cjs', '.js', '.jsx', '.mjs', '.ts', '.tsx',
-      ],
+      'import-x/extensions': extensions.all,
       'import-x/parsers': {
-        espree: [
-          '.js', '.cjs', '.mjs', '.jsx',
-        ],
-        '@typescript-eslint/parser': ['.ts', '.tsx'],
+        espree: [...extensions.js, '.jsx'],
+        '@typescript-eslint/parser': extensions.ts,
       },
       'import-x/resolver-next': [createNodeResolver()],
       n: {
-        tryExtensions: [
-          '.cjs', '.js', '.jsx', '.mjs', '.ts', '.tsx',
-        ],
+        tryExtensions: extensions.all,
       },
     },
   },

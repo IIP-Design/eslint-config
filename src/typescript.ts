@@ -4,10 +4,12 @@ import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescrip
 
 import baseConfig from './index';
 
+import { extensions, allFilesWithExts } from './constants';
+
 const scriptConfig = config(
   baseConfig,
   {
-    files: ['**/*.ts', '**/*.tsx'],
+    files: allFilesWithExts( extensions.ts ),
     'extends': [configs.recommended],
     languageOptions: {
       parser,
