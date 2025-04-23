@@ -3,7 +3,7 @@ import globals from 'globals';
 import { config } from 'typescript-eslint';
 import importPlugin, { createNodeResolver } from 'eslint-plugin-import-x';
 
-// import jestPlugin from 'eslint-plugin-jest';
+import jestPlugin from 'eslint-plugin-jest';
 import nodePlugin from 'eslint-plugin-n';
 
 import baseRules from './rules/base/index';
@@ -55,27 +55,35 @@ const baseConfig = config(
     },
   },
   {
-    files: ['**/*.test.js'],
+    'extends': [jestPlugin.configs['flat/recommended']],
+    files: ['**/*.test.{js,ts}'],
     languageOptions: {
       globals: {
         ...globals.jest,
       },
     },
-    // plugins: {
-    //   jest: jestPlugin,
-    // },
-  },
-  {
-    // Allow use of dev dependencies in webpack configs
-    files: ['**/webpack.*.js'],
+    name: 'gpalab/test-files',
     rules: {
-      'n/no-unpublished-require': 'off',
+      // For some reason this rule crashes the linter on test files.
+      'import-x/dynamic-import-chunkname': 'off',
+    },
+    plugins: {
+      jest: jestPlugin,
     },
   },
   {
-    files: ['**/eslint.config.js'],
+    // Allow use of dev dependencies in config files
+    files: [
+      '**/webpack.*.{js,ts}',
+      '**/jest.config.{js,ts}',
+      '**/eslint.config.{js,ts}',
+      '**/vite.config.{js,ts}',
+    ],
+    name: 'gpalab/config-files',
     rules: {
       'n/file-extension-in-import': 'off',
+      'n/no-unpublished-require': 'off',
+      'n/no-unpublished-import': 'off',
     },
   },
 );

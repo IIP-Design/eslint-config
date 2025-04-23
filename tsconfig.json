@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "noImplicitAny": true,
+    "downlevelIteration": true,
     "esModuleInterop": true,
+    "noImplicitAny": true,
     "outDir": "dist",
-    "removeComments": true
+    "removeComments": true,
   },
   "include": [
     "src"
