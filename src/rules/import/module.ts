@@ -1,4 +1,6 @@
-const importModuleRules = {
+import { TSESLint } from '@typescript-eslint/utils';
+
+const importModuleRules: TSESLint.SharedConfig.RulesRecord = {
   'import-x/no-amd': 'error',
   'import-x/no-commonjs': 'off',
   'import-x/no-import-module-exports': 'off',

@@ -1031,8 +1031,9 @@ const variableRules = {
     'no-delete-var': 'error',
     'no-label-var': 'error',
     'no-restricted-globals': [
-        'error'
-    ].concat(confusingGlobals),
+        'error',
+        ...confusingGlobals
+    ],
     'no-shadow': [
         'error',
         {

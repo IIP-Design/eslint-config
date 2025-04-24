@@ -1,3 +1,5 @@
+import { TSESLint } from '@typescript-eslint/utils';
+
 /*
  * The Lab team traditionally used Prettier for formatting and ESLint for linting.
  * Since ESLint provides nearly all of the capabilities of Prettier, we opted for
@@ -10,7 +12,7 @@
 
 // Configure the rules typically disabled by Prettier.
 // For using the default setup without Prettier.
-const baseFormatRules = {
+const baseFormatRules: TSESLint.SharedConfig.RulesRecord = {
   'array-bracket-newline': ['error', { multiline: true, minItems: 3 }],
   'array-bracket-spacing': ['error', 'never'],
   'array-element-newline': ['error', 'consistent'],
@@ -104,7 +106,7 @@ const baseFormatRules = {
 
 // Prettier leaves the following stylistic rules somewhat open to the user's discretion.
 // For more details see: https://github.com/prettier/eslint-config-prettier#special-rules
-const configurableFormatRules = {
+const configurableFormatRules: TSESLint.SharedConfig.RulesRecord = {
   'arrow-body-style': [
     'error',
     'as-needed',

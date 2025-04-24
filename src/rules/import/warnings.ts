@@ -1,4 +1,6 @@
-const importWarningRules = {
+import { TSESLint } from '@typescript-eslint/utils';
+
+const importWarningRules: TSESLint.SharedConfig.RulesRecord = {
   'import-x/export': 'error',
   'import-x/no-deprecated': 'error',
   'import-x/no-empty-named-blocks': 'error',

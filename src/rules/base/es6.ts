@@ -1,7 +1,9 @@
+import { TSESLint } from '@typescript-eslint/utils';
+
 /**
  * These rules relate to ES6, also known as ES2015.
  */
-const es6Rules = {
+const es6Rules: TSESLint.SharedConfig.RulesRecord = {
   'constructor-super': 'error',
   'no-class-assign': 'error',
   'no-const-assign': 'error',

@@ -1,4 +1,6 @@
-const jsxA11yRules = {
+import { TSESLint } from '@typescript-eslint/utils';
+
+const jsxA11yRules: TSESLint.SharedConfig.RulesRecord = {
   'jsx-a11y/alt-text': 'error',
   'jsx-a11y/anchor-ambiguous-text': 'off',
   'jsx-a11y/anchor-has-content': 'error',

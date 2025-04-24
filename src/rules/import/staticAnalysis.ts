@@ -1,4 +1,6 @@
-const importStaticAnalysisRules = {
+import { TSESLint } from '@typescript-eslint/utils';
+
+const importStaticAnalysisRules: TSESLint.SharedConfig.RulesRecord = {
   'import-x/default': 'off',
   'import-x/named': 'error',
   'import-x/namespace': 'off',

@@ -1,7 +1,9 @@
+import { TSESLint } from '@typescript-eslint/utils';
+
 /**
  * These rules relate to possible syntax or logic errors in JavaScript code.
  */
-const errorRules = {
+const errorRules: TSESLint.SharedConfig.RulesRecord = {
   'for-direction': 'error',
   'getter-return': ['error', { allowImplicit: true }],
   'no-async-promise-executor': 'error',

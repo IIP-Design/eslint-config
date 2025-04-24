@@ -1,7 +1,9 @@
+import { TSESLint } from '@typescript-eslint/utils';
+
 /**
  * These rules relate to style guidelines.
  */
-const stylisticRules = {
+const stylisticRules: TSESLint.SharedConfig.RulesRecord = {
   camelcase: ['error', { properties: 'never', ignoreDestructuring: false }],
   'capitalized-comments': 'off',
   'consistent-this': 'off',

@@ -1,5 +1,7 @@
+import { TSESLint } from '@typescript-eslint/utils';
+
 // Enable ESLint React rules typically handled by Prettier.
-const reactFormattingRules = {
+const reactFormattingRules: TSESLint.SharedConfig.RulesRecord = {
   'react/jsx-child-element-spacing': 'error',
   'react/jsx-closing-bracket-location': ['error', 'line-aligned'],
   'react/jsx-closing-tag-location': 'error',

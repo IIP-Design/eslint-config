@@ -1,3 +1,5 @@
+import { TSESLint } from '@typescript-eslint/utils';
+
 // module.exports = {
 //   env: {
 //     jest: true,
@@ -6,6 +8,6 @@
 //   plugins: ['eslint-plugin-jest'],
 // };
 
-const jestRules = {};
+const jestRules: TSESLint.SharedConfig.RulesRecord = {};
 
 export default jestRules;

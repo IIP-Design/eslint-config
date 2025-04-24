@@ -1,4 +1,6 @@
-const importStylisticRules = {
+import { TSESLint } from '@typescript-eslint/utils';
+
+const importStylisticRules: TSESLint.SharedConfig.RulesRecord = {
   'import-x/consistent-type-specifier-style': ['error', 'prefer-top-level'],
   'import-x/dynamic-import-chunkname': ['warn', { allowEmpty: true }],
   'import-x/exports-last': 'off',

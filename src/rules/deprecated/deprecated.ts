@@ -1,13 +1,15 @@
+import { TSESLint } from '@typescript-eslint/utils';
+
 /**
  * Deprecated rules listed in reverse chronological order relative to their
  * deprecation date and annotated with the following information:
  * package - version when deprecated - replacement rule if any
  *
  * ESLint's deprecation policy can be found here: https://eslint.org/docs/user-guide/rule-deprecation
- * A list of all deprecated rules can be found here: https://eslint.org/docs/rules/#deprecated
+ * A list of all deprecated rules can be found here: https://eslint.org/docs/latest/rules/#deprecated
  *
  */
-const deprecatedEslintRules = {
+const deprecatedEslintRules: TSESLint.SharedConfig.RulesRecord = {
   'id-blacklist': 'off', // ESLint - v7.4.0 - id-denylist'
   'callback-return': 'off', // ESLint - v7.0.0 - eslint-plugin-node
   'global-require': 'off', // ESLint - v7.0.0 - eslint-plugin-node

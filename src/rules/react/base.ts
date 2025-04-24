@@ -1,4 +1,6 @@
-const reactBaseRules = {
+import { TSESLint } from '@typescript-eslint/utils';
+
+const reactBaseRules:TSESLint.SharedConfig.RulesRecord = {
   'react/boolean-prop-naming': 'off',
   'react/button-has-type': [
     'error',

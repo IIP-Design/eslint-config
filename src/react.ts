@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { config } from 'typescript-eslint';
 import hooksPlugin from 'eslint-plugin-react-hooks';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
@@ -25,7 +24,7 @@ const reactConfig = config(
       'react-hooks': hooksPlugin,
     },
     rules: {
-      ...reactRules as Partial<Record<string, any>>,
+      ...reactRules,
     },
     settings: {
       react: {

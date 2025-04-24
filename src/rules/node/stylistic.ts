@@ -1,4 +1,6 @@
-const nodeStylisticRules = {
+import { TSESLint } from '@typescript-eslint/utils';
+
+const nodeStylisticRules: TSESLint.SharedConfig.RulesRecord = {
   'n/callback-return': 'error',
   'n/exports-style': [
     'error', 'module.exports', { allowBatchAssign: true },

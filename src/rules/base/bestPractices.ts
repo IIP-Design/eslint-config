@@ -1,7 +1,9 @@
+import { TSESLint } from '@typescript-eslint/utils';
+
 /**
  * These rules relate to better ways of doing things to help avoid problems.
  */
-const bestPracticeRules = {
+const bestPracticeRules: TSESLint.SharedConfig.RulesRecord = {
   'accessor-pairs': 'off',
   'array-callback-return': ['error', { allowImplicit: true }],
   'block-scoped-var': 'error',

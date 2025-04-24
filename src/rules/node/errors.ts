@@ -1,4 +1,6 @@
-const nodeErrorRules = {
+import { TSESLint } from '@typescript-eslint/utils';
+
+const nodeErrorRules: TSESLint.SharedConfig.RulesRecord = {
   'n/handle-callback-err': 'off',
   'n/no-callback-literal': 'off',
   'n/no-exports-assign': 'error',

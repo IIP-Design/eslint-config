@@ -1,13 +1,15 @@
+import { TSESLint } from '@typescript-eslint/utils';
+
 /**
  * These rules relate to variable declarations.
  */
 import confusingGlobals from './confusingGlobals';
 
-const variableRules = {
+const variableRules: TSESLint.SharedConfig.RulesRecord = {
   'init-declarations': 'off',
   'no-delete-var': 'error',
   'no-label-var': 'error',
-  'no-restricted-globals': ['error'].concat( confusingGlobals ),
+  'no-restricted-globals': ['error', ...confusingGlobals],
   'no-shadow': [
     'error',
     {

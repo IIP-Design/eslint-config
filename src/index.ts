@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import globals from 'globals';
 import { config } from 'typescript-eslint';
 import importPlugin, { createNodeResolver } from 'eslint-plugin-import-x';
@@ -38,9 +37,9 @@ const baseConfig = config(
       n: nodePlugin,
     },
     rules: {
-      ...baseRules as Partial<Record<string, any>>,
-      ...importRules as Partial<Record<string, any>>,
-      ...nodeRules as Partial<Record<string, any>>,
+      ...baseRules,
+      ...importRules,
+      ...nodeRules,
     },
     settings: {
       'import-x/extensions': extensions.all,
