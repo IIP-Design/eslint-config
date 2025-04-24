@@ -20,9 +20,7 @@ const bestPracticeRules: TSESLint.SharedConfig.RulesRecord = {
   'default-case-last': 'error',
   'default-param-last': 'off',
   'dot-notation': ['error', { allowKeywords: true }],
-  eqeqeq: [
-    'error', 'always', { 'null': 'ignore' },
-  ],
+  eqeqeq: ['error', 'smart'],
   'grouped-accessor-pairs': 'off',
   'guard-for-in': 'error',
   'logical-assignment-operators': ['error', 'never'],
@@ -154,10 +152,12 @@ const bestPracticeRules: TSESLint.SharedConfig.RulesRecord = {
   'no-useless-return': 'error',
   'no-void': 'error',
   'no-warning-comments': [
-    'warn', { terms: [
-      'todo', 'fixme', 'xxx',
-    ],
-    location: 'start' },
+    'warn', {
+      terms: [
+        'todo', 'fixme', 'xxx',
+      ],
+      location: 'start',
+    },
   ],
   'no-with': 'error',
   'prefer-named-capture-group': 'off',

@@ -6,6 +6,8 @@ import hooksRuleset from '../rules/react/hooks';
 import jsxRuleset from '../rules/react/jsx';
 import formatRuleset from '../rules/react/formatting';
 
+import { confirmRuleFormatIsValid } from './_helpers';
+
 interface IReactSettings {
   version: string
 }
@@ -68,11 +70,27 @@ describe( 'React accessibility ruleset', () => {
   it( 'loads without error', () => {
     expect( () => a11yRuleset ).not.toThrow();
   } );
+
+  it( 'contains rules that conform to the required format', () => {
+    const rules = Object.entries( a11yRuleset );
+
+    rules.forEach( ( [name, value] ) => {
+      expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
+    } );
+  } );
 } );
 
 describe( 'React base ruleset', () => {
   it( 'loads without error', () => {
     expect( () => baseRuleset ).not.toThrow();
+  } );
+
+  it( 'contains rules that conform to the required format', () => {
+    const rules = Object.entries( baseRuleset );
+
+    rules.forEach( ( [name, value] ) => {
+      expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
+    } );
   } );
 } );
 
@@ -80,11 +98,27 @@ describe( 'Deprecated React ruleset', () => {
   it( 'loads without error', () => {
     expect( () => deprecatedRuleset ).not.toThrow();
   } );
+
+  it( 'contains rules that conform to the required format', () => {
+    const rules = Object.entries( deprecatedRuleset );
+
+    rules.forEach( ( [name, value] ) => {
+      expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
+    } );
+  } );
 } );
 
 describe( 'React hooks ruleset', () => {
   it( 'loads without error', () => {
     expect( () => hooksRuleset ).not.toThrow();
+  } );
+
+  it( 'contains rules that conform to the required format', () => {
+    const rules = Object.entries( hooksRuleset );
+
+    rules.forEach( ( [name, value] ) => {
+      expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
+    } );
   } );
 } );
 
@@ -92,10 +126,26 @@ describe( 'React JSX ruleset', () => {
   it( 'loads without error', () => {
     expect( () => jsxRuleset ).not.toThrow();
   } );
+
+  it( 'contains rules that conform to the required format', () => {
+    const rules = Object.entries( jsxRuleset );
+
+    rules.forEach( ( [name, value] ) => {
+      expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
+    } );
+  } );
 } );
 
 describe( 'React formatting ruleset', () => {
   it( 'loads without error', () => {
     expect( () => formatRuleset ).not.toThrow();
+  } );
+
+  it( 'contains rules that conform to the required format', () => {
+    const rules = Object.entries( formatRuleset );
+
+    rules.forEach( ( [name, value] ) => {
+      expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
+    } );
   } );
 } );

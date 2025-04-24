@@ -11,7 +11,13 @@ const reactBaseRules:TSESLint.SharedConfig.RulesRecord = {
     },
   ],
   'react/default-props-match-prop-types': 'off',
-  'react/destructuring-assignment': ['warn', 'always'],
+  'react/destructuring-assignment': [
+    'warn',
+    'always',
+    {
+      destructureInSignature: 'ignore',
+    },
+  ],
   'react/display-name': 'off',
   'react/forbid-component-props': 'off',
   'react/forbid-dom-props': 'off',

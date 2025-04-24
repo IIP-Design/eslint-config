@@ -10,6 +10,8 @@ import variablesRuleset from '../rules/base/variables';
 import importRuleset from '../rules/import/index';
 import nodeRuleset from '../rules/node/index';
 
+import { confirmRuleFormatIsValid } from './_helpers';
+
 describe( 'Default config', () => {
   // The default config is composed of four sub-configs that we extract here.
   const [
@@ -85,11 +87,27 @@ describe( 'Deprecated ruleset', () => {
   it( 'loads without error', () => {
     expect( () => deprecatedRuleset ).not.toThrow();
   } );
+
+  it( 'contains rules that conform to the required format', () => {
+    const rules = Object.entries( deprecatedRuleset );
+
+    rules.forEach( ( [name, value] ) => {
+      expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
+    } );
+  } );
 } );
 
 describe( 'Best practices ruleset', () => {
   it( 'loads without error', () => {
     expect( () => bestPracticesRuleset ).not.toThrow();
+  } );
+
+  it( 'contains rules that conform to the required format', () => {
+    const rules = Object.entries( bestPracticesRuleset );
+
+    rules.forEach( ( [name, value] ) => {
+      expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
+    } );
   } );
 } );
 
@@ -97,10 +115,27 @@ describe( 'Errors ruleset', () => {
   it( 'loads without error', () => {
     expect( () => errorsRuleset ).not.toThrow();
   } );
+
+  it( 'contains rules that conform to the required format', () => {
+    const rules = Object.entries( errorsRuleset );
+
+    rules.forEach( ( [name, value] ) => {
+      expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
+    } );
+  } );
 } );
+
 describe( 'ES6 base ruleset', () => {
   it( 'loads without error', () => {
     expect( () => es6Ruleset ).not.toThrow();
+  } );
+
+  it( 'contains rules that conform to the required format', () => {
+    const rules = Object.entries( es6Ruleset );
+
+    rules.forEach( ( [name, value] ) => {
+      expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
+    } );
   } );
 } );
 
@@ -108,17 +143,41 @@ describe( 'Strict mode ruleset', () => {
   it( 'loads without error', () => {
     expect( () => strictRuleset ).not.toThrow();
   } );
+
+  it( 'contains rules that conform to the required format', () => {
+    const rules = Object.entries( strictRuleset );
+
+    rules.forEach( ( [name, value] ) => {
+      expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
+    } );
+  } );
 } );
 
 describe( 'Stylistic ruleset', () => {
   it( 'loads without error', () => {
     expect( () => stylisticRuleset ).not.toThrow();
   } );
+
+  it( 'contains rules that conform to the required format', () => {
+    const rules = Object.entries( stylisticRuleset );
+
+    rules.forEach( ( [name, value] ) => {
+      expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
+    } );
+  } );
 } );
 
 describe( 'Variables ruleset', () => {
   it( 'loads without error', () => {
     expect( () => variablesRuleset ).not.toThrow();
+  } );
+
+  it( 'contains rules that conform to the required format', () => {
+    const rules = Object.entries( variablesRuleset );
+
+    rules.forEach( ( [name, value] ) => {
+      expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
+    } );
   } );
 } );
 

@@ -41,7 +41,7 @@ const stylisticRules: TSESLint.SharedConfig.RulesRecord = {
   'no-continue': 'error',
   'no-inline-comments': 'off',
   'no-lonely-if': 'error',
-  'no-multi-assign': ['error'],
+  'no-multi-assign': 'error',
   'no-negated-condition': 'off',
   'no-nested-ternary': 'error',
   'no-new-object': 'error',
