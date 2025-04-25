@@ -65,12 +65,18 @@ const baseConfig = config(
       },
     },
     name: 'gpalab/test-files',
+    plugins: {
+      jest: jestPlugin,
+    },
     rules: {
       // For some reason this rule crashes the linter on test files.
       'import-x/dynamic-import-chunkname': 'off',
-    },
-    plugins: {
-      jest: jestPlugin,
+      'n/no-unpublished-import': [
+        'error',
+        {
+          allowModules: ['vitest'],
+        },
+      ],
     },
   },
   {
