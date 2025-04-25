@@ -1400,12 +1400,20 @@ const baseConfig = config({
         globals: _extends({}, globals.jest)
     },
     name: 'gpalab/test-files',
-    rules: {
-        // For some reason this rule crashes the linter on test files.
-        'import-x/dynamic-import-chunkname': 'off'
-    },
     plugins: {
         jest: jestPlugin
+    },
+    rules: {
+        // For some reason this rule crashes the linter on test files.
+        'import-x/dynamic-import-chunkname': 'off',
+        'n/no-unpublished-import': [
+            'error',
+            {
+                allowModules: [
+                    'vitest'
+                ]
+            }
+        ]
     }
 }, {
     // Allow use of dev dependencies in config files

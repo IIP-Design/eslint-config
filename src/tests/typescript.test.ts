@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import tsConfig from '../typescript';
 
 describe( 'The TypeScript configuration', () => {

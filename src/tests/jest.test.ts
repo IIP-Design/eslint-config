@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import jestRuleset from '../rules/testing/jest';
 
 describe( 'Jest ruleset', () => {

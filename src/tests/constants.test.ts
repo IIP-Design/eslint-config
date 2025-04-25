@@ -1,3 +1,4 @@
+import { describe, expect, it } from 'vitest';
 import { allFilesWithExts } from '../constants';
 
 describe( 'The glob pattern helper function', () => {

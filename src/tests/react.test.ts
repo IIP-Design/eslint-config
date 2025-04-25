@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import reactConfig from '../react';
 import a11yRuleset from '../rules/react/a11y';
 import baseRuleset from '../rules/react/base';

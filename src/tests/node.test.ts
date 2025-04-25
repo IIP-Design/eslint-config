@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import nodeRules from '../rules/node/index';
 import bestPracticesRuleset from '../rules/node/bestPractices';
 import errorsRuleset from '../rules/node/errors';

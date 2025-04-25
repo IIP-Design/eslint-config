@@ -1,3 +1,5 @@
+import { describe, expect, it } from 'vitest';
+
 import importRules from '../rules/import/index';
 import moduleRuleset from '../rules/import/module';
 import staticAnalysisRuleset from '../rules/import/staticAnalysis';
