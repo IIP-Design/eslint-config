@@ -18,6 +18,17 @@ const config = [
       ],
     },
   },
+  {
+    files: ['.config/tsup.config.ts'],
+    rules: {
+      'n/no-unpublished-import': [
+        'error',
+        {
+          allowModules: ['tsup'],
+        },
+      ],
+    },
+  },
 ];
 
 export default defineConfig( config );
