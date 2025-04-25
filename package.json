@@ -54,7 +54,8 @@
     ".": "./dist/index.js",
     "./react": "./dist/react.js",
     "./script": "./dist/script.js",
-    "./typescript": "./dist/typescript.js"
+    "./typescript": "./dist/typescript.js",
+    "./typescript-tc": "./dist/typescript-tc.js"
   },
   "files": [
     "/dist"

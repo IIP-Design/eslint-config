@@ -51,6 +51,9 @@ const baseConfig = config(
       n: {
         tryExtensions: extensions.all,
       },
+      node: {
+        version: '>=20.0.0',
+      },
     },
   },
   {

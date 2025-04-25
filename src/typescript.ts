@@ -1,27 +1,5 @@
-import { config, configs, parser, plugin } from 'typescript-eslint';
-import { createNodeResolver } from 'eslint-plugin-import-x';
-import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
+import tsBaseConfig from './ts-base';
 
-import baseConfig from './index';
+const tsConfig = tsBaseConfig( false );
 
-import { extensions, allFilesWithExts } from './constants';
-
-const scriptConfig = config(
-  baseConfig,
-  {
-    files: allFilesWithExts( extensions.ts ),
-    'extends': [configs.recommended],
-    languageOptions: {
-      parser,
-    },
-    name: 'gpalab/typescript',
-    plugins: {
-      '@typescript-eslint': plugin,
-    },
-    settings: {
-      'import-x/resolver-next': [createTypeScriptImportResolver(), createNodeResolver()],
-    },
-  },
-);
-
-export default scriptConfig;
+export default tsConfig;
