@@ -55,6 +55,9 @@
     "./script": "./dist/script.js",
     "./typescript": "./dist/typescript.js"
   },
+  "files": [
+    "/dist"
+  ],
   "publishConfig": {
     "access": "public"
   },

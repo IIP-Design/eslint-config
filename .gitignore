@@ -1,6 +1,8 @@
+# Build Outputs
+dist/
+
 # Dependencies
 node_modules/
-package-lock.json
 
 # Editor Settings
 .vscode/*
