@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 /**
  * Some core ESLint rules do not support TypeScript syntax. In these cases, TypeScript ESLint

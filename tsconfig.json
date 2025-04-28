@@ -5,8 +5,10 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "noImplicitAny": true,
+    "noImplicitThis": true,
     "outDir": "dist",
     "removeComments": true,
+    "strictNullChecks": true
   },
   "include": [
     ".config/**/*",

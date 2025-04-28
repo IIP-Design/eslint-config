@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 import overrides from './overrides';
 
 const baseRules: TSESLint.SharedConfig.RulesRecord = {
@@ -82,15 +82,35 @@ const baseRules: TSESLint.SharedConfig.RulesRecord = {
 };
 
 const typeCheckedRules: TSESLint.SharedConfig.RulesRecord = {
-  // '@typescript-eslint/await-thenable': '',
+  '@typescript-eslint/await-thenable': 'error',
   '@typescript-eslint/no-array-delete': 'error',
   '@typescript-eslint/no-base-to-string': 'error',
-  // '@typescript-eslint/no-duplicate-type-constituents': '',
-  // '@typescript-eslint/no-floating-promises': '',
-  // '@typescript-eslint/no-for-in-array': '',
-  // '@typescript-eslint/no-implied-eval': '',
-  // '@typescript-eslint/no-misused-promises': '',
-  // '@typescript-eslint/no-redundant-type-constituents': '',
+  '@typescript-eslint/no-duplicate-type-constituents': [
+    'error',
+    {
+      ignoreIntersections: false,
+      ignoreUnions: false,
+    },
+  ],
+  '@typescript-eslint/no-floating-promises': [
+    'error',
+    {
+      checkThenables: false,
+      ignoreIIFE: false,
+      ignoreVoid: true,
+    },
+  ],
+  '@typescript-eslint/no-for-in-array': 'error',
+  '@typescript-eslint/no-implied-eval': 'error',
+  '@typescript-eslint/no-misused-promises': [
+    'error',
+    {
+      checksConditionals: true,
+      checksSpreads: true,
+      checksVoidReturn: true,
+    },
+  ],
+  '@typescript-eslint/no-redundant-type-constituents': 'error',
   '@typescript-eslint/no-unnecessary-type-assertion': 'error',
   '@typescript-eslint/no-unsafe-argument': 'error',
   '@typescript-eslint/no-unsafe-assignment': 'error',
@@ -99,12 +119,51 @@ const typeCheckedRules: TSESLint.SharedConfig.RulesRecord = {
   '@typescript-eslint/no-unsafe-member-access': 'error',
   '@typescript-eslint/no-unsafe-return': 'error',
   '@typescript-eslint/no-unsafe-unary-minus': 'error',
-  // '@typescript-eslint/only-throw-error': '',
-  // '@typescript-eslint/prefer-promise-reject-errors': '',
-  // '@typescript-eslint/require-await': '',
-  // '@typescript-eslint/restrict-plus-operands': '',
-  // '@typescript-eslint/restrict-template-expressions': '',
-  // '@typescript-eslint/return-await': '',
+  '@typescript-eslint/only-throw-error': [
+    'error',
+    {
+      allowThrowingAny: false,
+      allowThrowingUnknown: true,
+    },
+  ],
+  '@typescript-eslint/prefer-promise-reject-errors': [
+    'error',
+    {
+      allowEmptyReject: true,
+      allowThrowingAny: false,
+      allowThrowingUnknown: true,
+    },
+  ],
+  '@typescript-eslint/require-await': 'off',
+  '@typescript-eslint/restrict-plus-operands': [
+    'error',
+    {
+      allowAny: false,
+      allowBoolean: false,
+      allowNullish: false,
+      allowNumberAndString: false,
+      allowRegExp: false,
+      skipCompoundAssignments: false,
+    },
+  ],
+  '@typescript-eslint/restrict-template-expressions': [
+    'error',
+    {
+      allow: [
+        { name: [
+          'Error', 'URL', 'URLSearchParams',
+        ],
+        from: 'lib' },
+      ],
+      allowAny: false,
+      allowBoolean: true,
+      allowNever: false,
+      allowNullish: false,
+      allowNumber: true,
+      allowRegExp: false,
+    },
+  ],
+  '@typescript-eslint/return-await': ['error', 'in-try-catch'],
   '@typescript-eslint/unbound-method': [
     'error',
     { ignoreStatic: true },

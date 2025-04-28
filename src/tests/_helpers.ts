@@ -47,7 +47,7 @@ export const confirmRuleFormatIsValid = ( name: string, value: unknown ) => {
   }
 
   // Ensure that a rule configured with an array expresses the severity as a string.
-  let severity = value[0];
+  let severity = value[0] as unknown;
 
   if ( typeof severity !== 'string' ) {
     return reportInvalidRule( name, 'The first element in the rule configuration should be the severity represented as a string' );
@@ -79,9 +79,9 @@ export const confirmRuleFormatIsValid = ( name: string, value: unknown ) => {
   if ( isThreePart ) {
     [
       severity, strOption, options,
-    ] = value;
+    ] = value as unknown[];
   } else {
-    [severity, options] = value;
+    [severity, options] = value as unknown[];
   }
 
   if ( isThreePart && typeof strOption !== 'string' ) {

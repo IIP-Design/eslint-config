@@ -1,12 +1,11 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 import deprecatedTsRules from '../deprecated/typescript';
-import recommendedRules from './recommended';
-
-// ToDo extensions
-// ToDo misc
-// ToDo strict
-// ToDo stylistic
+import extensionRules from './extensions';
+import recommendedRules from './misc';
+import miscRules from './recommended';
+import strictRules from './strict';
+import stylisticRules from './stylistic';
 
 interface IOptionallyTypedRuleset {
   base: TSESLint.SharedConfig.RulesRecord
@@ -38,6 +37,10 @@ const includeTypeChecked = ( typeChecked: boolean, ruleset: IOptionallyTypedRule
 const typescriptRules = ( typeChecked: boolean ) => ( {
   ...deprecatedTsRules,
   ...includeTypeChecked( typeChecked, recommendedRules ),
+  ...includeTypeChecked( typeChecked, extensionRules ),
+  ...includeTypeChecked( typeChecked, miscRules ),
+  ...includeTypeChecked( typeChecked, strictRules ),
+  ...includeTypeChecked( typeChecked, stylisticRules ),
 } );
 
 export default typescriptRules;

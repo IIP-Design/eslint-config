@@ -34,6 +34,11 @@ const STRING_OPTION_RULES = [
   'react/no-did-update-set-state',
   'react/no-will-update-set-state',
   'react/prefer-es6-class',
+  '@typescript-eslint/consistent-generic-constructors',
+  '@typescript-eslint/consistent-indexed-object-style',
+  '@typescript-eslint/consistent-type-definitions',
+  '@typescript-eslint/method-signature-style',
+  '@typescript-eslint/return-await',
 ];
 
 /**
@@ -49,6 +54,8 @@ const SPECIAL_CASE_RULES = [
   'padding-line-between-statements',
   'react/jsx-indent',
   'react/jsx-indent-props',
+  '@typescript-eslint/prefer-destructuring',
+  '@typescript-eslint/naming-convention',
 ];
 
 /**
