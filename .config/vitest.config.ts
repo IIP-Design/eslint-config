@@ -5,9 +5,14 @@ const vitestConfig = defineConfig( {
     coverage: {
       enabled: true,
       provider: 'v8',
-      reporter: ['json-summary', 'text-summary'],
+      reporter: [
+        'html-spa',
+        ['json-summary', { file: 'coverage.json' }],
+        'text-summary',
+      ],
     },
   },
+  root: './',
 } );
 
 export default vitestConfig;
