@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 const importWarningRules: TSESLint.SharedConfig.RulesRecord = {
   'import-x/export': 'error',

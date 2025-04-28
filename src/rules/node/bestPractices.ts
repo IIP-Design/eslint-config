@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 const nodeBestPracticeRules: TSESLint.SharedConfig.RulesRecord = {
   'n/no-deprecated-api': 'error',

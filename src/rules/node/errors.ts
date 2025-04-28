@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 const nodeErrorRules: TSESLint.SharedConfig.RulesRecord = {
   'n/handle-callback-err': 'off',

@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 // Enable ESLint React rules typically handled by Prettier.
 const reactFormattingRules: TSESLint.SharedConfig.RulesRecord = {

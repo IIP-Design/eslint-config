@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 /**
  * These rules relate to possible syntax or logic errors in JavaScript code.

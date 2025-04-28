@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 /*
  * The Lab team traditionally used Prettier for formatting and ESLint for linting.

@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 const reactJsxRules: TSESLint.SharedConfig.RulesRecord = {
   'react/jsx-boolean-value': ['error', 'never'],

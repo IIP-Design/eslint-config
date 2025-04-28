@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 const importStylisticRules: TSESLint.SharedConfig.RulesRecord = {
   'import-x/consistent-type-specifier-style': ['error', 'prefer-top-level'],

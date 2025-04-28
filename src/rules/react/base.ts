@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 const reactBaseRules:TSESLint.SharedConfig.RulesRecord = {
   'react/boolean-prop-naming': 'off',

@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 const importStaticAnalysisRules: TSESLint.SharedConfig.RulesRecord = {
   'import-x/default': 'off',

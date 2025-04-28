@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 const reactHooksRules: TSESLint.SharedConfig.RulesRecord = {
   'react-hooks/exhaustive-deps': 'warn',

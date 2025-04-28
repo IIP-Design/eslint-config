@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 const jsxA11yRules: TSESLint.SharedConfig.RulesRecord = {
   'jsx-a11y/alt-text': 'error',

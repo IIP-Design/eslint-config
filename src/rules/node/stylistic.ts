@@ -1,4 +1,4 @@
-import { TSESLint } from '@typescript-eslint/utils';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 const nodeStylisticRules: TSESLint.SharedConfig.RulesRecord = {
   'n/callback-return': 'error',
