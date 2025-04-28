@@ -1,7 +1,8 @@
 import { config, parser, plugin } from 'typescript-eslint';
 import { createNodeResolver } from 'eslint-plugin-import-x';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
-import { TSESLint } from '@typescript-eslint/utils';
+
+import type { TSESLint } from '@typescript-eslint/utils';
 
 import baseConfig from './index';
 import tsRules from './rules/typescript/index';
