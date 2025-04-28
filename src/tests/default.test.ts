@@ -29,20 +29,39 @@ describe( 'Default config', () => {
     expect( defaultConfig ).toHaveLength( 4 );
 
     // Make sure that the base config applies to JS files.
-    expect( baseConfigObject.files.includes( '**/*.js' ) ).toEqual( true );
+    expect( baseConfigObject.files ).toBeDefined();
+
+    if ( baseConfigObject.files ) {
+      expect( baseConfigObject.files.includes( '**/*.js' ) ).toEqual( true );
+    }
     expect( baseConfigObject.name ).toEqual( 'gpalab/recommended' );
 
     // Make sure that the jest and test configs apply to both Typescript and JS test files.
-    expect( jestConfigObject.files.includes( '**/*.test.{js,ts}' ) ).toEqual( true );
-    expect( testConfigObject.files.includes( '**/*.test.{js,ts}' ) ).toEqual( true );
+    expect( jestConfigObject.files ).toBeDefined();
+
+    if ( jestConfigObject.files ) {
+      expect( jestConfigObject.files.includes( '**/*.test.{js,ts}' ) ).toEqual( true );
+    }
+
+    expect( testConfigObject.files ).toBeDefined();
+
+    if ( testConfigObject.files ) {
+      expect( testConfigObject.files.includes( '**/*.test.{js,ts}' ) ).toEqual( true );
+    }
     expect( testConfigObject.name ).toEqual( 'gpalab/test-files' );
 
     // Make sure that the configuration file config apply only to files.
-    const regex = new RegExp( /\b(?:config|webpack|eslint|jest)\b/ );
+    expect( configsConfigObject.files ).toBeDefined();
 
-    configsConfigObject.files.forEach( file => {
-      expect( regex.test( file as string ) ).toBe( true );
-    } );
+    if ( configsConfigObject.files ) {
+      const regex = new RegExp( /\b(?:config|webpack|eslint|jest)\b/ );
+
+      configsConfigObject.files.forEach( file => {
+        if ( typeof file === 'string' ) {
+          expect( regex.test( file ) ).toBe( true );
+        }
+      } );
+    }
 
     expect( configsConfigObject.name ).toEqual( 'gpalab/config-files' );
   } );
@@ -52,10 +71,14 @@ describe( 'Default config', () => {
 
     const { plugins } = baseConfigObject;
 
-    expect( Object.keys( plugins ).length ).toEqual( 2 );
+    expect( plugins ).toBeDefined();
 
-    expect( plugins['import-x'] ).toBeDefined();
-    expect( plugins.n ).toBeDefined();
+    if ( plugins ) {
+      expect( Object.keys( plugins ).length ).toEqual( 2 );
+
+      expect( plugins['import-x'] ).toBeDefined();
+      expect( plugins.n ).toBeDefined();
+    }
   } );
 
   it( 'includes the Jest plugins in the tests ruleset', () => {
@@ -63,24 +86,32 @@ describe( 'Default config', () => {
 
     const { plugins } = testConfigObject;
 
-    expect( Object.keys( plugins ).length ).toEqual( 1 );
+    expect( plugins ).toBeDefined();
 
-    expect( plugins.jest ).toBeDefined();
+    if ( plugins ) {
+      expect( Object.keys( plugins ).length ).toEqual( 1 );
+
+      expect( plugins.jest ).toBeDefined();
+    }
   } );
 
   it( 'sets the language and parser options', () => {
-    expect( baseConfigObject.languageOptions ).toBeDefined();
+    const { languageOptions } = baseConfigObject;
 
-    expect( baseConfigObject.languageOptions.ecmaVersion ).toBeDefined();
-    expect( baseConfigObject.languageOptions.globals ).toBeDefined();
-    expect( baseConfigObject.languageOptions.parserOptions ).toBeDefined();
+    expect( languageOptions ).toBeDefined();
 
-    const { ecmaVersion, parserOptions: { ecmaFeatures } } = baseConfigObject.languageOptions;
+    if ( languageOptions ) {
+      expect( languageOptions.ecmaVersion ).toBeDefined();
+      expect( languageOptions.globals ).toBeDefined();
+      expect( languageOptions.parserOptions ).toBeDefined();
 
-    expect( ecmaVersion ).toEqual( 'latest' );
+      const { ecmaVersion, parserOptions } = languageOptions;
 
-    expect( ecmaFeatures.impliedStrict ).toEqual( true );
-    expect( ecmaFeatures.globalReturn ).toEqual( false );
+      expect( ecmaVersion ).toEqual( 'latest' );
+
+      expect( parserOptions?.ecmaFeatures?.impliedStrict ).toEqual( true );
+      expect( parserOptions?.ecmaFeatures?.globalReturn ).toEqual( false );
+    }
   } );
 } );
 

@@ -27,13 +27,18 @@ describe( 'React config', () => {
     expect( Array.isArray( reactConfig ) ).toEqual( true );
     expect( reactConfig ).toHaveLength( 1 );
 
-    // Inspect the React-specific configuration objct.
+    // Inspect the React-specific configuration object.
     expect( reactConfigObject.name ).toEqual( 'gpalab/react' );
-    expect( reactConfigObject.files ).toHaveLength( 2 );
 
-    jsxFileExts.forEach( ext => {
-      expect( reactConfigObject.files.includes( `**/*${ext}` ) ).toEqual( true );
-    } );
+    const { files } = reactConfigObject;
+
+    expect( files ).toHaveLength( 2 );
+
+    if ( files ) {
+      jsxFileExts.forEach( ext => {
+        expect( files.includes( `**/*${ext}` ) ).toEqual( true );
+      } );
+    }
   } );
 
   it( 'includes the React, JSX a11y, and hooks plugins', () => {
@@ -41,26 +46,28 @@ describe( 'React config', () => {
 
     const { plugins } = reactConfigObject;
 
-    expect( Object.keys( plugins ).length ).toEqual( 3 );
+    expect( plugins ).toBeDefined();
 
-    expect( plugins.react ).toBeDefined();
-    expect( plugins['react-hooks'] ).toBeDefined();
-    expect( plugins['jsx-a11y'] ).toBeDefined();
+    if ( plugins ) {
+      expect( Object.keys( plugins ).length ).toEqual( 3 );
+
+      expect( plugins.react ).toBeDefined();
+      expect( plugins['react-hooks'] ).toBeDefined();
+      expect( plugins['jsx-a11y'] ).toBeDefined();
+    }
   } );
 
   it( 'enables the use of JSX', () => {
-    const parserOptions = reactConfigObject?.languageOptions?.parserOptions;
+    const parserOptions = reactConfigObject.languageOptions?.parserOptions;
 
     expect( parserOptions ).toBeDefined();
 
-    const { ecmaFeatures } = parserOptions;
-
-    expect( ecmaFeatures ).toBeDefined();
-    expect( ecmaFeatures.jsx ).toEqual( true );
+    expect( parserOptions?.ecmaFeatures ).toBeDefined();
+    expect( parserOptions?.ecmaFeatures?.jsx ).toEqual( true );
   } );
 
   it( "detects the user's version of React", () => {
-    const reactSettings = reactConfigObject?.settings?.react as IReactSettings;
+    const reactSettings = reactConfigObject.settings?.react as IReactSettings;
 
     expect( reactSettings ).toBeDefined();
     expect( reactSettings.version ).toEqual( 'detect' );

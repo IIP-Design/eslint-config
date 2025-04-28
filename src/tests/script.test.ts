@@ -33,11 +33,17 @@ describe( 'Node.js script config', () => {
 
   it( 'overrides the base language options', () => {
     // Applies to all files with .js extension.
-    expect( scriptConfigObject.files.length ).toEqual( 1 );
-    expect( scriptConfigObject.files.includes( '**/*.js' ) ).toEqual( true );
+    const { files } = scriptConfigObject;
+
+    expect( files ).toBeDefined();
+
+    if ( files ) {
+      expect( files.length ).toEqual( 1 );
+      expect( files.includes( '**/*.js' ) ).toEqual( true );
+    }
 
     // Changes the source type.
-    const sourceType = scriptConfigObject?.languageOptions?.sourceType;
+    const sourceType = scriptConfigObject.languageOptions?.sourceType;
 
     expect( sourceType ).toBeDefined();
     expect( sourceType ).toEqual( 'script' );

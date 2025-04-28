@@ -1,22 +1,21 @@
 import { describe, expect, it } from 'vitest';
 
 import tsRules from '../rules/typescript/index';
-import deprecatedRuleset from '../rules/deprecated/typescript';
 import extensionsRuleset from '../rules/typescript/extensions';
 import miscRuleset from '../rules/typescript/misc';
 import recommendedRuleset from '../rules/typescript/recommended';
 import stylisticRuleset from '../rules/typescript/stylistic';
 import strictRuleset from '../rules/typescript/strict';
 
-import tsConfig from '../typescript';
+import tsTcConfig from '../typescript-tc';
 
 import { confirmRuleFormatIsValid } from './_helpers';
 
 describe( 'The TypeScript configuration', () => {
-  const configName = 'gpalab/typescript';
+  const configName = 'gpalab/typescript-tc';
 
   it( 'loads without error', () => {
-    expect( () => tsConfig ).not.toThrow();
+    expect( () => tsTcConfig ).not.toThrow();
   } );
 
   const [
@@ -24,12 +23,12 @@ describe( 'The TypeScript configuration', () => {
     jestConfigObject,
     testConfigObject,
     configsConfigObject,
-    tsConfigObject,
-  ] = tsConfig;
+    tsTcConfigObject,
+  ] = tsTcConfig;
 
   it( 'contains the base GPA Lab configurations, and custom overrides for Typescript files', () => {
-    expect( Array.isArray( tsConfig ) ).toEqual( true );
-    expect( tsConfig ).toHaveLength( 5 );
+    expect( Array.isArray( tsTcConfig ) ).toEqual( true );
+    expect( tsTcConfig ).toHaveLength( 5 );
 
     // Includes base configurations.
     expect( baseConfigObject.name ).toEqual( 'gpalab/recommended' );
@@ -38,18 +37,18 @@ describe( 'The TypeScript configuration', () => {
     expect( configsConfigObject.name ).toEqual( 'gpalab/config-files' );
 
     // Includes custom TS configuration.
-    expect( tsConfigObject.name ).toEqual( configName );
+    expect( tsTcConfigObject.name ).toEqual( configName );
   } );
 
   it( 'applies additional configurations to TypeScript files', () => {
     // Check that the additional config only applies to TypeScript files.
-    expect( Array.isArray( tsConfigObject.files ) ).toEqual( true );
+    expect( Array.isArray( tsTcConfigObject.files ) ).toEqual( true );
 
-    const { files } = tsConfigObject;
+    const { files } = tsTcConfigObject;
 
     expect( files ).toBeDefined();
 
-    if ( files ) {
+    if ( files && files.length > 0 ) {
       expect( files.length ).toEqual( 2 );
 
       const tsFiles = ['**/*.ts', '**/*.tsx'];
@@ -60,12 +59,28 @@ describe( 'The TypeScript configuration', () => {
     }
 
     // Ensure that the parser is set.
-    const parser = tsConfigObject.languageOptions?.parser;
+    const parser = tsTcConfigObject.languageOptions?.parser;
 
     expect( parser?.meta?.name ).toEqual( 'typescript-eslint/parser' );
 
+    // Ensure that the the parser options identify the TS config that should be used.
+    const parserOptions = tsTcConfigObject.languageOptions?.parserOptions;
+
+    expect( parserOptions?.projectService ).toEqual( true );
+    expect( parserOptions?.tsconfigRootDir ).toBeDefined();
+
+    // Ensure that the node version is set to 22 and above.
+    const nodeSettings = tsTcConfigObject.settings?.node as { version: string };
+
+    expect( nodeSettings ).toBeDefined();
+    expect( nodeSettings.version ).toBeDefined();
+
+    if ( nodeSettings.version ) {
+      expect( nodeSettings.version ).toEqual( '>=22.0.0' );
+    }
+
     // Ensure that the TypeScript ESLint plugin is available.
-    const { plugins } = tsConfigObject;
+    const { plugins } = tsTcConfigObject;
 
     expect( plugins ).toBeDefined();
 
@@ -84,29 +99,15 @@ describe( 'Combined TypeScript rules', () => {
 } );
 
 // Confirm that each of the constituent rulesets load without issue and contains valid rules.
-describe( 'TypeScript deprecated ruleset', () => {
-  it( 'loads without error', () => {
-    expect( () => deprecatedRuleset ).not.toThrow();
-  } );
-
-  it( 'contains rules that conform to the required format', () => {
-    const rules = Object.entries( deprecatedRuleset );
-
-    rules.forEach( ( [name, value] ) => {
-      expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
-    } );
-  } );
-} );
-
 describe( 'TypeScript extensions ruleset', () => {
   it( 'loads without error', () => {
     expect( () => extensionsRuleset ).not.toThrow();
   } );
 
   it( 'contains rules that conform to the required format', () => {
-    const baseRules = Object.entries( extensionsRuleset.base );
+    const tcRules = Object.entries( extensionsRuleset.typeChecked );
 
-    baseRules.forEach( ( [name, value] ) => {
+    tcRules.forEach( ( [name, value] ) => {
       expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
     } );
   } );
@@ -118,9 +119,9 @@ describe( 'TypeScript misc ruleset', () => {
   } );
 
   it( 'contains rules that conform to the required format', () => {
-    const baseRules = Object.entries( miscRuleset.base );
+    const tcRules = Object.entries( miscRuleset.typeChecked );
 
-    baseRules.forEach( ( [name, value] ) => {
+    tcRules.forEach( ( [name, value] ) => {
       expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
     } );
   } );
@@ -132,9 +133,9 @@ describe( 'TypeScript recommended ruleset', () => {
   } );
 
   it( 'contains rules that conform to the required format', () => {
-    const baseRules = Object.entries( recommendedRuleset.base );
+    const tcRules = Object.entries( recommendedRuleset.typeChecked );
 
-    baseRules.forEach( ( [name, value] ) => {
+    tcRules.forEach( ( [name, value] ) => {
       expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
     } );
   } );
@@ -146,9 +147,9 @@ describe( 'TypeScript strict ruleset', () => {
   } );
 
   it( 'contains rules that conform to the required format', () => {
-    const baseRules = Object.entries( strictRuleset.base );
+    const tcRules = Object.entries( strictRuleset.typeChecked );
 
-    baseRules.forEach( ( [name, value] ) => {
+    tcRules.forEach( ( [name, value] ) => {
       expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
     } );
   } );
@@ -160,9 +161,9 @@ describe( 'TypeScript stylistic ruleset', () => {
   } );
 
   it( 'contains rules that conform to the required format', () => {
-    const baseRules = Object.entries( stylisticRuleset.base );
+    const tcRules = Object.entries( stylisticRuleset.typeChecked );
 
-    baseRules.forEach( ( [name, value] ) => {
+    tcRules.forEach( ( [name, value] ) => {
       expect( confirmRuleFormatIsValid( name, value ) ).toEqual( true );
     } );
   } );
