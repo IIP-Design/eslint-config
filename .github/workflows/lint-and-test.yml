@@ -1,6 +1,6 @@
-name: Lint & Test
+name: Test & Lint
 
-run-name: Testing ${{ github.event_name }} by @${{ github.actor }}
+run-name: Lint and run unit tests on the ${{ github.event_name }} to ${{ github.base_ref || github.ref_name }} by @${{ github.actor }}
 
 on:
   push:
