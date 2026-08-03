@@ -11,6 +11,9 @@ import tsTcConfig from '../typescript-tc';
 
 import { confirmRuleFormatIsValid } from './_helpers';
 
+// eslint-disable-next-line n/no-extraneous-import
+import type { ParserOptions } from '@typescript-eslint/parser';
+
 describe( 'The TypeScript configuration', () => {
   const configName = 'gpalab/typescript-tc';
 
@@ -59,15 +62,17 @@ describe( 'The TypeScript configuration', () => {
     }
 
     // Ensure that the parser is set.
-    const parser = tsTcConfigObject.languageOptions?.parser;
+    const parser = tsTcConfigObject.languageOptions?.parser as {
+      meta?: { name?: string };
+    } | undefined;
 
     expect( parser?.meta?.name ).toEqual( 'typescript-eslint/parser' );
 
     // Ensure that the the parser options identify the TS config that should be used.
-    const parserOptions = tsTcConfigObject.languageOptions?.parserOptions;
+    const parserOptions = tsTcConfigObject.languageOptions?.parserOptions as ParserOptions;
 
-    expect( parserOptions?.projectService ).toEqual( true );
-    expect( parserOptions?.tsconfigRootDir ).toBeDefined();
+    expect( parserOptions.projectService ).toEqual( true );
+    expect( parserOptions.tsconfigRootDir ).toBeDefined();
 
     // Ensure that the node version is set to 22 and above.
     const nodeSettings = tsTcConfigObject.settings?.node as { version: string };
@@ -76,7 +81,7 @@ describe( 'The TypeScript configuration', () => {
     expect( nodeSettings.version ).toBeDefined();
 
     if ( nodeSettings.version ) {
-      expect( nodeSettings.version ).toEqual( '>=22.0.0' );
+      expect( nodeSettings.version ).toEqual( '>=24.0.0' );
     }
 
     // Ensure that the TypeScript ESLint plugin is available.

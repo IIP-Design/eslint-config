@@ -1,8 +1,10 @@
-import { config, parser, plugin } from 'typescript-eslint';
+import { defineConfig } from 'eslint/config';
+import { parser, plugin } from 'typescript-eslint';
 import { createNodeResolver } from 'eslint-plugin-import-x';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
 
 import type { TSESLint } from '@typescript-eslint/utils';
+import type { Linter } from 'eslint';
 
 import baseConfig from './index';
 import tsRules from './rules/typescript/index';
@@ -15,14 +17,16 @@ import { extensions, allFilesWithExts } from './constants';
  * @returns The appropriate language options configuration.
  */
 const setLanguageOptions = ( typeChecked: boolean ) => {
-  const langOpts: TSESLint.FlatConfig.LanguageOptions = {
+  const { dirname } = import.meta;
+
+  const langOpts: Linter.LanguageOptions = {
     parser,
   };
 
   if ( typeChecked ) {
     langOpts.parserOptions = {
       projectService: true,
-      tsconfigRootDir: import.meta.dirname,
+      tsconfigRootDir: dirname,
     };
   }
 
@@ -44,7 +48,7 @@ const setSettings = ( typeChecked: boolean ) => {
     // of the tsconfig.json file. This feature is only available in Node >=21
     // therefore, in those cases we require Node 22 (LTS) or above.
     settings.node = {
-      version: '>=22.0.0',
+      version: '>=24.0.0',
     };
   }
 
@@ -56,7 +60,7 @@ const setSettings = ( typeChecked: boolean ) => {
  * @param typeChecked Whether or not to enable linting with type information.
  * @returns The base TypeScript linting config adjusted based on whether type checking is enabled.
  */
-const tsBaseConfig = ( typeChecked: boolean ) => config(
+const tsBaseConfig = ( typeChecked: boolean ) => defineConfig(
   baseConfig,
   {
     files: allFilesWithExts( extensions.ts ),

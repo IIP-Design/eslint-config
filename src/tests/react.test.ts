@@ -10,6 +10,9 @@ import formatRuleset from '../rules/react/formatting';
 
 import { confirmRuleFormatIsValid } from './_helpers';
 
+// eslint-disable-next-line n/no-extraneous-import
+import type { ParserOptions } from '@typescript-eslint/parser';
+
 interface IReactSettings {
   version: string
 }
@@ -58,12 +61,12 @@ describe( 'React config', () => {
   } );
 
   it( 'enables the use of JSX', () => {
-    const parserOptions = reactConfigObject.languageOptions?.parserOptions;
+    const parserOptions = reactConfigObject.languageOptions?.parserOptions as ParserOptions;
 
     expect( parserOptions ).toBeDefined();
 
-    expect( parserOptions?.ecmaFeatures ).toBeDefined();
-    expect( parserOptions?.ecmaFeatures?.jsx ).toEqual( true );
+    expect( parserOptions.ecmaFeatures ).toBeDefined();
+    expect( parserOptions.ecmaFeatures?.jsx ).toEqual( true );
   } );
 
   it( "detects the user's version of React", () => {

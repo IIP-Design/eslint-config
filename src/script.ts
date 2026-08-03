@@ -1,8 +1,8 @@
-import { config } from 'typescript-eslint';
+import { defineConfig } from 'eslint/config';
 
 import baseConfig from './index';
 
-const scriptConfig = config(
+const scriptConfig = defineConfig(
   {
     'extends': [baseConfig],
     files: ['**/*.js'],

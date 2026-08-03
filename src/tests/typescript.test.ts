@@ -60,7 +60,9 @@ describe( 'The TypeScript configuration', () => {
     }
 
     // Ensure that the parser is set.
-    const parser = tsConfigObject.languageOptions?.parser;
+    const parser = tsConfigObject.languageOptions?.parser as {
+      meta?: { name?: string };
+    } | undefined;
 
     expect( parser?.meta?.name ).toEqual( 'typescript-eslint/parser' );
 

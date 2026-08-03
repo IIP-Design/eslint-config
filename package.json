@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
+    "@types/node": "^26.1.2",
     "@typescript-eslint/utils": "^8.43.0",
     "@vitest/coverage-v8": "^4.1.10",
     "tsup": "^8.5.1",

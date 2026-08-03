@@ -13,7 +13,7 @@ import { extensions, allFilesWithExts } from './constants';
 
 const baseConfig = defineConfig(
   {
-    files: allFilesWithExts(extensions.all),
+    files: allFilesWithExts( extensions.all ),
     languageOptions: {
       ecmaVersion: 'latest',
       globals: {

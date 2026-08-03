@@ -14,6 +14,9 @@ import nodeRuleset from '../rules/node/index';
 
 import { confirmRuleFormatIsValid } from './_helpers';
 
+// eslint-disable-next-line n/no-extraneous-import
+import type { ParserOptions } from '@typescript-eslint/parser';
+
 describe( 'Default config', () => {
   // The default config is composed of four sub-configs that we extract here.
   const [
@@ -109,8 +112,10 @@ describe( 'Default config', () => {
 
       expect( ecmaVersion ).toEqual( 'latest' );
 
-      expect( parserOptions?.ecmaFeatures?.impliedStrict ).toEqual( true );
-      expect( parserOptions?.ecmaFeatures?.globalReturn ).toEqual( false );
+      const { ecmaFeatures } = parserOptions as ParserOptions;
+
+      expect( ecmaFeatures?.impliedStrict ).toEqual( true );
+      expect( ecmaFeatures?.globalReturn ).toEqual( false );
     }
   } );
 } );
