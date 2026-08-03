@@ -19,9 +19,7 @@ import type { ParserOptions } from '@typescript-eslint/parser';
 
 describe( 'Default config', () => {
   // The default config is composed of four sub-configs that we extract here.
-  const [
-    baseConfigObject, jestConfigObject, testConfigObject, configsConfigObject,
-  ] = defaultConfig;
+  const [baseConfigObject, configsConfigObject] = defaultConfig;
 
   it( 'loads without error', () => {
     expect( () => defaultConfig ).not.toThrow();
@@ -29,7 +27,7 @@ describe( 'Default config', () => {
 
   it( 'is a list of rulesets that contains rules for JS files, tests, and configuration file configs', () => {
     expect( Array.isArray( defaultConfig ) ).toEqual( true );
-    expect( defaultConfig ).toHaveLength( 4 );
+    expect( defaultConfig ).toHaveLength( 2 );
 
     // Make sure that the base config applies to JS files.
     expect( baseConfigObject.files ).toBeDefined();
@@ -38,20 +36,6 @@ describe( 'Default config', () => {
       expect( baseConfigObject.files.includes( '**/*.js' ) ).toEqual( true );
     }
     expect( baseConfigObject.name ).toEqual( 'gpalab/recommended' );
-
-    // Make sure that the jest and test configs apply to both Typescript and JS test files.
-    expect( jestConfigObject.files ).toBeDefined();
-
-    if ( jestConfigObject.files ) {
-      expect( jestConfigObject.files.includes( '**/*.test.{js,ts}' ) ).toEqual( true );
-    }
-
-    expect( testConfigObject.files ).toBeDefined();
-
-    if ( testConfigObject.files ) {
-      expect( testConfigObject.files.includes( '**/*.test.{js,ts}' ) ).toEqual( true );
-    }
-    expect( testConfigObject.name ).toEqual( 'gpalab/test-files' );
 
     // Make sure that the configuration file config apply only to files.
     expect( configsConfigObject.files ).toBeDefined();
@@ -81,20 +65,6 @@ describe( 'Default config', () => {
 
       expect( plugins['import-x'] ).toBeDefined();
       expect( plugins.n ).toBeDefined();
-    }
-  } );
-
-  it( 'includes the Jest plugins in the tests ruleset', () => {
-    expect( testConfigObject.plugins ).toBeDefined();
-
-    const { plugins } = testConfigObject;
-
-    expect( plugins ).toBeDefined();
-
-    if ( plugins ) {
-      expect( Object.keys( plugins ).length ).toEqual( 1 );
-
-      expect( plugins.jest ).toBeDefined();
     }
   } );
 

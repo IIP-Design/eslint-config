@@ -23,20 +23,16 @@ describe( 'The TypeScript configuration', () => {
 
   const [
     baseConfigObject,
-    jestConfigObject,
-    testConfigObject,
     configsConfigObject,
     tsTcConfigObject,
   ] = tsTcConfig;
 
   it( 'contains the base GPA Lab configurations, and custom overrides for Typescript files', () => {
     expect( Array.isArray( tsTcConfig ) ).toEqual( true );
-    expect( tsTcConfig ).toHaveLength( 5 );
+    expect( tsTcConfig ).toHaveLength( 3 );
 
     // Includes base configurations.
     expect( baseConfigObject.name ).toEqual( 'gpalab/recommended' );
-    expect( jestConfigObject.name ).toEqual( 'gpalab/test-files' );
-    expect( testConfigObject.name ).toEqual( 'gpalab/test-files' );
     expect( configsConfigObject.name ).toEqual( 'gpalab/config-files' );
 
     // Includes custom TS configuration.
