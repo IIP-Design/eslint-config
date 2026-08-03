@@ -1,6 +1,6 @@
 import { defineConfig } from 'tsup';
 
-const tsupConfig = defineConfig( {
+const tsupConfig = defineConfig({
   dts: true,
   entry: {
     index: './src/index.ts',
@@ -10,7 +10,7 @@ const tsupConfig = defineConfig( {
     'typescript-tc': './src/typescript-tc.ts',
   },
   format: ['esm'],
-  minify: true,
-} );
+  minify: false,
+});
 
 export default tsupConfig;
