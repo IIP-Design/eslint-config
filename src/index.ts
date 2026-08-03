@@ -1,8 +1,8 @@
 import globals from 'globals';
-import { config } from 'typescript-eslint';
+import { defineConfig } from 'eslint/config';
 import importPlugin, { createNodeResolver } from 'eslint-plugin-import-x';
 
-import jestPlugin from 'eslint-plugin-jest';
+// import jestPlugin from 'eslint-plugin-jest';
 import nodePlugin from 'eslint-plugin-n';
 
 import baseRules from './rules/base/index';
@@ -11,9 +11,9 @@ import nodeRules from './rules/node/index';
 
 import { extensions, allFilesWithExts } from './constants';
 
-const baseConfig = config(
+const baseConfig = defineConfig(
   {
-    files: allFilesWithExts( extensions.all ),
+    files: allFilesWithExts(extensions.all),
     languageOptions: {
       ecmaVersion: 'latest',
       globals: {
@@ -56,29 +56,29 @@ const baseConfig = config(
       },
     },
   },
-  {
-    'extends': [jestPlugin.configs['flat/recommended']],
-    files: ['**/*.test.{js,ts}'],
-    languageOptions: {
-      globals: {
-        ...globals.jest,
-      },
-    },
-    name: 'gpalab/test-files',
-    plugins: {
-      jest: jestPlugin,
-    },
-    rules: {
-      // For some reason this rule crashes the linter on test files.
-      'import-x/dynamic-import-chunkname': 'off',
-      'n/no-unpublished-import': [
-        'error',
-        {
-          allowModules: ['vitest'],
-        },
-      ],
-    },
-  },
+  // {
+  //   'extends': [jestPlugin.configs['flat/recommended']],
+  //   files: ['**/*.test.{js,ts}'],
+  //   languageOptions: {
+  //     globals: {
+  //       ...globals.jest,
+  //     },
+  //   },
+  //   name: 'gpalab/test-files',
+  //   plugins: {
+  //     jest: jestPlugin,
+  //   },
+  //   rules: {
+  //     // For some reason this rule crashes the linter on test files.
+  //     'import-x/dynamic-import-chunkname': 'off',
+  //     'n/no-unpublished-import': [
+  //       'error',
+  //       {
+  //         allowModules: ['vitest'],
+  //       },
+  //     ],
+  //   },
+  // },
   {
     // Allow use of dev dependencies in config files
     files: [
